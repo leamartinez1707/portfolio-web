@@ -23,8 +23,8 @@ const translations = {
     'hero.greeting': 'Hola, soy un',
     'hero.role': 'Desarrollador Full Stack',
     'hero.role2': 'Desarrollador enfocado al Frontend',
-    'hero.description': 'Programador Full Stack apasionado por crear experiencias web excepcionales. Especializado en React y Next.js, Node.js, TypeScript y tecnologías modernas.',
-    'hero.hire': 'Contrátarme',
+    'hero.description': 'Apasionado por construir experiencias web de alto impacto. Especializado en React && Next.js, Express.js && Nest.js, TypeScript y tecnologías modernas para el desarrollo ágil y escalable.',
+    'hero.hire': 'Contratarme',
     'hero.download': 'Descargar CV',
 
     // About
@@ -79,9 +79,9 @@ const translations = {
     'contact.form.placeholder.email': 'tu@email.com',
     'contact.form.placeholder.subject': '¿De qué quieres hablar?',
     'contact.form.placeholder.message': 'Cuéntame sobre tu proyecto...',
-    'contact.email': 'tu.email@gmail.com',
-    'contact.phone': '+1 (555) 123-4567',
-    'contact.location': 'Ciudad, País',
+    'contact.email': 'leandromartinez.dev@gmail.com',
+    'contact.phone': '+598 (95) 220-063',
+    'contact.location': 'Montevideo, Uruguay',
 
     // Footer
     'footer.description': 'Desarrollador Full Stack apasionado por crear experiencias web excepcionales.',
@@ -101,7 +101,7 @@ const translations = {
     'hero.greeting': 'Hi, I\'m a',
     'hero.role': 'Full Stack Developer',
     'hero.role2': 'Frontend Oriented Developer',
-    'hero.description': 'Full Stack Developer passionate about creating exceptional web experiences. Specialized in React, Next.js, Node.js, TypeScript and modern technologies.',
+    'hero.description': 'I\'m passionate about crafting high-impact web experiences. I specialize in React && Next.js, Express.js && Nest.js, TypeScript, and modern tools for building fast and scalable applications.',
     'hero.hire': 'Hire Me',
     'hero.download': 'Download CV',
 
@@ -157,9 +157,9 @@ const translations = {
     'contact.form.placeholder.email': 'your@email.com',
     'contact.form.placeholder.subject': 'What do you want to talk about?',
     'contact.form.placeholder.message': 'Tell me about your project...',
-    'contact.email': 'your.email@gmail.com',
-    'contact.phone': '+1 (555) 123-4567',
-    'contact.location': 'City, Country',
+    'contact.email': 'leandromartinez.devl@gmail.com',
+    'contact.phone': '+598 (95) 220-063',
+    'contact.location': 'Montevideo, Uruguay',
 
     // Footer
     'footer.description': 'Frontend Developer passionate about creating exceptional web experiences.',

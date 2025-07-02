@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import LanguageToggle from './LanguageToggle';
@@ -39,11 +39,11 @@ const Header = () => {
         : 'bg-transparent'
         }`}
     >
-      <nav className="container mx-auto px-6 py-4">
+      <nav className="container mx-auto px-6 py-4" id='header'>
         <div className="flex items-center justify-between">
           <div className="text-2xl font-bold important-text-gradient">
             <span className="text-violet-900">{'<'}</span>
-            Leandro Martínez
+            <button className='hover:cursor-pointer' onClick={() => scrollToSection('inicio')}>Leandro Martínez</button>
             <span className="text-violet-700">{'<'}</span>
             <span className="text-violet-600">{'/'}</span>
             <span className="text-violet-500">{'>'}</span>

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ExternalLink, Github, ArrowRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -27,113 +27,113 @@ const Projects = () => {
   const projects = {
     es: [
       {
-        title: 'E-commerce Moderno',
-        description: 'Plataforma de comercio electrónico completa con carrito de compras, autenticación y pagos integrados.',
-        image: 'https://images.pexels.com/photos/4968630/pexels-photo-4968630.jpeg?auto=compress&cs=tinysrgb&w=800',
-        technologies: ['React', 'TypeScript', 'Node.js', 'MongoDB', 'Stripe'],
-        github: '#',
-        demo: '#',
+        title: 'Chatbot con IA para E-commerce',
+        description: 'Chatbot inteligente que asiste a los clientes en la compra de productos, responde preguntas frecuentes y recomienda artículos.',
+        image: '/chatbot_photo.png',
+        technologies: ['Next.js', 'TypeScript', 'OpenAI API', 'Supabase', 'Tailwind CSS', 'Vercel'],
+        github: 'https://github.com/leamartinez1707/IA-Catalog-Chatbot',
+        demo: 'https://ia-catalog-chatbot.vercel.app/',
         featured: true
       },
       {
-        title: 'Dashboard Analytics',
-        description: 'Panel de control interactivo con gráficos en tiempo real y métricas de rendimiento.',
-        image: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800',
-        technologies: ['React', 'Chart.js', 'Tailwind CSS', 'API REST'],
-        github: '#',
-        demo: '#',
+        title: 'SaludNet - Plataforma de Telemedicina',
+        description: 'Plataforma de telemedicina que conecta pacientes con médicos, permite agendar citas, realizar consultas en línea y gestionar historiales médicos.',
+        image: '/saludnet_screenshot.png',
+        technologies: ['React.js', 'Node.js', 'Express.js', 'API REST', 'MongoDB', 'Tailwind CSS', 'Context API', 'Vercel', 'Render'],
+        github: 'https://github.com/No-Country-simulation/c20-37-n-node-react',
+        demo: 'https://saludnet.vercel.app/',
+        featured: false
+      },
+      {
+        title: 'CVBoost - Optimizador de CV con IA',
+        description: 'Landing page que utiliza IA para mejorar currículums. Permite a los usuarios subir su CV en texto y recibir sugerencias de mejoras, basadas en las mejores prácticas en base al puesto solicitado.',
+        image: '/cvboost_screenshot.png',
+        technologies: ['React.js', 'JavaScript', 'OpenAI API', 'Axios', 'PDFjs', 'Tailwind CSS', 'Vercel'],
+        github: 'https://github.com/leamartinez1707/cv_boost',
+        demo: 'https://cv-ai-boost.vercel.app/',
         featured: true
       },
       {
-        title: 'App de Tareas',
-        description: 'Aplicación de gestión de tareas con drag & drop, categorías y sincronización en tiempo real.',
-        image: 'https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=800',
-        technologies: ['React', 'TypeScript', 'Firebase', 'React DnD'],
-        github: '#',
-        demo: '#',
-        featured: false
+        title: 'FastFood - Gestión de Restaurantes',
+        description: 'Aplicación para restaurantes de comida rápida que permite gestionar pedidos en tiempo real, administración de menú y seguimiento de pedidos. Dashboard para administración y control de productos.',
+        image: '/fastfood_screenshot.png',
+        technologies: ['Next.js', 'TypeScript', 'Prisma', 'MongoDB', 'SWR', 'Tailwind CSS', 'Zustand', 'Cloudinary', 'Vercel'],
+        github: 'https://github.com/leamartinez1707/next-tienda',
+        demo: 'https://fastfooduy.vercel.app/order/cafe',
+        featured: true
       },
       {
-        title: 'Portfolio Personal',
-        description: 'Sitio web personal responsive con animaciones suaves y diseño minimalista.',
-        image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800',
-        technologies: ['React', 'Tailwind CSS', 'Framer Motion'],
-        github: '#',
-        demo: '#',
-        featured: false
+        title: 'UpTask - Gestión de Proyectos',
+        description: 'Aplicación de gestión de proyectos estilo Kanban que permite crear, asignar y gestionar tareas en equipo. Incluye autenticación, drag and drop de tareas y un sistema de comentarios.',
+        image: '/uptask_screenshot.png',
+        technologies: ['React.js', 'React Query', 'TypeScript', 'Drag and Drop Kit', 'Tailwind CSS', 'Chakra UI', 'Express.js', 'MongoDB', 'JWT', 'NodeMailer', 'Vercel'],
+        github: 'https://github.com/leamartinez1707/mytasks-frontend',
+        demo: 'https://uptask-projectmanagement-phi.vercel.app/auth/login',
+        featured: true
       },
       {
-        title: 'Chat en Tiempo Real',
-        description: 'Aplicación de mensajería instantánea con salas de chat y notificaciones push.',
-        image: 'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=800',
-        technologies: ['React', 'Socket.io', 'Node.js', 'Express'],
+        title: 'TodoMuebles | Landing Page de Carpintería',
+        description: 'Landing page para una carpintería que ofrece muebles personalizados. Incluye catálogo de productos y formulario de contacto.',
+        image: '/todo_muebles_screenshot.png',
+        technologies: ['Next.js', 'Motion', 'HeadlessUi', 'NodeMailer', 'Tailwind CSS', 'Vercel'],
         github: '#',
-        demo: '#',
-        featured: false
-      },
-      {
-        title: 'Weather App',
-        description: 'Aplicación del clima con pronóstico de 7 días, geolocalización y mapas interactivos.',
-        image: 'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800',
-        technologies: ['React', 'OpenWeather API', 'Leaflet', 'CSS3'],
-        github: '#',
-        demo: '#',
+        demo: 'https://todomueblesuy.vercel.app/home',
         featured: false
       }
     ],
     en: [
       {
-        title: 'Modern E-commerce',
-        description: 'Complete e-commerce platform with shopping cart, authentication and integrated payments.',
-        image: 'https://images.pexels.com/photos/4968630/pexels-photo-4968630.jpeg?auto=compress&cs=tinysrgb&w=800',
-        technologies: ['React', 'TypeScript', 'Node.js', 'MongoDB', 'Stripe'],
-        github: '#',
-        demo: '#',
+        title: 'AI Chatbot for E-commerce',
+        description: 'Intelligent chatbot that assists customers with product purchases, answers FAQs, and recommends items.',
+        image: '/chatbot_photo.png',
+        technologies: ['Next.js', 'TypeScript', 'OpenAI API', 'Supabase', 'Tailwind CSS', 'Vercel'],
+        github: 'https://github.com/leamartinez1707/IA-Catalog-Chatbot',
+        demo: 'https://ia-catalog-chatbot.vercel.app/',
         featured: true
       },
       {
-        title: 'Analytics Dashboard',
-        description: 'Interactive control panel with real-time charts and performance metrics.',
-        image: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800',
-        technologies: ['React', 'Chart.js', 'Tailwind CSS', 'REST API'],
-        github: '#',
-        demo: '#',
+        title: 'SaludNet - Telemedicine Platform',
+        description: 'Telemedicine platform connecting patients with doctors, allowing appointment scheduling, online consultations, and medical record management.',
+        image: '/saludnet_screenshot.png',
+        technologies: ['React.js', 'Node.js', 'Express.js', 'REST API', 'MongoDB', 'Tailwind CSS', 'Context API', 'Vercel', 'Render'],
+        github: 'https://github.com/No-Country-simulation/c20-37-n-node-react',
+        demo: 'https://saludnet.vercel.app/',
+        featured: false
+      },
+      {
+        title: 'CVBoost - AI Resume Optimizer',
+        description: 'Landing page that uses AI to improve resumes. Users can upload their CV as text and receive suggestions based on best practices for the desired position.',
+        image: '/cvboost_screenshot.png',
+        technologies: ['React.js', 'JavaScript', 'OpenAI API', 'Axios', 'PDFjs', 'Tailwind CSS', 'Vercel'],
+        github: 'https://github.com/leamartinez1707/cv_boost',
+        demo: 'https://cv-ai-boost.vercel.app/',
         featured: true
       },
       {
-        title: 'Task Management App',
-        description: 'Task management application with drag & drop, categories and real-time synchronization.',
-        image: 'https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=800',
-        technologies: ['React', 'TypeScript', 'Firebase', 'React DnD'],
-        github: '#',
-        demo: '#',
-        featured: false
+        title: 'FastFood - Restaurant Management',
+        description: 'App for fast food restaurants to manage real-time orders, menu administration, and order tracking. Includes dashboard for product control.',
+        image: '/fastfood_screenshot.png',
+        technologies: ['Next.js', 'TypeScript', 'Prisma', 'MongoDB', 'SWR', 'Tailwind CSS', 'Zustand', 'Cloudinary', 'Vercel'],
+        github: 'https://github.com/leamartinez1707/next-tienda',
+        demo: 'https://fastfooduy.vercel.app/order/cafe',
+        featured: true
       },
       {
-        title: 'Personal Portfolio',
-        description: 'Responsive personal website with smooth animations and minimalist design.',
-        image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800',
-        technologies: ['React', 'Tailwind CSS', 'Framer Motion'],
-        github: '#',
-        demo: '#',
-        featured: false
+        title: 'UpTask - Project Management',
+        description: 'Kanban-style project management app to create, assign, and manage team tasks. Includes authentication, drag and drop, and a comment system.',
+        image: '/uptask_screenshot.png',
+        technologies: ['React.js', 'React Query', 'TypeScript', 'Drag and Drop Kit', 'Tailwind CSS', 'Chakra UI', 'Express.js', 'MongoDB', 'JWT', 'NodeMailer', 'Vercel'],
+        github: 'https://github.com/leamartinez1707/mytasks-frontend',
+        demo: 'https://uptask-projectmanagement-phi.vercel.app/auth/login',
+        featured: true
       },
       {
-        title: 'Real-time Chat',
-        description: 'Instant messaging application with chat rooms and push notifications.',
-        image: 'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=800',
-        technologies: ['React', 'Socket.io', 'Node.js', 'Express'],
+        title: 'TodoMuebles | Carpentry Landing Page',
+        description: 'Landing page for a carpentry business offering custom furniture. Includes product catalog and contact form.',
+        image: '/todo_muebles_screenshot.png',
+        technologies: ['Next.js', 'Motion', 'HeadlessUi', 'NodeMailer', 'Tailwind CSS', 'Vercel'],
         github: '#',
-        demo: '#',
-        featured: false
-      },
-      {
-        title: 'Weather App',
-        description: 'Weather application with 7-day forecast, geolocation and interactive maps.',
-        image: 'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800',
-        technologies: ['React', 'OpenWeather API', 'Leaflet', 'CSS3'],
-        github: '#',
-        demo: '#',
+        demo: 'https://todomueblesuy.vercel.app/home',
         featured: false
       }
     ]
@@ -171,7 +171,7 @@ const Projects = () => {
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
@@ -198,12 +198,14 @@ const Projects = () => {
                     <div className="flex gap-4">
                       <a
                         href={project.github}
+                        target='_blank'
                         className="flex items-center gap-2 text-gray-600 hover:text-gray-800 transition-colors duration-300"
                       >
                         <Github size={20} />
                         {t('projects.code')}
                       </a>
                       <a
+                        target='_blank'
                         href={project.demo}
                         className="flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors duration-300"
                       >
@@ -249,12 +251,14 @@ const Projects = () => {
                   <div className="flex justify-between items-center">
                     <div className="flex gap-3">
                       <a
+                        target='_blank'
                         href={project.github}
                         className="text-gray-600 hover:text-gray-800 transition-colors duration-300"
                       >
                         <Github size={18} />
                       </a>
                       <a
+                        target='_blank'
                         href={project.demo}
                         className="text-blue-600 hover:text-blue-800 transition-colors duration-300"
                       >

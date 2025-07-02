@@ -69,19 +69,19 @@ const Contact = () => {
     {
       icon: Github,
       label: 'GitHub',
-      href: 'https://github.com/tu-usuario',
+      href: 'https://github.com/leamartinez1707',
       color: 'hover:text-gray-800'
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      href: 'https://linkedin.com/in/tu-perfil',
+      href: 'https://www.linkedin.com/in/leandromartinezuy/',
       color: 'hover:text-blue-600'
     },
     {
       icon: MessageCircle,
       label: 'WhatsApp',
-      href: 'https://wa.me/tu-numero',
+      href: 'https://wa.me/598220063',
       color: 'hover:text-green-600'
     }
   ];
@@ -167,7 +167,7 @@ const Contact = () => {
               <h3 className="text-2xl font-bold text-gray-800 mb-6">
                 {t('contact.form.title')}
               </h3>
-              
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
@@ -201,7 +201,7 @@ const Contact = () => {
                     />
                   </div>
                 </div>
-                
+
                 <div>
                   <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
                     {t('contact.form.subject')}
@@ -217,7 +217,7 @@ const Contact = () => {
                     placeholder={t('contact.form.placeholder.subject')}
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                     {t('contact.form.message')}
@@ -233,7 +233,7 @@ const Contact = () => {
                     placeholder={t('contact.form.placeholder.message')}
                   />
                 </div>
-                
+
                 <button
                   type="submit"
                   className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-6 rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"

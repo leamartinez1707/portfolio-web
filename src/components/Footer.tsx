@@ -23,7 +23,7 @@ const Footer = () => {
               {t('footer.description')}
             </p>
           </div>
-          
+
           <div className="flex flex-col items-center md:items-end">
             <button
               onClick={scrollToTop}
@@ -31,7 +31,7 @@ const Footer = () => {
             >
               <ArrowUp size={20} />
             </button>
-            
+
             <div className="flex items-center gap-2 text-gray-400">
               <span>{t('footer.made')}</span>
               <Heart size={16} className="text-red-500 animate-pulse" />
@@ -39,9 +39,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 Portfolio. {t('footer.rights')}</p>
+          <p>&copy; {new Date().getFullYear()} Portfolio. {t('footer.rights')}</p>
         </div>
       </div>
     </footer>
