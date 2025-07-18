@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { ExternalLink, Github, ArrowRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import GithubIcon from './icons/GithubIcon';
+import { projects } from '../libs/projects';
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -15,7 +16,10 @@ const Projects = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.3 }
+      { 
+        threshold: 0.1,
+        rootMargin: '50px 0px -50px 0px'
+      }
     );
 
     if (sectionRef.current) {
@@ -25,142 +29,29 @@ const Projects = () => {
     return () => observer.disconnect();
   }, []);
 
-  const projects = {
-    es: [
-      {
-        title: 'Chatbot con IA para E-commerce',
-        description: 'Chatbot inteligente que asiste a los clientes en la compra de productos, responde preguntas frecuentes y recomienda artículos.',
-        image: '/chatbot_photo.png',
-        technologies: ['Next.js', 'TypeScript', 'OpenAI API', 'Supabase', 'Tailwind CSS', 'Vercel'],
-        github: 'https://github.com/leamartinez1707/IA-Catalog-Chatbot',
-        demo: 'https://ia-catalog-chatbot.vercel.app/',
-        featured: true
-      },
-      {
-        title: 'SaludNet - Plataforma de Telemedicina',
-        description: 'Plataforma de telemedicina que conecta pacientes con médicos, permite agendar citas, realizar consultas en línea y gestionar historiales médicos.',
-        image: '/saludnet_screenshot.png',
-        technologies: ['React.js', 'Node.js', 'Express.js', 'API REST', 'MongoDB', 'Tailwind CSS', 'Context API', 'Vercel', 'Render'],
-        github: 'https://github.com/No-Country-simulation/c20-37-n-node-react',
-        demo: 'https://saludnet.vercel.app/',
-        featured: false
-      },
-      {
-        title: 'CVBoost - Optimizador de CV con IA',
-        description: 'Landing page que utiliza IA para mejorar currículums. Permite a los usuarios subir su CV en texto y recibir sugerencias de mejoras, basadas en las mejores prácticas en base al puesto solicitado.',
-        image: '/cvboost_screenshot.png',
-        technologies: ['React.js', 'JavaScript', 'OpenAI API', 'Axios', 'PDFjs', 'Tailwind CSS', 'Vercel'],
-        github: 'https://github.com/leamartinez1707/cv_boost',
-        demo: 'https://cv-ai-boost.vercel.app/',
-        featured: true
-      },
-      {
-        title: 'FastFood - Gestión de Restaurantes',
-        description: 'Aplicación para restaurantes de comida rápida que permite gestionar pedidos en tiempo real, administración de menú y seguimiento de pedidos. Dashboard para administración y control de productos.',
-        image: '/fastfood_screenshot.png',
-        technologies: ['Next.js', 'TypeScript', 'Prisma', 'MongoDB', 'SWR', 'Tailwind CSS', 'Zustand', 'Cloudinary', 'Vercel'],
-        github: 'https://github.com/leamartinez1707/next-tienda',
-        demo: 'https://fastfooduy.vercel.app/order/cafe',
-        featured: true
-      },
-      {
-        title: 'UpTask - Gestión de Proyectos',
-        description: 'Aplicación de gestión de proyectos estilo Kanban que permite crear, asignar y gestionar tareas en equipo. Incluye autenticación, drag and drop de tareas y un sistema de comentarios.',
-        image: '/uptask_screenshot.png',
-        technologies: ['React.js', 'React Query', 'TypeScript', 'Drag and Drop Kit', 'Tailwind CSS', 'Chakra UI', 'Express.js', 'MongoDB', 'JWT', 'NodeMailer', 'Vercel'],
-        github: 'https://github.com/leamartinez1707/mytasks-frontend',
-        demo: 'https://uptask-projectmanagement-phi.vercel.app/auth/login',
-        featured: true
-      },
-      {
-        title: 'TodoMuebles | Landing Page de Carpintería',
-        description: 'Landing page para una carpintería que ofrece muebles personalizados. Incluye catálogo de productos y formulario de contacto.',
-        image: '/todo_muebles_screenshot.png',
-        technologies: ['Next.js', 'Motion', 'HeadlessUi', 'NodeMailer', 'Tailwind CSS', 'Vercel'],
-        github: '#',
-        demo: 'https://todomueblesuy.vercel.app/home',
-        featured: false
-      }
-    ],
-    en: [
-      {
-        title: 'AI Chatbot for E-commerce',
-        description: 'Intelligent chatbot that assists customers with product purchases, answers FAQs, and recommends items.',
-        image: '/chatbot_photo.png',
-        technologies: ['Next.js', 'TypeScript', 'OpenAI API', 'Supabase', 'Tailwind CSS', 'Vercel'],
-        github: 'https://github.com/leamartinez1707/IA-Catalog-Chatbot',
-        demo: 'https://ia-catalog-chatbot.vercel.app/',
-        featured: true
-      },
-      {
-        title: 'SaludNet - Telemedicine Platform',
-        description: 'Telemedicine platform connecting patients with doctors, allowing appointment scheduling, online consultations, and medical record management.',
-        image: '/saludnet_screenshot.png',
-        technologies: ['React.js', 'Node.js', 'Express.js', 'REST API', 'MongoDB', 'Tailwind CSS', 'Context API', 'Vercel', 'Render'],
-        github: 'https://github.com/No-Country-simulation/c20-37-n-node-react',
-        demo: 'https://saludnet.vercel.app/',
-        featured: false
-      },
-      {
-        title: 'CVBoost - AI Resume Optimizer',
-        description: 'Landing page that uses AI to improve resumes. Users can upload their CV as text and receive suggestions based on best practices for the desired position.',
-        image: '/cvboost_screenshot.png',
-        technologies: ['React.js', 'JavaScript', 'OpenAI API', 'Axios', 'PDFjs', 'Tailwind CSS', 'Vercel'],
-        github: 'https://github.com/leamartinez1707/cv_boost',
-        demo: 'https://cv-ai-boost.vercel.app/',
-        featured: true
-      },
-      {
-        title: 'FastFood - Restaurant Management',
-        description: 'App for fast food restaurants to manage real-time orders, menu administration, and order tracking. Includes dashboard for product control.',
-        image: '/fastfood_screenshot.png',
-        technologies: ['Next.js', 'TypeScript', 'Prisma', 'MongoDB', 'SWR', 'Tailwind CSS', 'Zustand', 'Cloudinary', 'Vercel'],
-        github: 'https://github.com/leamartinez1707/next-tienda',
-        demo: 'https://fastfooduy.vercel.app/order/cafe',
-        featured: true
-      },
-      {
-        title: 'UpTask - Project Management',
-        description: 'Kanban-style project management app to create, assign, and manage team tasks. Includes authentication, drag and drop, and a comment system.',
-        image: '/uptask_screenshot.png',
-        technologies: ['React.js', 'React Query', 'TypeScript', 'Drag and Drop Kit', 'Tailwind CSS', 'Chakra UI', 'Express.js', 'MongoDB', 'JWT', 'NodeMailer', 'Vercel'],
-        github: 'https://github.com/leamartinez1707/mytasks-frontend',
-        demo: 'https://uptask-projectmanagement-phi.vercel.app/auth/login',
-        featured: true
-      },
-      {
-        title: 'TodoMuebles | Carpentry Landing Page',
-        description: 'Landing page for a carpentry business offering custom furniture. Includes product catalog and contact form.',
-        image: '/todo_muebles_screenshot.png',
-        technologies: ['Next.js', 'Motion', 'HeadlessUi', 'NodeMailer', 'Tailwind CSS', 'Vercel'],
-        github: '#',
-        demo: 'https://todomueblesuy.vercel.app/home',
-        featured: false
-      }
-    ]
-  };
+
 
   const currentProjects = projects[language];
   const featuredProjects = currentProjects.filter(project => project.featured);
   const otherProjects = currentProjects.filter(project => !project.featured);
 
   return (
-    <section id="proyectos" ref={sectionRef} className="py-20 bg-white">
-      <div className="container mx-auto px-6">
+    <section id="proyectos" ref={sectionRef} className="py-12 md:py-20 bg-white">
+      <div className="container mx-auto px-4 md:px-6">
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
               {t('projects.title')} <span className="important-text-gradient">{t('projects.projects')}</span>
             </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto">
               {t('projects.subtitle')}
             </p>
           </div>
 
           {/* Featured Projects */}
-          <div className="mb-16">
-            <h3 className="text-2xl font-bold text-gray-800 mb-8">{t('projects.featured')}</h3>
-            <div className="grid lg:grid-cols-2 gap-8">
+          <div className="mb-12 md:mb-16">
+            <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-6 md:mb-8">{t('projects.featured')}</h3>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
               {featuredProjects.map((project, index) => (
                 <div
                   key={index}
@@ -172,16 +63,16 @@ const Projects = () => {
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-48 md:h-72 object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
 
-                  <div className="p-6">
-                    <h4 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                  <div className="p-4 md:p-6">
+                    <h4 className="text-lg md:text-xl font-bold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors duration-300">
                       {project.title}
                     </h4>
-                    <p className="text-gray-600 mb-4 leading-relaxed">
+                    <p className="text-gray-600 text-sm md:text-base mb-4 leading-relaxed">
                       {project.description}
                     </p>
 
@@ -189,28 +80,28 @@ const Projects = () => {
                       {project.technologies.map((tech, techIndex) => (
                         <span
                           key={techIndex}
-                          className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full font-medium"
+                          className="px-2 md:px-3 py-1 bg-blue-100 text-blue-800 text-xs md:text-sm rounded-full font-medium"
                         >
                           {tech}
                         </span>
                       ))}
                     </div>
 
-                    <div className="flex gap-4">
+                    <div className="flex gap-3 md:gap-4">
                       <a
                         href={project.github}
                         target='_blank'
-                        className="flex items-center gap-2 text-gray-600 hover:text-gray-800 transition-colors duration-300"
+                        className="flex items-center gap-2 text-gray-600 hover:text-gray-800 transition-colors duration-300 text-sm md:text-base touch-manipulation"
                       >
-                        <Github size={20} />
+                        <Github size={18} className="md:w-5 md:h-5" />
                         {t('projects.code')}
                       </a>
                       <a
                         target='_blank'
                         href={project.demo}
-                        className="flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors duration-300"
+                        className="flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors duration-300 text-sm md:text-base touch-manipulation"
                       >
-                        <ExternalLink size={20} />
+                        <ExternalLink size={18} className="md:w-5 md:h-5" />
                         {t('projects.demo')}
                       </a>
                     </div>
@@ -222,23 +113,23 @@ const Projects = () => {
 
           {/* Other Projects */}
           <div>
-            <h3 className="text-2xl font-bold  mb-8">{t('projects.others')}</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-6 md:mb-8">{t('projects.others')}</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
               {otherProjects.map((project, index) => (
                 <div
                   key={index}
-                  className={`group bg-gray-50 rounded-lg p-6 hover:bg-white hover:shadow-lg transition-all duration-300 ${isVisible ? 'animate-fade-in-up' : ''
+                  className={`group bg-gray-50 rounded-lg p-4 md:p-6 hover:bg-white hover:shadow-lg transition-all duration-300 ${isVisible ? 'animate-fade-in-up' : ''
                     }`}
                   style={{ animationDelay: `${(index + 2) * 200}ms` }}
                 >
-                  <h4 className="text-lg font-bold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                  <h4 className="text-base md:text-lg font-bold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors duration-300">
                     {project.title}
                   </h4>
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                  <p className="text-gray-600 text-xs md:text-sm mb-3 md:mb-4 leading-relaxed">
                     {project.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-1 md:gap-2 mb-3 md:mb-4">
                     {project.technologies.slice(0, 3).map((tech, techIndex) => (
                       <span
                         key={techIndex}
@@ -254,26 +145,26 @@ const Projects = () => {
                       <a
                         target='_blank'
                         href={project.github}
-                        className="text-gray-600 hover:text-gray-800 transition-colors duration-300"
+                        className="text-gray-600 hover:text-gray-800 transition-colors duration-300 touch-manipulation"
                       >
                         <GithubIcon />
                       </a>
                       <a
                         target='_blank'
                         href={project.demo}
-                        className="text-blue-600 hover:text-blue-800 transition-colors duration-300"
+                        className="text-blue-600 hover:text-blue-800 transition-colors duration-300 touch-manipulation"
                       >
-                        <ExternalLink size={18} />
+                        <ExternalLink size={16} className="md:w-[18px] md:h-[18px]" />
                       </a>
                     </div>
-                    <ArrowRight size={18} className="text-gray-400 group-hover:text-violet-600 group-hover:translate-x-1 transition-all duration-300" />
+                    <ArrowRight size={16} className="md:w-[18px] md:h-[18px] text-gray-400 group-hover:text-violet-600 group-hover:translate-x-1 transition-all duration-300" />
                   </div>
                 </div>
               ))}
               <a
                 target='_blank'
                 rel='noopener noreferrer'
-                className='gradient-text flex flex-col items-center justify-center font-bold text-2xl underline hover:underline-offset-4 transition-all duration-300'
+                className='gradient-text flex flex-col items-center justify-center font-bold text-lg md:text-2xl underline hover:underline-offset-4 transition-all duration-300 touch-manipulation p-4 md:p-6 min-h-[200px] md:min-h-[240px]'
                 href='https://github.com/leamartinez1707'>Ver más</a>
             </div>
           </div>
