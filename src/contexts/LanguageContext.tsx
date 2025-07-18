@@ -23,7 +23,7 @@ const translations = {
     'hero.greeting': 'Hola, soy un',
     'hero.role': 'Desarrollador Full Stack',
     'hero.role2': 'Desarrollador enfocado al Frontend',
-    'hero.description': 'Apasionado por construir experiencias web de alto impacto. Especializado en React && Next.js, Express.js && Nest.js, TypeScript y tecnologías modernas para el desarrollo ágil y escalable.',
+    'hero.description': 'Enfocado en construir experiencias web de alto impacto. Especializado en React && Next.js, Express.js && Nest.js, TypeScript y tecnologías modernas para el desarrollo ágil y escalable.',
     'hero.hire': 'Contratarme',
     'hero.download': 'Descargar CV',
 
@@ -32,8 +32,8 @@ const translations = {
     'about.me': 'Mí',
     'about.subtitle': 'Conoce mi trayectoria y pasión por el desarrollo web',
     'about.story': 'Mi Historia',
-    'about.description1': 'Soy un desarrollador frontend apasionado por crear experiencias web únicas y funcionales. Me especializo en React, TypeScript y tecnologías modernas para construir aplicaciones que no solo se ven increíbles, sino que también ofrecen una experiencia de usuario intuitiva y moderna.',
-    'about.description2': 'Mi enfoque está en escribir código limpio, mantenible y escalable. Siempre estoy aprendiendo nuevas tecnologías y mejores prácticas para mantenerme al día con las últimas tendencias del desarrollo web.',
+    'about.description1': 'Soy un Desarrollador Full Stack orientado al Frontend, apasionado por crear experiencias web únicas y funcionales. Me especializo en React, TypeScript y tecnologías modernas para construir aplicaciones que no solo se ven increíbles, sino que también ofrecen una experiencia de usuario intuitiva y moderna.',
+    'about.description2': 'Mi enfoque está en escribir código limpio, mantenible y escalable, aplicando las mejores prácticas. Siempre estoy aprendiendo nuevas tecnologías y mejores prácticas para mantenerme al día con las últimas tendencias del desarrollo web.',
     'about.description3': 'Busco mi primera oportunidad profesional, donde pueda aplicar mis conocimientos, contribuir al éxito del equipo y seguir creciendo como desarrollador.',
     'about.projects': 'Proyectos Completados',
     'about.technologies': 'Tecnologías Dominadas',
@@ -43,7 +43,7 @@ const translations = {
     // Skills
     'skills.title': 'Stack',
     'skills.tech': 'Tecnológico',
-    'skills.subtitle': 'Tecnologías que domino para crear soluciones innovadoras',
+    'skills.subtitle': 'Tecnologías que utilizo principalmente para crear soluciones innovadoras',
     'skills.featured.title': 'Mis Especialidades',
     'skills.featured.subtitle': 'Las tecnologías en las que me enfoco principalmente',
     'skills.featured.focus': 'Enfoque Principal',
@@ -70,7 +70,7 @@ const translations = {
     'contact.cta.description': 'Envíame un mensaje y hablemos sobre tu próximo proyecto.',
     'contact.cta.email': 'Enviar Email',
     'contact.form.title': 'Envíame un Mensaje',
-    'contact.form.name': 'Nombre',
+    'contact.form.name': 'Teléfono',
     'contact.form.email': 'Email',
     'contact.form.subject': 'Asunto',
     'contact.form.message': 'Mensaje',
@@ -148,7 +148,7 @@ const translations = {
     'contact.cta.description': 'Send me a message and let\'s talk about your next project.',
     'contact.cta.email': 'Send Email',
     'contact.form.title': 'Send Me a Message',
-    'contact.form.name': 'Name',
+    'contact.form.name': 'Phone',
     'contact.form.email': 'Email',
     'contact.form.subject': 'Subject',
     'contact.form.message': 'Message',
@@ -169,7 +169,7 @@ const translations = {
   }
 };
 
-export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguage] = useState<Language>('es');
 
   const t = (key: string): string => {
@@ -185,7 +185,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
 
 export const useLanguage = () => {
   const context = useContext(LanguageContext);
-  if (context === undefined) {
+  if (context === undefined || context === null) {
     throw new Error('useLanguage must be used within a LanguageProvider');
   }
   return context;

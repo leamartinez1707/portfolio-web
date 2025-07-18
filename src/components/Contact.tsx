@@ -1,6 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Mail, Phone, MapPin, Github, Linkedin, Send, MessageCircle } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { Mail, Phone, MapPin, Send, MessageCircle } from 'lucide-react';
+import GithubIcon from './icons/GithubIcon';
+import LinkedinIcon from './icons/LinkedinIcon';
 
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -67,13 +69,13 @@ const Contact = () => {
 
   const socialLinks = [
     {
-      icon: Github,
+      icon: GithubIcon,
       label: 'GitHub',
       href: 'https://github.com/leamartinez1707',
       color: 'hover:text-gray-800'
     },
     {
-      icon: Linkedin,
+      icon: LinkedinIcon,
       label: 'LinkedIn',
       href: 'https://www.linkedin.com/in/leandromartinezuy/',
       color: 'hover:text-blue-600'
@@ -92,7 +94,7 @@ const Contact = () => {
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-              {t('contact.title')} <span className="text-blue-600">{t('contact.together')}</span>
+              {t('contact.title')} <span className="gradient-text">{t('contact.together')}</span>
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
               {t('contact.subtitle')}
@@ -113,7 +115,7 @@ const Contact = () => {
                       href={info.href}
                       className="flex items-center gap-4 p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
                     >
-                      <div className="text-blue-600">
+                      <div className="text-violet-600">
                         <info.icon size={24} />
                       </div>
                       <div>
@@ -147,14 +149,14 @@ const Contact = () => {
               </div>
 
               {/* CTA */}
-              <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-6 text-white">
+              <div className="bg-gradient rounded-xl p-6 text-white">
                 <h4 className="text-xl font-bold mb-2">{t('contact.cta.title')}</h4>
                 <p className="mb-4 opacity-90">
                   {t('contact.cta.description')}
                 </p>
                 <a
                   href={`mailto:${t('contact.email')}`}
-                  className="inline-flex items-center gap-2 bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300"
+                  className="inline-flex items-center gap-2 bg-white text-violet-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300"
                 >
                   <Mail size={18} />
                   {t('contact.cta.email')}
@@ -181,7 +183,7 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all duration-300"
                       placeholder={t('contact.form.placeholder.name')}
                     />
                   </div>
@@ -196,7 +198,7 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all duration-300"
                       placeholder={t('contact.form.placeholder.email')}
                     />
                   </div>
@@ -213,7 +215,7 @@ const Contact = () => {
                     value={formData.subject}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all duration-300"
                     placeholder={t('contact.form.placeholder.subject')}
                   />
                 </div>
@@ -229,14 +231,14 @@ const Contact = () => {
                     onChange={handleInputChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all duration-300 resize-none"
                     placeholder={t('contact.form.placeholder.message')}
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-6 rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
+                  className="w-full bg-gradient-to-r from-violet-600 to-purple-600 text-white py-3 px-6 rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
                 >
                   <Send size={20} />
                   {t('contact.form.send')}

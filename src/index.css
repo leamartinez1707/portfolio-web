@@ -7,7 +7,7 @@
 
   * {
     scrollbar-width: thin;
-    scrollbar-color: #3B82F6 #F1F5F9;
+    scrollbar-color: #d467ff #F1F5F9;
   }
 
   *::-webkit-scrollbar {
@@ -19,12 +19,12 @@
   }
 
   *::-webkit-scrollbar-thumb {
-    background: #3B82F6;
+    background: #d467ff;
     border-radius: 4px;
   }
 
   *::-webkit-scrollbar-thumb:hover {
-    background: #2563EB;
+    background: #d467ff;
   }
 }
 
@@ -35,10 +35,23 @@
 
   .animate-scroll-smooth {
     animation: scrollSmooth 50s linear infinite;
+    will-change: transform;
+    transform: translateZ(0);
   }
 
   .animate-scroll-reverse {
     animation: scrollReverse 45s linear infinite;
+    will-change: transform;
+    transform: translateZ(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-scroll-smooth,
+    .animate-scroll-reverse {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      opacity: 0.5;
+    }
   }
 
   @keyframes fadeInUp {
@@ -55,21 +68,21 @@
 
   @keyframes scrollSmooth {
     0% {
-      transform: translateX(0);
+      transform: translate3d(0, 0, 0);
     }
 
     100% {
-      transform: translateX(-33.333%);
+      transform: translate3d(-33.333%, 0, 0);
     }
   }
 
   @keyframes scrollReverse {
     0% {
-      transform: translateX(-33.333%);
+      transform: translate3d(-33.333%, 0, 0);
     }
 
     100% {
-      transform: translateX(0);
+      transform: translate3d(0, 0, 0);
     }
   }
 
@@ -89,12 +102,12 @@
 
 /* Custom selection colors */
 ::selection {
-  background-color: #3B82F6;
+  background-color: #d467ff;
   color: white;
 }
 
 ::-moz-selection {
-  background-color: #3B82F6;
+  background-color: #d467ff;
   color: white;
 }
 
@@ -111,8 +124,8 @@ a:focus,
 button:focus,
 input:focus,
 textarea:focus {
-  outline: 2px solid #3B82F6;
-  outline-offset: 2px;
+  outline: 1px solid #d467ff;
+  outline-offset: 1px;
 }
 
 /* Custom loading animation */
@@ -134,4 +147,12 @@ textarea:focus {
 
 .important-text-gradient {
   @apply bg-clip-text font-bold bg-gradient-to-r from-blue-600 to-purple-600 text-transparent
+}
+
+.bg-gradient {
+  @apply bg-gradient-to-r from-blue-600 to-purple-600;
+}
+
+button {
+  cursor: pointer;
 }

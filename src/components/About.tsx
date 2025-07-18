@@ -37,7 +37,7 @@ const About = () => {
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-              {t('about.title')} <span className="text-blue-600">{t('about.me')}</span>
+              {t('about.title')} <span className="important-text-gradient">{t('about.me')}</span>
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
               {t('about.subtitle')}
@@ -64,12 +64,11 @@ const About = () => {
               {stats.map((stat, index) => (
                 <div
                   key={index}
-                  className={`bg-gradient-to-br from-white to-gray-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 ${
-                    isVisible ? 'animate-fade-in-up' : ''
-                  }`}
+                  className={`bg-gradient-to-br from-white to-gray-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 ${isVisible ? 'animate-fade-in-up' : ''
+                    }`}
                   style={{ animationDelay: `${index * 200}ms` }}
                 >
-                  <div className="text-blue-600 mb-3">
+                  <div className="mb-3 text-violet-600">
                     <stat.icon size={32} />
                   </div>
                   <div className="text-2xl font-bold text-gray-800 mb-1">

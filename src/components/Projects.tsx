@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { ExternalLink, Github, ArrowRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import GithubIcon from './icons/GithubIcon';
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -149,7 +150,7 @@ const Projects = () => {
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-              {t('projects.title')} <span className="text-blue-600">{t('projects.projects')}</span>
+              {t('projects.title')} <span className="important-text-gradient">{t('projects.projects')}</span>
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
               {t('projects.subtitle')}
@@ -221,7 +222,7 @@ const Projects = () => {
 
           {/* Other Projects */}
           <div>
-            <h3 className="text-2xl font-bold text-gray-800 mb-8">{t('projects.others')}</h3>
+            <h3 className="text-2xl font-bold  mb-8">{t('projects.others')}</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {otherProjects.map((project, index) => (
                 <div
@@ -241,7 +242,7 @@ const Projects = () => {
                     {project.technologies.slice(0, 3).map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded font-medium"
+                        className="px-2 py-1 bg-blue-50 text-blue-800 text-xs rounded font-medium"
                       >
                         {tech}
                       </span>
@@ -255,7 +256,7 @@ const Projects = () => {
                         href={project.github}
                         className="text-gray-600 hover:text-gray-800 transition-colors duration-300"
                       >
-                        <Github size={18} />
+                        <GithubIcon />
                       </a>
                       <a
                         target='_blank'
@@ -265,10 +266,15 @@ const Projects = () => {
                         <ExternalLink size={18} />
                       </a>
                     </div>
-                    <ArrowRight size={18} className="text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-300" />
+                    <ArrowRight size={18} className="text-gray-400 group-hover:text-violet-600 group-hover:translate-x-1 transition-all duration-300" />
                   </div>
                 </div>
               ))}
+              <a
+                target='_blank'
+                rel='noopener noreferrer'
+                className='gradient-text flex flex-col items-center justify-center font-bold text-2xl underline hover:underline-offset-4 transition-all duration-300'
+                href='https://github.com/leamartinez1707'>Ver más</a>
             </div>
           </div>
         </div>

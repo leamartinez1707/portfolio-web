@@ -19,7 +19,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50 mt-14 md:mt-0">
       {/* Background Effects */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
@@ -52,16 +52,16 @@ const Hero = () => {
               </div>
             </button>
 
-            <button className="group border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-full font-semibold hover:border-blue-600 hover:text-blue-600 hover:shadow-md transition-all duration-300 flex items-center gap-2">
+            <button className="group border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-full focus:border-violet-600 font-semibold hover:border-violet-600 hover:text-violet-600 hover:shadow-md transition-all duration-300 flex items-center gap-2">
               <Download size={20} />
               {t('hero.download')}
             </button>
-          </div>
+          </div>  
 
           <div className="animate-bounce">
             <button
               onClick={() => scrollToSection('sobre-mi')}
-              className="text-gray-400 hover:text-blue-600 transition-colors duration-300"
+              className="text-gray-400 hover:text-violet-600 transition-colors duration-300"
             >
               <ArrowDown size={32} />
             </button>

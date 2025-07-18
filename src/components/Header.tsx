@@ -55,9 +55,10 @@ const Header = () => {
               <button
                 key={item.key}
                 onClick={() => scrollToSection(item.key)}
-                className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium"
+                className="text-gray-700 hover:text-violet-600 transition-colors duration-300 font-medium"
               >
                 {item.label}
+
               </button>
             ))}
             <LanguageToggle />
@@ -66,9 +67,10 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-gray-700 hover:text-blue-600 transition-colors duration-300"
+            className="md:hidden text-gray-700 hover:text-violet-600 transition-colors duration-300"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+
           </button>
         </div>
 
@@ -79,7 +81,7 @@ const Header = () => {
               <button
                 key={item.key}
                 onClick={() => scrollToSection(item.key)}
-                className="block w-full text-left px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300"
+                className="block w-full text-left px-4 py-2 text-gray-700 hover:text-violet-600 hover:bg-blue-50 transition-all duration-300"
               >
                 {item.label}
               </button>
