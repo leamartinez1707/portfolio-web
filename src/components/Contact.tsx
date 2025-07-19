@@ -3,6 +3,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { Mail, Phone, MapPin, Send, MessageCircle } from 'lucide-react';
 import GithubIcon from './icons/GithubIcon';
 import LinkedinIcon from './icons/LinkedinIcon';
+import { sendEmail } from '../actions/sendEmail';
 
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -39,11 +40,19 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Formulario enviado:', formData);
-    alert('¡Mensaje enviado! Te contactaré pronto.');
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    try {
+      await sendEmail(formData);
+      alert('¡Mensaje enviado! Te contactaré pronto.');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (error) {
+      console.error('Error al enviar el correo:', error);
+      alert('Error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.');
+      return;
+
+    }
+
   };
 
   const contactInfo = [
@@ -83,7 +92,7 @@ const Contact = () => {
     {
       icon: MessageCircle,
       label: 'WhatsApp',
-      href: 'https://wa.me/598220063',
+      href: 'https://wa.me/59895220063',
       color: 'hover:text-green-600'
     }
   ];

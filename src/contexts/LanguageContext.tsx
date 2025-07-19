@@ -20,9 +20,10 @@ const translations = {
     'nav.contact': 'Contacto',
 
     // Hero
-    'hero.greeting': 'Hola, soy un',
-    'hero.role': 'Desarrollador Full Stack',
-    'hero.role2': 'Desarrollador enfocado al Frontend',
+    'hero.greeting': 'Hola, soy Leandro Martínez',
+    'hero.greeting2': 'Developer,',
+    'hero.role': ' Full Stack',
+    'hero.role2': ' Frontend-Focused',
     'hero.description': 'Enfocado en construir experiencias web de alto impacto. Especializado en React && Next.js, Express.js && Nest.js, TypeScript y tecnologías modernas para el desarrollo ágil y escalable.',
     'hero.hire': 'Contratarme',
     'hero.download': 'Descargar CV',
@@ -65,7 +66,7 @@ const translations = {
     'contact.together': 'Juntos!',
     'contact.subtitle': '¿Tienes un proyecto en mente? Me encantaría escuchar sobre él y ayudarte a hacerlo realidad.',
     'contact.info': 'Información de Contacto',
-    'contact.social': 'Sígueme en Redes',
+    'contact.social': 'Mis redes sociales',
     'contact.cta.title': '¿Listo para empezar?',
     'contact.cta.description': 'Envíame un mensaje y hablemos sobre tu próximo proyecto.',
     'contact.cta.email': 'Enviar Email',
@@ -98,10 +99,11 @@ const translations = {
     'nav.contact': 'Contact',
 
     // Hero
-    'hero.greeting': 'Hi, I\'m a',
-    'hero.role': 'Full Stack Developer',
-    'hero.role2': 'Frontend Oriented Developer',
-    'hero.description': 'I\'m passionate about crafting high-impact web experiences. I specialize in React && Next.js, Express.js && Nest.js, TypeScript, and modern tools for building fast and scalable applications.',
+    'hero.greeting': 'Hi, I\'m Leandro Martínez',
+    'hero.greeting2': 'Developer',
+    'hero.role': ' Full Stack',
+    'hero.role2': ' Frontend-Focused',
+    'hero.description': 'Focused on building high-impact web experiences. Specialized in React && Next.js, Express.js && Nest.js, TypeScript, and modern technologies for agile and scalable development.',
     'hero.hire': 'Hire Me',
     'hero.download': 'Download CV',
 
@@ -110,9 +112,9 @@ const translations = {
     'about.me': 'Me',
     'about.subtitle': 'Learn about my journey and passion for web development',
     'about.story': 'My Story',
-    'about.description1': 'I\'m a frontend developer passionate about creating unique and functional web experiences. I specialize in React, TypeScript and modern technologies to build applications that not only look amazing, but also offer an exceptional user experience.',
-    'about.description2': 'My focus is on writing clean, maintainable and scalable code. I\'m always learning new technologies and best practices to stay up to date with the latest web development trends.',
-    'about.description3': 'I\'m looking for my first professional opportunity where I can apply my knowledge, contribute to team success and continue growing as a developer.',
+    'about.description1': 'I\'m a Full Stack Developer with frontend orientation, passionate about creating unique and functional web experiences. I specialize in React, TypeScript, and modern technologies to build applications that not only look incredible, but also deliver an intuitive and modern user experience.',
+    'about.description2': 'My approach focuses on writing clean, maintainable, and scalable code, applying best practices. I\'m always learning new technologies and methodologies to stay current with the latest web development trends.',
+    'about.description3': 'I\'m seeking my first professional opportunity where I can apply my knowledge, contribute to team success, and continue growing as a developer.',
     'about.projects': 'Completed Projects',
     'about.technologies': 'Mastered Technologies',
     'about.clients': 'Satisfied Clients',
@@ -121,10 +123,10 @@ const translations = {
     // Skills
     'skills.title': 'Tech',
     'skills.tech': 'Stack',
-    'skills.subtitle': 'Technologies I master to create innovative solutions',
+    'skills.subtitle': 'Technologies I primarily use to create innovative solutions',
     'skills.featured.title': 'My Specialties',
     'skills.featured.subtitle': 'The technologies I focus on primarily',
-    'skills.featured.focus': 'Main Focus',
+    'skills.featured.focus': 'Primary Focus',
     'skills.featured.proficiency': 'Proficiency',
     'skills.slider.title': 'Technologies I use daily',
     'skills.slider.subtitle': 'Tools I work with in my projects',
@@ -132,7 +134,7 @@ const translations = {
     // Projects
     'projects.title': 'My',
     'projects.projects': 'Projects',
-    'projects.subtitle': 'A selection of my best work that demonstrates my skills',
+    'projects.subtitle': 'A selection of my best work showcasing my technical skills',
     'projects.featured': 'Featured Projects',
     'projects.others': 'Other Projects',
     'projects.code': 'Code',
@@ -157,14 +159,14 @@ const translations = {
     'contact.form.placeholder.email': 'your@email.com',
     'contact.form.placeholder.subject': 'What do you want to talk about?',
     'contact.form.placeholder.message': 'Tell me about your project...',
-    'contact.email': 'leandromartinez.devl@gmail.com',
+    'contact.email': 'leandromartinez.dev@gmail.com',
     'contact.phone': '+598 (95) 220-063',
     'contact.location': 'Montevideo, Uruguay',
 
     // Footer
-    'footer.description': 'Frontend Developer passionate about creating exceptional web experiences.',
+    'footer.description': 'Full Stack Developer passionate about creating exceptional web experiences.',
     'footer.made': 'Made with',
-    'footer.by': 'by a future developer',
+    'footer.by': 'by Leandro Martínez',
     'footer.rights': 'All rights reserved.',
   }
 };

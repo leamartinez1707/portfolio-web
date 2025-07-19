@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { featuredSkills, allTechnologies } from '../libs/skills';
 
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -23,34 +24,7 @@ const Skills = () => {
     return () => observer.disconnect();
   }, []);
 
-  const featuredSkills = [
-    { name: 'React', level: 80, knowledge: 'Avanzado', color: 'from-blue-500 to-cyan-500', icon: '⚛️' },
-    { name: 'Next.js', level: 60, knowledge: 'Intermedio', color: 'from-gray-700 to-gray-900', icon: '▲' },
-    { name: 'TypeScript', level: 80, knowledge: 'Avanzado', color: 'from-blue-600 to-blue-800', icon: '🔷' },
-    { name: 'Express.js', level: 80, knowledge: 'Avanzado', color: 'from-green-500 to-green-700', icon: '🚀' },
-    { name: 'Nest.js', level: 60, knowledge: 'Intermedio', color: 'from-red-500 to-red-700', icon: '🏰' },
-    { name: 'Node.js', level: 80, knowledge: 'Avanzado', color: 'from-green-600 to-green-800', icon: '🟢' }
-  ];
 
-  const allTechnologies = [
-    { name: 'React', icon: '⚛️' },
-    { name: 'TypeScript', icon: '🔷' },
-    { name: 'JavaScript', icon: '🟨' },
-    { name: 'Node.js', icon: '🟢' },
-    { name: 'Next.js', icon: '▲' },
-    { name: 'Tailwind CSS', icon: '🎨' },
-    { name: 'MongoDB', icon: '🍃' },
-    { name: 'PostgreSQL', icon: '🐘' },
-    { name: 'Git', icon: '📝' },
-    { name: 'Docker', icon: '🐳' },
-    { name: 'AWS', icon: '☁️' },
-    { name: 'Firebase', icon: '🔥' },
-    { name: 'Redux', icon: '🟣' },
-    { name: 'Vercel', icon: '🔺' },
-    { name: 'Express.js', icon: '🚀' },
-    { name: 'Nest.js', icon: '🏰' },
-    { name: 'Zustand', icon: '🗃️' },
-  ];
 
   return (
     <section id="habilidades" ref={sectionRef} className="py-12 md:py-20 bg-gradient-to-br from-gray-50 to-blue-50">
@@ -121,7 +95,13 @@ const Skills = () => {
             {/* First row - moves left */}
             <div className="relative overflow-hidden mb-6 md:mb-8">
               <div className="flex animate-scroll-smooth space-x-4 md:space-x-8 py-4 md:py-6">
-                {[...allTechnologies.slice(0, 10), ...allTechnologies.slice(0, 10), ...allTechnologies.slice(0, 10)].map((tech, index) => (
+                {[
+                  ...allTechnologies.slice(0, 10), 
+                  ...allTechnologies.slice(0, 10), 
+                  ...allTechnologies.slice(0, 10),
+                  ...allTechnologies.slice(0, 10),
+                  ...allTechnologies.slice(0, 10)
+                ].map((tech, index) => (
                   <div
                     key={index}
                     className="flex-shrink-0 flex items-center gap-2 md:gap-4 bg-gradient-to-r from-blue-50 to-indigo-50 hover:from-blue-100 hover:to-indigo-100 px-4 md:px-8 py-3 md:py-6 rounded-xl md:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-blue-100 hover:border-blue-300 group cursor-default min-w-fit touch-manipulation"
@@ -140,7 +120,13 @@ const Skills = () => {
             {/* Second row - moves right */}
             <div className="relative overflow-hidden">
               <div className="flex animate-scroll-reverse space-x-4 md:space-x-8 py-4 md:py-6">
-                {[...allTechnologies.slice(10), ...allTechnologies.slice(10), ...allTechnologies.slice(10)].map((tech, index) => (
+                {[
+                  ...allTechnologies.slice(10), 
+                  ...allTechnologies.slice(10), 
+                  ...allTechnologies.slice(10),
+                  ...allTechnologies.slice(10),
+                  ...allTechnologies.slice(10)
+                ].map((tech, index) => (
                   <div
                     key={index}
                     className="flex-shrink-0 flex items-center gap-2 md:gap-4 bg-gradient-to-r from-purple-50 to-pink-50 hover:from-purple-100 hover:to-pink-100 px-4 md:px-8 py-3 md:py-6 rounded-xl md:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-purple-100 hover:border-purple-300 group cursor-default min-w-fit touch-manipulation"

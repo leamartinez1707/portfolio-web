@@ -34,18 +34,29 @@
   }
 
   .animate-scroll-smooth {
-    animation: scrollSmooth 50s linear infinite;
+    animation: scrollSmooth 30s linear infinite;
     will-change: transform;
     transform: translateZ(0);
   }
 
   .animate-scroll-reverse {
-    animation: scrollReverse 45s linear infinite;
+    animation: scrollReverse 25s linear infinite;
     will-change: transform;
     transform: translateZ(0);
   }
 
+  @media (max-width: 768px) {
+    .animate-scroll-smooth {
+      animation: scrollSmoothMobile 25s linear infinite;
+    }
+
+    .animate-scroll-reverse {
+      animation: scrollReverseMobile 22s linear infinite;
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
+
     .animate-scroll-smooth,
     .animate-scroll-reverse {
       animation-duration: 0.01ms !important;
@@ -79,6 +90,26 @@
   @keyframes scrollReverse {
     0% {
       transform: translate3d(-33.333%, 0, 0);
+    }
+
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes scrollSmoothMobile {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  @keyframes scrollReverseMobile {
+    0% {
+      transform: translate3d(-50%, 0, 0);
     }
 
     100% {
@@ -120,8 +151,7 @@ textarea {
 }
 
 /* Focus states for accessibility */
-a:focus,
-button:focus,
+
 input:focus,
 textarea:focus {
   outline: 1px solid #d467ff;

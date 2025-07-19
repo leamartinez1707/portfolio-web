@@ -15,9 +15,9 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <div className="text-2xl font-bold mb-2">
-              <span className="text-blue-400">{'<'}</span>
+              <span className="text-violet-400">{'<'}</span>
               Portfolio
-              <span className="text-blue-400">{'/>'}</span>
+              <span className="text-violet-400">{'/>'}</span>
             </div>
             <p className="text-gray-400">
               {t('footer.description')}
@@ -27,14 +27,14 @@ const Footer = () => {
           <div className="flex flex-col items-center md:items-end">
             <button
               onClick={scrollToTop}
-              className="mb-4 p-3 bg-blue-600 hover:bg-blue-700 rounded-full transition-colors duration-300 hover:scale-110 transform"
+              className="mb-4 p-3 bg-violet-600 hover:bg-violet-700 rounded-full transition-colors duration-300 hover:scale-110 transform"
             >
               <ArrowUp size={20} />
             </button>
 
             <div className="flex items-center gap-2 text-gray-400">
               <span>{t('footer.made')}</span>
-              <Heart size={16} className="text-red-500 animate-pulse" />
+              <Heart size={16} className="fill-red-500 text-red-500 animate-pulse" />
               <span>{t('footer.by')}</span>
             </div>
           </div>

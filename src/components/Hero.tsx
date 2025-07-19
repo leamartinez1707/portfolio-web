@@ -29,11 +29,15 @@ const Hero = () => {
 
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h1 className="text-5xl md:text-7xl font-bol important-text-gradient mb-6 ">
+          <h1 className="text-2xl md:text-7xl font-bold important-text-gradient mb-6 flex flex-col items-center">
             {t('hero.greeting')}{' '}
-            <Typewriter loop words={[t('hero.role'), t('hero.role2')]} cursor cursorStyle="|" typeSpeed={100} deleteSpeed={50} delaySpeed={1500}>
-              { }
-            </Typewriter>
+            <div>
+              <Typewriter loop words={[t('hero.role'), t('hero.role2')]} cursor cursorStyle="|" typeSpeed={100} deleteSpeed={50} delaySpeed={1500}>
+                { }
+              </Typewriter>
+              <span className="bg-clip-text font-bold bg-gradient-to-r from-gray-500 to-black/80 text-transparent">{t('hero.greeting2')}</span>
+            </div>
+
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
@@ -52,11 +56,11 @@ const Hero = () => {
               </div>
             </button>
 
-            <button className="group border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-full focus:border-violet-600 font-semibold hover:border-violet-600 hover:text-violet-600 hover:shadow-md transition-all duration-300 flex items-center gap-2">
+            <a href='/leandro-martinez-fullstack-curriculum.pdf' download className="group border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-full focus:border-violet-600 font-semibold hover:border-violet-600 hover:text-violet-600 hover:shadow-md transition-all duration-300 flex items-center gap-2">
               <Download size={20} />
               {t('hero.download')}
-            </button>
-          </div>  
+            </a>
+          </div>
 
           <div className="animate-bounce">
             <button
