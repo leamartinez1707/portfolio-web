@@ -32,11 +32,11 @@ const About = () => {
   ];
 
   return (
-    <section id="sobre-mi" ref={sectionRef} className="py-20 bg-white">
+    <section id="sobre-mi" ref={sectionRef} className="lg:py-10 bg-white">
       <div className="container mx-auto px-6">
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
               {t('about.title')} <span className="important-text-gradient">{t('about.me')}</span>
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">

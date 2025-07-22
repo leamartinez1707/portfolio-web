@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { ExternalLink, Github, ArrowRight } from 'lucide-react';
+import { ExternalLink, ArrowRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import GithubIcon from './icons/GithubIcon';
 import { projects } from '../libs/projects';
@@ -16,7 +16,7 @@ const Projects = () => {
           setIsVisible(true);
         }
       },
-      { 
+      {
         threshold: 0.1,
         rootMargin: '50px 0px -50px 0px'
       }
@@ -93,7 +93,7 @@ const Projects = () => {
                         target='_blank'
                         className="flex items-center gap-2 text-gray-600 hover:text-gray-800 transition-colors duration-300 text-sm md:text-base touch-manipulation"
                       >
-                        <Github size={18} className="md:w-5 md:h-5" />
+                        <GithubIcon className="size-4 md:w-5 md:h-5" />
                         {t('projects.code')}
                       </a>
                       <a
@@ -164,7 +164,7 @@ const Projects = () => {
               <a
                 target='_blank'
                 rel='noopener noreferrer'
-                className='gradient-text flex flex-col items-center justify-center font-bold text-lg md:text-2xl underline hover:underline-offset-4 transition-all duration-300 touch-manipulation p-4 md:p-6 min-h-[200px] md:min-h-[240px]'
+                className='gradient-text hover:underline flex flex-col items-center justify-center font-bold text-lg md:text-2xl underline hover:underline-offset-4 transition-all duration-300 touch-manipulation p-4 md:p-6'
                 href='https://github.com/leamartinez1707'>Ver más</a>
             </div>
           </div>

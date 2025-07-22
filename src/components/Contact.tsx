@@ -3,16 +3,15 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { Mail, Phone, MapPin, Send, MessageCircle } from 'lucide-react';
 import GithubIcon from './icons/GithubIcon';
 import LinkedinIcon from './icons/LinkedinIcon';
-import { sendEmail } from '../actions/sendEmail';
+import emailjs from '@emailjs/browser';
+import { SnackbarProvider, enqueueSnackbar } from 'notistack';
+
+const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
 
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
   const sectionRef = useRef<HTMLDivElement>(null);
   const { t } = useLanguage();
 
@@ -33,22 +32,41 @@ const Contact = () => {
     return () => observer.disconnect();
   }, []);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
+  const form = useRef<HTMLFormElement>(null);
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const formData = new FormData(form.current!);
+    const name = formData.get('name')?.toString().trim();
+    const email = formData.get('email')?.toString().trim();
+    const message = formData.get('message')?.toString().trim();
+
+    if (!name || !email || !message) {
+      enqueueSnackbar('Por favor, completa todos los campos correctamente.', { variant: 'warning' });
+      return;
+    }
     try {
-      await sendEmail(formData);
-      alert('¡Mensaje enviado! Te contactaré pronto.');
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      if (form.current) {
+        emailjs
+          .sendForm(SERVICE_ID, TEMPLATE_ID, form.current, {
+            publicKey: PUBLIC_KEY,
+          })
+          .then(
+            () => {
+              enqueueSnackbar('¡Mensaje enviado! Te contactaré pronto.', { variant: 'success' });
+            },
+            (error) => {
+              console.error('Error al enviar el correo:', error);
+              enqueueSnackbar('Error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.', { variant: 'error' });
+            },
+          );
+        form.current.reset();
+      } else {
+        enqueueSnackbar('Error al enviar el mensaje. Verifique que todos los campos esten llenos.', { variant: 'error' });
+        return;
+      }
     } catch (error) {
       console.error('Error al enviar el correo:', error);
-      alert('Error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.');
+      enqueueSnackbar('Error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.', { variant: 'error' });
       return;
 
     }
@@ -98,7 +116,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contacto" ref={sectionRef} className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section id="contacto" ref={sectionRef} className="lg:py-20 bg-gradient-to-br from-gray-50 to-blue-50 mb-10">
       <div className="container mx-auto px-6">
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="text-center mb-16">
@@ -179,7 +197,7 @@ const Contact = () => {
                 {t('contact.form.title')}
               </h3>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form ref={form} onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
@@ -189,8 +207,6 @@ const Contact = () => {
                       type="text"
                       id="name"
                       name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all duration-300"
                       placeholder={t('contact.form.placeholder.name')}
@@ -204,31 +220,12 @@ const Contact = () => {
                       type="email"
                       id="email"
                       name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all duration-300"
                       placeholder={t('contact.form.placeholder.email')}
                     />
                   </div>
                 </div>
-
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                    {t('contact.form.subject')}
-                  </label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all duration-300"
-                    placeholder={t('contact.form.placeholder.subject')}
-                  />
-                </div>
-
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                     {t('contact.form.message')}
@@ -236,8 +233,6 @@ const Contact = () => {
                   <textarea
                     id="message"
                     name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
                     required
                     rows={5}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-violet-500 focus:border-transparent transition-all duration-300 resize-none"
@@ -257,6 +252,12 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <SnackbarProvider
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
+        }}
+      />
     </section>
   );
 };

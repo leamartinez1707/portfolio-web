@@ -50,7 +50,7 @@ const Header = () => {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8">
             {menuItems.map((item) => (
               <button
                 key={item.key}
@@ -67,7 +67,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-gray-700 hover:text-violet-600 transition-colors duration-300"
+            className="lg:hidden text-gray-700 hover:text-violet-600 transition-colors duration-300"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
 
@@ -76,7 +76,7 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 py-4 bg-white/95 backdrop-blur-md rounded-lg shadow-lg">
+          <div className="lg:hidden mt-4 py-4 bg-white/95 backdrop-blur-md rounded-lg shadow-lg">
             {menuItems.map((item) => (
               <button
                 key={item.key}

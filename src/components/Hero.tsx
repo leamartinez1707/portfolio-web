@@ -29,7 +29,7 @@ const Hero = () => {
 
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h1 className="text-2xl md:text-7xl font-bold important-text-gradient mb-6 flex flex-col items-center">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold important-text-gradient mb-6 flex flex-col items-center">
             {t('hero.greeting')}{' '}
             <div>
               <Typewriter loop words={[t('hero.role'), t('hero.role2')]} cursor cursorStyle="|" typeSpeed={100} deleteSpeed={50} delaySpeed={1500}>
