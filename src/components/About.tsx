@@ -25,9 +25,9 @@ const About = () => {
   }, []);
 
   const stats = [
-    { icon: Code, label: t('about.projects'), value: '15+' },
-    { icon: Rocket, label: t('about.technologies'), value: '12+' },
-    { icon: Users, label: t('about.clients'), value: '8+' },
+    { icon: Code, label: t('about.projects'), value: '20+' },
+    { icon: Rocket, label: t('about.technologies'), value: '6+' },
+    { icon: Users, label: t('about.clients'), value: '3+' },
     { icon: Award, label: t('about.certifications'), value: '5+' }
   ];
 
