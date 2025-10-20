@@ -34,24 +34,24 @@
   }
 
   .animate-scroll-smooth {
-    animation: scrollSmooth 30s linear infinite;
+    animation: scrollSmooth 20s linear infinite;
     will-change: transform;
     transform: translateZ(0);
   }
 
   .animate-scroll-reverse {
-    animation: scrollReverse 25s linear infinite;
+    animation: scrollReverse 18s linear infinite;
     will-change: transform;
     transform: translateZ(0);
   }
 
   @media (max-width: 768px) {
     .animate-scroll-smooth {
-      animation: scrollSmoothMobile 25s linear infinite;
+      animation: scrollSmoothMobile 14s linear infinite;
     }
 
     .animate-scroll-reverse {
-      animation: scrollReverseMobile 22s linear infinite;
+      animation: scrollReverseMobile 12s linear infinite;
     }
   }
 
@@ -103,13 +103,13 @@
     }
 
     100% {
-      transform: translate3d(-50%, 0, 0);
+      transform: translate3d(-70%, 0, 0);
     }
   }
 
   @keyframes scrollReverseMobile {
     0% {
-      transform: translate3d(-50%, 0, 0);
+      transform: translate3d(-70%, 0, 0);
     }
 
     100% {

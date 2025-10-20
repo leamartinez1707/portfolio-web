@@ -49,7 +49,13 @@ const Skills = () => {
                   style={{ animationDelay: `${index * 150}ms` }}
                 >
                   <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
-                    <div className="text-3xl md:text-4xl">{skill.icon}</div>
+                    <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center">
+                      <img 
+                        src={skill.icon} 
+                        alt={skill.name}
+                        className="w-8 h-8 md:w-10 md:h-10 object-contain"
+                      />
+                    </div>
                     <div>
                       <h4 className="text-lg md:text-xl font-bold text-gray-800">{skill.name}</h4>
                       <p className="text-gray-600 text-xs md:text-sm">{t('skills.featured.focus')}</p>
@@ -106,9 +112,13 @@ const Skills = () => {
                     key={index}
                     className="flex-shrink-0 flex items-center gap-2 md:gap-4 bg-gradient-to-r from-blue-50 to-indigo-50 hover:from-blue-100 hover:to-indigo-100 px-4 md:px-8 py-3 md:py-6 rounded-xl md:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-blue-100 hover:border-blue-300 group cursor-default min-w-fit touch-manipulation"
                   >
-                    <span className="text-xl md:text-3xl group-hover:scale-125 transition-transform duration-300">
-                      {tech.icon}
-                    </span>
+                    <div className="w-6 h-6 md:w-8 md:h-8 group-hover:scale-125 transition-transform duration-300">
+                      <img 
+                        src={tech.icon} 
+                        alt={tech.name}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
                     <span className="text-gray-800 font-semibold md:font-bold text-sm md:text-lg whitespace-nowrap group-hover:text-blue-700 transition-colors duration-300">
                       {tech.name}
                     </span>
@@ -131,9 +141,13 @@ const Skills = () => {
                     key={index}
                     className="flex-shrink-0 flex items-center gap-2 md:gap-4 bg-gradient-to-r from-purple-50 to-pink-50 hover:from-purple-100 hover:to-pink-100 px-4 md:px-8 py-3 md:py-6 rounded-xl md:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-purple-100 hover:border-purple-300 group cursor-default min-w-fit touch-manipulation"
                   >
-                    <span className="text-xl md:text-3xl group-hover:scale-125 transition-transform duration-300">
-                      {tech.icon}
-                    </span>
+                    <div className="w-6 h-6 md:w-8 md:h-8 group-hover:scale-125 transition-transform duration-300">
+                      <img 
+                        src={tech.icon} 
+                        alt={tech.name}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
                     <span className="text-gray-800 font-semibold md:font-bold text-sm md:text-lg whitespace-nowrap group-hover:text-purple-700 transition-colors duration-300">
                       {tech.name}
                     </span>

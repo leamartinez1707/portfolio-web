@@ -35,7 +35,7 @@ const translations = {
     'about.story': 'Mi Historia',
     'about.description1': 'Soy un Desarrollador Full Stack orientado al Frontend, apasionado por crear experiencias web únicas y funcionales. Me especializo en React, TypeScript y tecnologías modernas para construir aplicaciones que no solo se vean increíbles, sino que también ofrezcan una experiencia de usuario intuitiva y moderna.',
     'about.description2': 'Mi enfoque está en escribir código limpio, mantenible y escalable, aplicando las mejores prácticas. Siempre estoy aprendiendo nuevas tecnologías y mejores prácticas para mantenerme al día con las últimas tendencias del desarrollo web.',
-    'about.description3': 'Busco mi primera oportunidad profesional, donde pueda aplicar mis conocimientos, contribuir al éxito del equipo y seguir creciendo como desarrollador.',
+    'about.description3': 'Busco mi primera oportunidad profesional como Desarrollador, donde pueda aplicar mis conocimientos, contribuir al éxito del equipo y seguir creciendo profesionalmente.',
     'about.projects': 'Proyectos Completados',
     'about.technologies': 'Tecnologías Dominadas',
     'about.clients': 'Clientes Satisfechos',
