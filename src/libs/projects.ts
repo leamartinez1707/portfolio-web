@@ -10,6 +10,15 @@ export const projects = {
             featured: true
         },
         {
+            title: 'Teslo Shop - Clon de Tesla Shop - E-commerce',
+            description: 'Plataforma de E-commerce que permite a los usuarios comprar productos de una manera fácil y rápida integrada con PayPal.',
+            image: '/teslo_1.png',
+            technologies: ['Next.js 15', 'TypeScript', 'Zustand', 'Prisma', 'Cloudinary', 'TypeScript', 'NextAuth', 'PostgreSQL', 'Tailwind CSS', 'PayPal API', 'Vercel'],
+            github: 'https://github.com/leamartinez1707/ecommerce-app',
+            demo: 'https://teslo-ecommerce-app.vercel.app/',
+            featured: true
+        },
+        {
             title: 'SaludNet - Plataforma de Telemedicina',
             description: 'Plataforma de telemedicina que conecta pacientes con médicos, permite agendar citas, realizar consultas en línea y gestionar historiales médicos.',
             image: '/saludnet_screenshot.png',
@@ -17,6 +26,33 @@ export const projects = {
             github: 'https://github.com/No-Country-simulation/c20-37-n-node-react',
             demo: 'https://saludnet.vercel.app/',
             featured: false
+        },
+        {
+            title: 'ServicioYA - Guía de Servicios Técnicos',
+            description: 'Plataforma que conecta a usuarios con servicios técnicos disponibles en su área, permitiendo agendar citas al instante.',
+            image: '/servicioya_1.png',
+            technologies: ['Node.js', 'React.js', 'TypeScript', 'Tailwind CSS', 'Leaflet', 'Motion', 'Zod', 'Vercel'],
+            github: '#',
+            demo: 'https://servicioyauy.vercel.app/',
+            featured: true
+        },
+        {
+            title: 'Avelino Acevedo SA - Gestión de servicios técnicos monopatines eléctricos',
+            description: 'Plataforma que permite gestionar servicios técnicos para monopatines eléctricos, facilitando la programación de reparaciones y mantenimiento.',
+            image: '/aasa_1.png',
+            technologies: ['Node.js', 'JavaScript', 'Express.js', 'JWT', 'Zod', 'MongoDB', 'Render', 'React.js', 'Tailwind CSS', 'Vercel'],
+            github: '#',
+            demo: '#',
+            featured: true
+        },
+        {
+            title: 'NM Masajes - Landing Page de Masajes',
+            description: 'Landing page para un negocio de masajes que ofrece información sobre servicios, precios y permite agendar citas en línea mediante Whatsapp.',
+            image: '/nmasajes_1.png',
+            technologies: ['Node.js', 'TypeScript', 'React.js', 'Tailwind CSS', 'Motion', 'Vercel'],
+            github: 'https://github.com/leamartinez1707/nm-masajes-landing/tree/master',
+            demo: 'https://nmasajes.vercel.app/',
+            featured: true
         },
         {
             title: 'CVBoost - Optimizador de CV con IA',
