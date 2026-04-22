@@ -4,7 +4,7 @@ export const LandingFooter = () => {
       <div className="max-w-[1440px] mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex flex-col gap-2">
-            <span className="font-headline text-lg font-black tracking-tighter text-[#e5e2e1]/80">LM.DEV</span>
+            <span className="font-headline text-lg font-black tracking-tighter text-[#e5e2e1]/80">LEANDRO MARTÍNEZ</span>
             <span className="font-label text-xs tracking-widest uppercase text-[#e5e2e1]/30">
               © 2026 Leandro Martínez. Built with React &amp; TypeScript.
             </span>
@@ -36,7 +36,7 @@ export const LandingFooter = () => {
             </a>
             <a
               href="mailto:leandromartinez.dev@gmail.com"
-              className="font-label text-xs tracking-widest uppercase text-[#4edea3] hover:tracking-[0.2em] transition-all duration-500"
+              className="font-label text-xs tracking-widest uppercase text-secondary hover:tracking-[0.2em] transition-all duration-500"
             >
               Email Me
             </a>

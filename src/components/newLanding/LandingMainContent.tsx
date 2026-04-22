@@ -8,8 +8,9 @@ export const LandingMainContent = () => {
         <header data-gsap-reveal className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div className="max-w-2xl">
             <span className="font-label text-secondary tracking-[0.3em] uppercase text-xs mb-4 block">Tech Stack</span>
-            <h2 data-gsap-heading className="font-headline font-black text-6xl md:text-8xl leading-none tracking-tighter text-on-surface">
-              THE<br /> <span className="text-primary">STACK.</span>
+            <h2 data-gsap-heading className="font-headline font-black text-6xl md:text-8xl leading-none tracking-tighter text-on-surface overflow-hidden">
+              <span data-gsap-line className="block">THE</span>
+              <span data-gsap-line className="block text-primary">STACK.</span>
             </h2>
           </div>
           <div className="md:max-w-sm mb-4">
@@ -20,9 +21,9 @@ export const LandingMainContent = () => {
         </header>
 
         {/* Featured Skills Bento */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-16">
+        <div data-gsap-stagger className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-16">
           {/* Frontend block */}
-          <div data-gsap-reveal className="md:col-span-8 bg-surface-container-low p-10 rounded-xl relative overflow-hidden group border border-outline-variant/10">
+          <div data-gsap-item data-gsap-reveal data-gsap-tilt className="md:col-span-8 bg-surface-container-low p-10 rounded-xl relative overflow-hidden group border border-outline-variant/10">
             <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
               <span className="material-symbols-outlined text-[160px]" data-icon="code">code</span>
             </div>
@@ -36,7 +37,7 @@ export const LandingMainContent = () => {
                 Type-safe, component-driven UIs with React 19 and Next.js. I build state management systems, SSR/SSG apps, and pixel-perfect interfaces with TypeScript and Tailwind CSS.
               </p>
               <div className="flex flex-wrap gap-3">
-                {['React.js', 'Next.js', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'Zustand'].map(tech => (
+                {['React.js', 'Next.js', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'TanStack Query', 'Zustand'].map(tech => (
                   <div key={tech} className="bg-surface-container-highest px-4 py-2 font-label text-sm text-on-surface flex items-center gap-2">
                     <span className="material-symbols-outlined text-sm text-primary" data-icon="verified" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
                     {tech}
@@ -47,7 +48,7 @@ export const LandingMainContent = () => {
           </div>
 
           {/* Proficiency block */}
-          <div data-gsap-reveal className="md:col-span-4 bg-surface-container-high p-10 rounded-xl flex flex-col justify-between border border-outline-variant/10">
+          <div data-gsap-item data-gsap-reveal data-gsap-tilt className="md:col-span-4 bg-surface-container-high p-10 rounded-xl flex flex-col justify-between border border-outline-variant/10">
             <div className="mb-6">
               <span className="material-symbols-outlined text-secondary text-4xl mb-4 block" data-icon="speed">speed</span>
               <h4 className="font-headline text-2xl font-bold mb-3">Skill Levels</h4>
@@ -71,7 +72,7 @@ export const LandingMainContent = () => {
           </div>
 
           {/* Backend block */}
-          <div data-gsap-reveal className="md:col-span-4 bg-surface-container-low p-10 rounded-xl group hover:bg-surface-container-high transition-colors border border-outline-variant/10">
+          <div data-gsap-item data-gsap-reveal data-gsap-tilt className="md:col-span-4 bg-surface-container-low p-10 rounded-xl group hover:bg-surface-container-high transition-colors border border-outline-variant/10">
             <span className="material-symbols-outlined text-primary text-4xl mb-6 block" data-icon="database">database</span>
             <h4 className="font-headline text-2xl font-bold mb-4">Backend & APIs</h4>
             <p className="text-on-surface-variant text-sm font-body mb-6 leading-relaxed">
@@ -85,7 +86,7 @@ export const LandingMainContent = () => {
           </div>
 
           {/* Tools & DevOps block */}
-          <div data-gsap-reveal className="md:col-span-5 bg-surface-container-low p-10 rounded-xl border border-outline-variant/10">
+          <div data-gsap-item data-gsap-reveal data-gsap-tilt className="md:col-span-5 bg-surface-container-low p-10 rounded-xl border border-outline-variant/10">
             <span className="material-symbols-outlined text-secondary text-4xl mb-6 block" data-icon="cloud_done">cloud_done</span>
             <h4 className="font-headline text-3xl font-bold mb-4">Tools & Cloud</h4>
             <p className="text-on-surface-variant text-sm font-body mb-6 leading-relaxed">
@@ -99,7 +100,7 @@ export const LandingMainContent = () => {
           </div>
 
           {/* Design focus block */}
-          <div data-gsap-reveal className="md:col-span-3 bg-primary-container p-10 rounded-xl flex items-center justify-center text-center">
+          <div data-gsap-item data-gsap-reveal data-gsap-tilt className="md:col-span-3 bg-primary-container p-10 rounded-xl flex items-center justify-center text-center">
             <div>
               <span className="material-symbols-outlined text-6xl text-on-primary-container mb-4 block" data-icon="architecture">architecture</span>
               <div className="font-headline font-black text-on-primary-container text-xl leading-tight">
@@ -111,11 +112,11 @@ export const LandingMainContent = () => {
 
         {/* All technologies icon row */}
         <div data-gsap-reveal>
-          <h3 className="font-headline text-xl font-bold mb-10 text-center text-outline-variant uppercase tracking-widest">Full Ecosystem</h3>
+          <h3 className="font-headline text-xl font-bold mb-10 text-center uppercase tracking-widest">Full Ecosystem</h3>
           <div className="flex flex-wrap justify-center gap-10 opacity-40 hover:opacity-100 transition-opacity duration-700 grayscale hover:grayscale-0">
             {allTechnologies.map(tech => (
               <div key={tech.name} className="flex flex-col items-center gap-2">
-                <img src={tech.icon} alt={tech.name} className="w-10 h-10" />
+                <img src={tech.icon} alt={tech.name} className="size-14" />
                 <span className="font-label text-[9px] uppercase tracking-widest text-on-surface-variant">{tech.name}</span>
               </div>
             ))}

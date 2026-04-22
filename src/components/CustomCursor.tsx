@@ -57,7 +57,7 @@ export const CustomCursor = () => {
       gsap.to(dot, { scale: 0, duration: 0.25, ease: 'power2.out' });
       gsap.to(halo, {
         scale: 2.2,
-        borderColor: 'rgba(212, 103, 255, 0.9)',
+        borderColor: 'rgba(34, 211, 238, 0.95)',
         duration: 0.3,
         ease: 'power2.out',
       });
@@ -67,7 +67,7 @@ export const CustomCursor = () => {
       gsap.to(dot, { scale: 1, duration: 0.25, ease: 'power2.out' });
       gsap.to(halo, {
         scale: 1,
-        borderColor: 'rgba(212, 103, 255, 0.5)',
+        borderColor: 'rgba(34, 211, 238, 0.5)',
         duration: 0.3,
         ease: 'power2.out',
       });

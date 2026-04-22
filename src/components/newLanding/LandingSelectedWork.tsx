@@ -15,8 +15,9 @@ const LandingSelectedWork = () => {
                         <span className="font-label text-secondary uppercase tracking-[0.3em] text-xs">Selected Work</span>
                     </div>
                     <div className="flex flex-col md:flex-row justify-between items-end gap-8">
-                        <h2 data-gsap-heading className="font-headline text-6xl md:text-8xl font-black tracking-tighter leading-none text-on-surface">
-                            FEATURED<br /><span className="text-primary italic">PROJECTS</span>
+                        <h2 data-gsap-heading className="font-headline text-6xl md:text-8xl font-black tracking-tighter leading-none text-on-surface overflow-hidden">
+                            <span data-gsap-line className="block">FEATURED</span>
+                            <span data-gsap-line className="block text-primary italic">PROJECTS</span>
                         </h2>
                         <p className="md:max-w-sm text-on-surface-variant font-body text-lg leading-relaxed text-right">
                             Real-world apps solving real problems — full stack, production-ready.
@@ -27,9 +28,9 @@ const LandingSelectedWork = () => {
                 {/* Big Feature: Project 1 */}
                 {main && (
                     <div data-gsap-reveal className="mb-20 group">
-                        <div className="grid grid-cols-12 gap-8 items-end">
-                            <div className="col-span-12 lg:col-span-8">
-                                <div data-gsap-parallax className="relative aspect-video overflow-hidden mb-6 bg-surface-container-low transition-all duration-500 hover:translate-y-[-4px]">
+                        <div data-gsap-stagger className="grid grid-cols-12 gap-8 items-end">
+                            <div data-gsap-item className="col-span-12 lg:col-span-8">
+                                <div data-gsap-media data-gsap-parallax className="relative aspect-video overflow-hidden mb-6 bg-surface-container-low transition-all duration-500 hover:translate-y-[-4px]">
                                     <img
                                         src={main.image}
                                         alt={main.title}
@@ -68,8 +69,8 @@ const LandingSelectedWork = () => {
                             </div>
                             {/* Side card - Project 2 */}
                             {second && (
-                                <div data-gsap-reveal className="col-span-12 lg:col-span-4 lg:mb-0 group/side">
-                                    <div data-gsap-parallax className="relative aspect-[4/3] overflow-hidden mb-4 bg-surface-container-low transition-all duration-500 hover:translate-y-[-4px]">
+                                <div data-gsap-item data-gsap-reveal className="col-span-12 lg:col-span-4 lg:mb-0 group/side">
+                                    <div data-gsap-media data-gsap-parallax className="relative aspect-[4/3] overflow-hidden mb-4 bg-surface-container-low transition-all duration-500 hover:translate-y-[-4px]">
                                         <img
                                             src={second.image}
                                             alt={second.title}
@@ -100,10 +101,10 @@ const LandingSelectedWork = () => {
                 )}
 
                 {/* Row: Projects 3 & 4 */}
-                <div className="grid grid-cols-12 gap-8 mb-12">
+                <div data-gsap-stagger className="grid grid-cols-12 gap-8 mb-12">
                     {[third, fourth].filter(Boolean).map((project, idx) => (
-                        <div key={project!.title} data-gsap-reveal className={"col-span-12 md:col-span-6 group" + (idx === 1 ? " md:mt-16" : "")}>
-                            <div data-gsap-parallax className="relative aspect-video overflow-hidden mb-4 bg-surface-container-low transition-all duration-500 hover:translate-y-[-4px]">
+                        <div key={project!.title} data-gsap-item data-gsap-reveal data-gsap-tilt className={"col-span-12 md:col-span-6 group" + (idx === 1 ? " md:mt-16" : "")}>
+                            <div data-gsap-media data-gsap-parallax className="relative aspect-video overflow-hidden mb-4 bg-surface-container-low transition-all duration-500 hover:translate-y-[-4px]">
                                 <img
                                     src={project!.image}
                                     alt={project!.title}
@@ -139,9 +140,9 @@ const LandingSelectedWork = () => {
                             <span className="font-label text-xs tracking-widest uppercase text-on-surface-variant">More Projects</span>
                             <div className="h-px flex-1 bg-outline-variant/15"></div>
                         </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div data-gsap-stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                             {rest.map(project => (
-                                <div key={project.title} data-gsap-reveal className="group bg-surface-container-low p-6 border border-outline-variant/10 hover:border-primary/30 transition-all duration-300">
+                                <div key={project.title} data-gsap-item data-gsap-reveal data-gsap-tilt className="group bg-surface-container-low p-6 border border-outline-variant/10 hover:border-primary/30 transition-all duration-300">
                                     <h4 className="font-headline text-lg font-bold mb-2 group-hover:text-primary transition-colors uppercase">{project.title}</h4>
                                     <p className="text-on-surface-variant font-body text-sm mb-4 leading-relaxed line-clamp-2">{project.description}</p>
                                     <div className="flex flex-wrap gap-2 mb-4">

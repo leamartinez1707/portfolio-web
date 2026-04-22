@@ -47,17 +47,19 @@ const LandingContact = () => {
               <div className="h-px w-12 bg-secondary"></div>
               <span className="font-label text-secondary uppercase tracking-[0.3em] text-xs">Get In Touch</span>
             </div>
-            <h2 data-gsap-heading className="font-headline text-6xl md:text-8xl font-black tracking-tighter leading-none text-on-surface mb-6">
-              LET'S<br /><span className="text-primary italic">WORK</span><br />TOGETHER.
+            <h2 data-gsap-heading className="font-headline text-6xl md:text-8xl font-black tracking-tighter leading-none text-on-surface mb-6 overflow-hidden">
+              <span data-gsap-line className="block">LET'S</span>
+              <span data-gsap-line className="block text-primary italic">WORK</span>
+              <span data-gsap-line className="block">TOGETHER.</span>
             </h2>
             <p className="max-w-xl text-on-surface-variant text-lg leading-relaxed font-body">
               Open to full-time positions, freelance projects, and technical collaborations. Let's build something great.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          <div data-gsap-stagger className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             {/* Contact info */}
-            <div data-gsap-reveal className="lg:col-span-4 space-y-10">
+            <div data-gsap-item data-gsap-reveal className="lg:col-span-4 space-y-10">
               <div>
                 <h3 className="font-headline text-xl font-bold mb-6 uppercase text-on-surface">Contact Details</h3>
                 <div className="space-y-4">
@@ -131,7 +133,7 @@ const LandingContact = () => {
               {/* Availability status */}
               <div className="bg-surface-container-low p-6 border border-outline-variant/10">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-2 h-2 rounded-full bg-[#4edea3] animate-pulse"></div>
+                  <div className="w-2 h-2 rounded-full bg-secondary animate-pulse"></div>
                   <span className="font-label text-xs uppercase tracking-widest text-secondary">Available Now</span>
                 </div>
                 <p className="font-body text-sm text-on-surface-variant leading-relaxed">
@@ -141,7 +143,7 @@ const LandingContact = () => {
             </div>
 
             {/* Contact form */}
-            <div data-gsap-reveal className="lg:col-span-8 bg-surface-container-low p-10 border border-outline-variant/10">
+            <div data-gsap-item data-gsap-reveal className="lg:col-span-8 bg-surface-container-low p-10 border border-outline-variant/10">
               <h3 className="font-headline text-2xl font-bold mb-8 uppercase text-on-surface">Send a Message</h3>
               <form ref={form} onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

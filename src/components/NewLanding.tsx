@@ -12,14 +12,14 @@ import ScrollProgress from "./ScrollProgress";
 
 export const NewLanding = () => {
   const [loaded, setLoaded] = useState(false);
-  const scope = useLandingGsap();
+  const scope = useLandingGsap(loaded);
 
   return (
     <>
       <CustomCursor />
       <ScrollProgress />
       {!loaded && <PageLoader onComplete={() => setLoaded(true)} />}
-      <div ref={scope} className="relative overflow-x-hidden">
+      <div ref={scope} className="relative overflow-x-hidden portfolio-atmosphere editorial-texture">
         <LandingTopNav />
         <LandingHome />
         <LandingSelectedWork />

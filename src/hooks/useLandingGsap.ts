@@ -67,11 +67,16 @@ function animateCounter(element: HTMLElement) {
 
 // ─── Hook ─────────────────────────────────────────────────────────────────────
 
-export const useLandingGsap = () => {
+export const useLandingGsap = (enabled: boolean) => {
   const scope = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
+      if (!enabled) {
+        console.log('🔴 GSAP: disabled');
+        return;
+      }
+      console.log('🟢 GSAP: animations starting...');
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
       const mm = gsap.matchMedia();
@@ -82,13 +87,13 @@ export const useLandingGsap = () => {
         autoAlpha: 0,
         duration: 0.9,
         ease: 'expo.out',
-        delay: 2.4, // fires after PageLoader wipe
+        delay: 0.05,
       });
 
       // ── Hero intro timeline ─────────────────────────────────────────────────
       const heroTl = gsap.timeline({
         defaults: { ease: 'power3.out' },
-        delay: 2.5,
+        delay: 0.12,
       });
 
       heroTl
@@ -110,7 +115,9 @@ export const useLandingGsap = () => {
       statNumbers.forEach(animateCounter);
 
       // ── Scroll reveal ───────────────────────────────────────────────────────
-      gsap.utils.toArray<HTMLElement>('[data-gsap-reveal]').forEach((el, i) => {
+      const reveals = gsap.utils.toArray<HTMLElement>('[data-gsap-reveal]');
+      console.log(`Found ${reveals.length} reveal elements`);
+      reveals.forEach((el, i) => {
         gsap.from(el, {
           y: 56,
           autoAlpha: 0,
@@ -127,6 +134,24 @@ export const useLandingGsap = () => {
 
       // ── Section heading word-split on scroll ────────────────────────────────
       gsap.utils.toArray<HTMLElement>('[data-gsap-heading]').forEach((heading) => {
+        const lines = heading.querySelectorAll<HTMLElement>('[data-gsap-line]');
+
+        if (lines.length > 0) {
+          gsap.from(lines, {
+            yPercent: 110,
+            autoAlpha: 0,
+            duration: 0.8,
+            ease: 'power4.out',
+            stagger: 0.08,
+            scrollTrigger: {
+              trigger: heading,
+              start: 'top 88%',
+              once: true,
+            },
+          });
+          return;
+        }
+
         const words = splitWords(heading);
         gsap.from(words, {
           y: '110%',
@@ -154,6 +179,40 @@ export const useLandingGsap = () => {
             scrollTrigger: { trigger: bar, start: 'top 90%', once: true },
           }
         );
+      });
+
+      // ── Media reveal (cinematic) ────────────────────────────────────────────
+      gsap.utils.toArray<HTMLElement>('[data-gsap-media]').forEach((media) => {
+        gsap.from(media, {
+          clipPath: 'inset(18% 0 20% 0 round 0px)',
+          autoAlpha: 0,
+          duration: 1.1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: media,
+            start: 'top 84%',
+            once: true,
+          },
+        });
+      });
+
+      // ── Stagger groups ──────────────────────────────────────────────────────
+      gsap.utils.toArray<HTMLElement>('[data-gsap-stagger]').forEach((group) => {
+        const items = group.querySelectorAll<HTMLElement>('[data-gsap-item]');
+        if (!items.length) return;
+
+        gsap.from(items, {
+          y: 40,
+          autoAlpha: 0,
+          duration: 0.75,
+          ease: 'power3.out',
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: group,
+            start: 'top 86%',
+            once: true,
+          },
+        });
       });
 
       // ── Float decoration ────────────────────────────────────────────────────
@@ -195,6 +254,41 @@ export const useLandingGsap = () => {
           });
         });
 
+      // ── Subtle tilt cards ───────────────────────────────────────────────────
+      gsap.utils.toArray<HTMLElement>('[data-gsap-tilt]').forEach((card) => {
+        const onMove = (e: MouseEvent) => {
+          const rect = card.getBoundingClientRect();
+          const x = ((e.clientX - rect.left) / rect.width - 0.5) * 4;
+          const y = ((e.clientY - rect.top) / rect.height - 0.5) * -4;
+
+          gsap.to(card, {
+            rotateX: y,
+            rotateY: x,
+            transformPerspective: 900,
+            transformOrigin: 'center',
+            duration: 0.35,
+            ease: 'power2.out',
+          });
+        };
+
+        const onLeave = () => {
+          gsap.to(card, {
+            rotateX: 0,
+            rotateY: 0,
+            duration: 0.5,
+            ease: 'power2.out',
+          });
+        };
+
+        card.addEventListener('mousemove', onMove);
+        card.addEventListener('mouseleave', onLeave);
+
+        magneticCleanups.push(() => {
+          card.removeEventListener('mousemove', onMove);
+          card.removeEventListener('mouseleave', onLeave);
+        });
+      });
+
       // ── Parallax (desktop only) ─────────────────────────────────────────────
       mm.add('(min-width: 1024px)', () => {
         const parallaxTweens = gsap.utils
@@ -218,15 +312,19 @@ export const useLandingGsap = () => {
         return () => parallaxTweens.forEach((t) => t.kill());
       });
 
-      requestAnimationFrame(() => ScrollTrigger.refresh());
+      requestAnimationFrame(() => {
+        console.log(`📍 ScrollTrigger.refresh() called. Active triggers: ${ScrollTrigger.getAll().length}`);
+        ScrollTrigger.refresh();
+      });
 
       return () => {
+        console.log('🧹 GSAP cleanup');
         floatTweens.forEach((t) => t.kill());
         magneticCleanups.forEach((fn) => fn());
         mm.revert();
       };
     },
-    { scope }
+    { scope, dependencies: [enabled], revertOnUpdate: true }
   );
 
   return scope;
