@@ -9,13 +9,13 @@ const LandingSelectedWork = () => {
         <section id="projects" className="py-40 px-8 bg-surface-container-lowest">
             <div className="max-w-[1440px] mx-auto">
                 {/* Header */}
-                <header className="mb-24">
+                <header data-gsap-reveal className="mb-24">
                     <div className="flex items-center gap-4 mb-6">
                         <div className="h-px w-12 bg-secondary"></div>
                         <span className="font-label text-secondary uppercase tracking-[0.3em] text-xs">Selected Work</span>
                     </div>
                     <div className="flex flex-col md:flex-row justify-between items-end gap-8">
-                        <h2 className="font-headline text-6xl md:text-8xl font-black tracking-tighter leading-none text-on-surface">
+                        <h2 data-gsap-heading className="font-headline text-6xl md:text-8xl font-black tracking-tighter leading-none text-on-surface">
                             FEATURED<br /><span className="text-primary italic">PROJECTS</span>
                         </h2>
                         <p className="md:max-w-sm text-on-surface-variant font-body text-lg leading-relaxed text-right">
@@ -26,10 +26,10 @@ const LandingSelectedWork = () => {
 
                 {/* Big Feature: Project 1 */}
                 {main && (
-                    <div className="mb-20 group">
+                    <div data-gsap-reveal className="mb-20 group">
                         <div className="grid grid-cols-12 gap-8 items-end">
                             <div className="col-span-12 lg:col-span-8">
-                                <div className="relative aspect-video overflow-hidden mb-6 bg-surface-container-low transition-all duration-500 hover:translate-y-[-4px]">
+                                <div data-gsap-parallax className="relative aspect-video overflow-hidden mb-6 bg-surface-container-low transition-all duration-500 hover:translate-y-[-4px]">
                                     <img
                                         src={main.image}
                                         alt={main.title}
@@ -68,8 +68,8 @@ const LandingSelectedWork = () => {
                             </div>
                             {/* Side card - Project 2 */}
                             {second && (
-                                <div className="col-span-12 lg:col-span-4 lg:mb-0 group/side">
-                                    <div className="relative aspect-[4/3] overflow-hidden mb-4 bg-surface-container-low transition-all duration-500 hover:translate-y-[-4px]">
+                                <div data-gsap-reveal className="col-span-12 lg:col-span-4 lg:mb-0 group/side">
+                                    <div data-gsap-parallax className="relative aspect-[4/3] overflow-hidden mb-4 bg-surface-container-low transition-all duration-500 hover:translate-y-[-4px]">
                                         <img
                                             src={second.image}
                                             alt={second.title}
@@ -102,8 +102,8 @@ const LandingSelectedWork = () => {
                 {/* Row: Projects 3 & 4 */}
                 <div className="grid grid-cols-12 gap-8 mb-12">
                     {[third, fourth].filter(Boolean).map((project, idx) => (
-                        <div key={project!.title} className={"col-span-12 md:col-span-6 group" + (idx === 1 ? " md:mt-16" : "")}>
-                            <div className="relative aspect-video overflow-hidden mb-4 bg-surface-container-low transition-all duration-500 hover:translate-y-[-4px]">
+                        <div key={project!.title} data-gsap-reveal className={"col-span-12 md:col-span-6 group" + (idx === 1 ? " md:mt-16" : "")}>
+                            <div data-gsap-parallax className="relative aspect-video overflow-hidden mb-4 bg-surface-container-low transition-all duration-500 hover:translate-y-[-4px]">
                                 <img
                                     src={project!.image}
                                     alt={project!.title}
@@ -141,7 +141,7 @@ const LandingSelectedWork = () => {
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                             {rest.map(project => (
-                                <div key={project.title} className="group bg-surface-container-low p-6 border border-outline-variant/10 hover:border-primary/30 transition-all duration-300">
+                                <div key={project.title} data-gsap-reveal className="group bg-surface-container-low p-6 border border-outline-variant/10 hover:border-primary/30 transition-all duration-300">
                                     <h4 className="font-headline text-lg font-bold mb-2 group-hover:text-primary transition-colors uppercase">{project.title}</h4>
                                     <p className="text-on-surface-variant font-body text-sm mb-4 leading-relaxed line-clamp-2">{project.description}</p>
                                     <div className="flex flex-wrap gap-2 mb-4">
@@ -164,12 +164,13 @@ const LandingSelectedWork = () => {
                 )}
 
                 {/* View all on GitHub */}
-                <div className="mt-20 text-center">
+                <div data-gsap-reveal className="mt-20 text-center">
                     <a
                         href="https://github.com/leamartinez1707"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-3 font-label text-sm uppercase tracking-widest text-on-surface/60 hover:text-primary transition-colors border border-outline-variant/30 px-10 py-4 hover:border-primary/50"
+                        data-gsap-magnetic
                     >
                         View All on GitHub <span className="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
                     </a>

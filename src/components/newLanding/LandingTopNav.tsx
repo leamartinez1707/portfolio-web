@@ -1,6 +1,6 @@
 export const LandingTopNav = () => {
   return (
-    <nav className="fixed top-0 w-full z-50 bg-zinc-900/40 backdrop-blur-xl bg-gradient-to-b from-black/20 to-transparent shadow-[0_8px_32px_rgba(79,70,229,0.06)]">
+    <nav data-gsap-nav className="fixed top-0 w-full z-50 bg-zinc-900/40 backdrop-blur-xl bg-gradient-to-b from-black/20 to-transparent shadow-[0_8px_32px_rgba(79,70,229,0.06)]">
       <div className="flex justify-between items-center px-8 py-6 max-w-[1440px] mx-auto w-full">
         <a href="#home" className="text-xl font-black tracking-tighter text-[#e5e2e1] hover:text-[#4edea3] transition-colors font-headline uppercase cursor-pointer">
           LEANDRO_MARTÍNEZ

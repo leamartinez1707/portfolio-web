@@ -1,6 +1,6 @@
 export const LandingFooter = () => {
   return (
-    <footer className="w-full py-20 px-8 bg-[#0e0e0e] border-t border-[#464555]/15">
+    <footer data-gsap-reveal className="w-full py-20 px-8 bg-[#0e0e0e] border-t border-[#464555]/15">
       <div className="max-w-[1440px] mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex flex-col gap-2">
