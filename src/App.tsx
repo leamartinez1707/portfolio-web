@@ -1,26 +1,17 @@
-import { LanguageProvider } from './contexts/LanguageContext';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import About from './components/About';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import { RouterProvider } from 'react-router-dom';
+import router from './routes/Routes';
 
 function App() {
-  return (
-    <LanguageProvider>
-      <div className="min-h-screen">
-        <Header />
+  return <RouterProvider router={router} />;
+}
+
+export default App;
+{/* <Header />
         <Hero />
         <About />
         <Skills />
         <Projects />
         <Contact />
-        <Footer />
-      </div>
-    </LanguageProvider>
-  );
-}
+        <Footer /> */}
 
-export default App;
+

@@ -12,6 +12,7 @@ export const allTechnologies = [
     { name: 'TypeScript', icon: 'https://skillicons.dev/icons?i=typescript&size=48' },
     { name: 'JavaScript', icon: 'https://skillicons.dev/icons?i=javascript&size=48' },
     { name: 'Node.js', icon: 'https://skillicons.dev/icons?i=nodejs&size=48' },
+    { name: 'Express.js', icon: 'https://skillicons.dev/icons?i=express&size=48' },
     { name: 'Next.js', icon: 'https://skillicons.dev/icons?i=nextjs&size=48' },
     { name: 'Tailwind CSS', icon: 'https://skillicons.dev/icons?i=tailwind&size=48' },
     { name: 'MongoDB', icon: 'https://skillicons.dev/icons?i=mongodb&size=48' },
@@ -22,7 +23,12 @@ export const allTechnologies = [
     { name: 'Firebase', icon: 'https://skillicons.dev/icons?i=firebase&size=48' },
     { name: 'Redux', icon: 'https://skillicons.dev/icons?i=redux&size=48' },
     { name: 'Vercel', icon: 'https://skillicons.dev/icons?i=vercel&size=48' },
-    { name: 'Express.js', icon: 'https://skillicons.dev/icons?i=express&size=48' },
     { name: 'Nest.js', icon: 'https://skillicons.dev/icons?i=nestjs&size=48' },
-    { name: 'Zustand', icon: 'https://skillicons.dev/icons?i=redux&size=48' }, // No hay icono específico para Zustand, uso Redux como alternativa
+    { name: 'Zustand', icon: 'https://user-images.githubusercontent.com/958486/218346783-72be5ae3-b953-4dd7-b239-788a882fdad6.svg' },
+    { name: 'TanStack Query', icon: 'https://tanstack.com/images/logos/logo-color-banner-600.png' },
+    { name: 'Prisma', icon: 'https://skillicons.dev/icons?i=prisma&size=48' },
+    { name: 'OpenAI API', icon: 'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/openai.png' },
+    {name: 'GitHub Copilot', icon: 'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/githubcopilot.png' }
+    
+    
   ];

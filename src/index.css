@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+:root {
+  --brand-cyan: #22d3ee;
+  --brand-orange: #fb923c;
+  --brand-cyan-soft: rgba(34, 211, 238, 0.38);
+  --brand-orange-soft: rgba(251, 146, 60, 0.38);
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -7,7 +14,7 @@
 
   * {
     scrollbar-width: thin;
-    scrollbar-color: #d467ff #F1F5F9;
+    scrollbar-color: var(--brand-cyan) #0f1720;
   }
 
   *::-webkit-scrollbar {
@@ -15,16 +22,16 @@
   }
 
   *::-webkit-scrollbar-track {
-    background: #F1F5F9;
+    background: #0f1720;
   }
 
   *::-webkit-scrollbar-thumb {
-    background: #d467ff;
+    background: linear-gradient(180deg, var(--brand-cyan), var(--brand-orange));
     border-radius: 4px;
   }
 
   *::-webkit-scrollbar-thumb:hover {
-    background: #d467ff;
+    background: linear-gradient(180deg, #67e8f9, #fdba74);
   }
 }
 
@@ -118,7 +125,7 @@
   }
 
   .gradient-text {
-    background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+    background: linear-gradient(135deg, var(--brand-cyan), var(--brand-orange));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -133,13 +140,13 @@
 
 /* Custom selection colors */
 ::selection {
-  background-color: #d467ff;
-  color: white;
+  background-color: rgba(34, 211, 238, 0.35);
+  color: #ecfeff;
 }
 
 ::-moz-selection {
-  background-color: #d467ff;
-  color: white;
+  background-color: rgba(34, 211, 238, 0.35);
+  color: #ecfeff;
 }
 
 /* Smooth transitions for all interactive elements */
@@ -154,7 +161,7 @@ textarea {
 
 input:focus,
 textarea:focus {
-  outline: 1px solid #d467ff;
+  outline: 1px solid var(--brand-cyan);
   outline-offset: 1px;
 }
 
@@ -176,11 +183,68 @@ textarea:focus {
 }
 
 .important-text-gradient {
-  @apply bg-clip-text font-bold bg-gradient-to-r from-blue-600 to-purple-600 text-transparent
+  @apply bg-clip-text font-bold bg-gradient-to-r from-cyan-400 to-orange-400 text-transparent
 }
 
 .bg-gradient {
-  @apply bg-gradient-to-r from-blue-600 to-purple-600;
+  @apply bg-gradient-to-r from-cyan-400 to-orange-400;
+}
+
+.portfolio-atmosphere {
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 14% 20%, rgba(34, 211, 238, 0.08), transparent 38%),
+    radial-gradient(circle at 82% 78%, rgba(251, 146, 60, 0.08), transparent 40%);
+}
+
+.portfolio-atmosphere::before,
+.portfolio-atmosphere::after {
+  content: "";
+  position: fixed;
+  inset: auto;
+  pointer-events: none;
+  z-index: -1;
+  width: 46vw;
+  height: 46vw;
+  filter: blur(68px);
+  opacity: 0.26;
+}
+
+.portfolio-atmosphere::selection {
+  background: rgba(251, 146, 60, 0.35);
+}
+
+.portfolio-atmosphere::before {
+  top: -18vw;
+  right: -14vw;
+  background: radial-gradient(circle at center, var(--brand-cyan-soft), transparent 62%);
+}
+
+.portfolio-atmosphere::after {
+  bottom: -16vw;
+  left: -12vw;
+  background: radial-gradient(circle at center, var(--brand-orange-soft), transparent 62%);
+}
+
+.editorial-texture {
+  position: relative;
+}
+
+.editorial-texture::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.08;
+  mix-blend-mode: soft-light;
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.07) 0px,
+    rgba(255, 255, 255, 0.07) 1px,
+    transparent 1px,
+    transparent 3px
+  );
 }
 
 button {
