@@ -1,6 +1,6 @@
 const LandingBuildings = () => {
   return (
-    <div>
+    <div id="about" className="py-40 px-8 bg-surface">
       {/* // <!-- Hero Section / About --> */}
       <section className="max-w-[1440px] mx-auto px-8 mb-40">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
@@ -69,66 +69,6 @@ const LandingBuildings = () => {
             </div>
             <div className="absolute right-[-10%] top-[-20%] opacity-5 pointer-events-none">
               <span className="material-symbols-outlined text-[200px]">trophy</span>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* // <!-- Contact Section --> */}
-      <section className="bg-surface-container-lowest py-32 px-8" id="contact">
-        <div className="max-w-[1440px] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
-            <div className="lg:col-span-5">
-              <h2 className="font-headline text-5xl md:text-7xl font-black tracking-tighter mb-8 uppercase">
-                Let's <br /> <span className="text-secondary">Collaborate</span>
-              </h2>
-              <p className="text-on-surface/60 max-w-md mb-12 text-lg">
-                Currently available for high-impact contracts and visionary digital products. If you value engineering quality as much as I do, reach out.
-              </p>
-              <div className="space-y-6">
-                <a className="group flex items-center gap-6" href="mailto:hello@binaryarchitect.dev">
-                  <div className="w-12 h-12 bg-surface-container-high flex items-center justify-center group-hover:bg-primary transition-colors">
-                    <span className="material-symbols-outlined text-primary group-hover:text-surface">mail</span>
-                  </div>
-                  <span className="font-label text-sm tracking-widest group-hover:text-primary transition-colors">HELLO@BINARYARCHITECT.DEV</span>
-                </a>
-                <div className="flex gap-4">
-                  <a className="w-12 h-12 border border-outline-variant/20 flex items-center justify-center hover:bg-secondary transition-all group" href="#">
-                    <span className="material-symbols-outlined text-xs group-hover:text-on-secondary">share</span>
-                  </a>
-                  <a className="px-6 border border-outline-variant/20 flex items-center justify-center hover:bg-primary transition-all group" href="#">
-                    <span className="font-label text-[10px] uppercase tracking-widest group-hover:text-on-primary">LinkedIn</span>
-                  </a>
-                  <a className="px-6 border border-outline-variant/20 flex items-center justify-center hover:bg-primary transition-all group" href="#">
-                    <span className="font-label text-[10px] uppercase tracking-widest group-hover:text-on-primary">GitHub</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="lg:col-span-7 bg-surface-container-low p-8 md:p-16 border border-outline-variant/10">
-              <form className="space-y-12">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                  <div className="relative group">
-                    <input className="peer w-full bg-transparent border-0 border-b border-outline-variant/30 py-3 px-0 focus:ring-0 focus:border-secondary transition-colors placeholder-transparent" id="name" placeholder=" " type="text" />
-                    <label className="absolute left-0 top-3 text-on-surface/40 font-label text-xs uppercase tracking-widest pointer-events-none transition-all peer-focus:-top-4 peer-focus:text-secondary peer-not-placeholder-shown:-top-4" htmlFor="name">Name</label>
-                  </div>
-                  <div className="relative group">
-                    <input className="peer w-full bg-transparent border-0 border-b border-outline-variant/30 py-3 px-0 focus:ring-0 focus:border-secondary transition-colors placeholder-transparent" id="email" placeholder=" " type="email" />
-                    <label className="absolute left-0 top-3 text-on-surface/40 font-label text-xs uppercase tracking-widest pointer-events-none transition-all peer-focus:-top-4 peer-focus:text-secondary peer-not-placeholder-shown:-top-4" htmlFor="email">Email</label>
-                  </div>
-                </div>
-                <div className="relative group">
-                  <input className="peer w-full bg-transparent border-0 border-b border-outline-variant/30 py-3 px-0 focus:ring-0 focus:border-secondary transition-colors placeholder-transparent" id="project" placeholder=" " type="text" />
-                  <label className="absolute left-0 top-3 text-on-surface/40 font-label text-xs uppercase tracking-widest pointer-events-none transition-all peer-focus:-top-4 peer-focus:text-secondary peer-not-placeholder-shown:-top-4" htmlFor="project">Subject / Project Type</label>
-                </div>
-                <div className="relative group">
-                  <textarea className="peer w-full bg-transparent border-0 border-b border-outline-variant/30 py-3 px-0 focus:ring-0 focus:border-secondary transition-colors placeholder-transparent resize-none" id="message" placeholder=" " rows={4}></textarea>
-                  <label className="absolute left-0 top-3 text-on-surface/40 font-label text-xs uppercase tracking-widest pointer-events-none transition-all peer-focus:-top-4 peer-focus:text-secondary peer-not-placeholder-shown:-top-4" htmlFor="message">Message</label>
-                </div>
-                <button className="w-full bg-primary-container text-on-primary-container py-6 font-label font-bold uppercase tracking-[0.3em] hover:bg-secondary hover:text-on-secondary transition-all duration-500 flex items-center justify-center gap-4 group" type="submit">
-                  Initiate Transmission
-                  <span className="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
-                </button>
-              </form>
             </div>
           </div>
         </div>

@@ -6,7 +6,6 @@ export const LandingTopNav = () => {
           LEANDRO_MARTINEZ
         </a>
         <div className="hidden md:flex items-center space-x-12">
-          <a className="text-[#e5e2e1]/70 hover:text-[#e5e2e1] transition-all font-headline tracking-tight font-bold uppercase text-sm" href="#about">About</a>
           <a className="text-[#e5e2e1]/70 hover:text-[#e5e2e1] transition-all font-headline tracking-tight font-bold uppercase text-sm" href="#projects">Projects</a>
           <a className="text-[#e5e2e1]/70 hover:text-[#e5e2e1] transition-all font-headline tracking-tight font-bold uppercase text-sm" href="#stack">Stack</a>
           <a className="text-[#e5e2e1]/70 hover:text-[#e5e2e1] transition-all font-headline tracking-tight font-bold uppercase text-sm" href="#contact">Contact</a>

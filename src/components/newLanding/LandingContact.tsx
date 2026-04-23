@@ -29,7 +29,8 @@ const LandingContact = () => {
       await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, { publicKey: PUBLIC_KEY });
       enqueueSnackbar('Message sent! I\'ll get back to you soon.', { variant: 'success' });
       form.current.reset();
-    } catch {
+    } catch (error) {
+      console.log('Email sending failed', error);
       enqueueSnackbar('Failed to send. Please try again or email me directly.', { variant: 'error' });
     } finally {
       setSending(false);
