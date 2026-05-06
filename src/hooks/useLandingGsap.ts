@@ -73,10 +73,8 @@ export const useLandingGsap = (enabled: boolean) => {
   useGSAP(
     () => {
       if (!enabled) {
-        console.log('🔴 GSAP: disabled');
         return;
       }
-      console.log('🟢 GSAP: animations starting...');
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
       const mm = gsap.matchMedia();
@@ -116,7 +114,6 @@ export const useLandingGsap = (enabled: boolean) => {
 
       // ── Scroll reveal ───────────────────────────────────────────────────────
       const reveals = gsap.utils.toArray<HTMLElement>('[data-gsap-reveal]');
-      console.log(`Found ${reveals.length} reveal elements`);
       reveals.forEach((el, i) => {
         gsap.from(el, {
           y: 56,
@@ -313,12 +310,10 @@ export const useLandingGsap = (enabled: boolean) => {
       });
 
       requestAnimationFrame(() => {
-        console.log(`📍 ScrollTrigger.refresh() called. Active triggers: ${ScrollTrigger.getAll().length}`);
         ScrollTrigger.refresh();
       });
 
       return () => {
-        console.log('🧹 GSAP cleanup');
         floatTweens.forEach((t) => t.kill());
         magneticCleanups.forEach((fn) => fn());
         mm.revert();

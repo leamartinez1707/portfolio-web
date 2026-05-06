@@ -34,7 +34,7 @@ const LandingSelectedWork = () => {
                                     <img
                                         src={main.image}
                                         alt={main.title}
-                                        className="w-full h-full object-cover opacity-70 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
+                                        className="w-full h-full object-center opacity-70 lg:grayscale md:group-hover:grayscale-0 md:group-hover:opacity-100 transition-all duration-700"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
                                     <div className="absolute bottom-6 left-6 flex flex-wrap gap-2">
@@ -74,7 +74,7 @@ const LandingSelectedWork = () => {
                                         <img
                                             src={second.image}
                                             alt={second.title}
-                                            className="w-full h-full object-cover opacity-60 grayscale group-hover/side:grayscale-0 group-hover/side:opacity-100 transition-all duration-700"
+                                            className="w-full h-full object-cover lg:opacity-60 lg:grayscale md:group-hover/side:grayscale-0 md:group-hover/side:opacity-100 transition-all duration-700"
                                         />
                                     </div>
                                     <h3 className="font-headline text-2xl font-bold mb-2 group-hover/side:text-secondary transition-colors uppercase">{second.title}</h3>
@@ -108,7 +108,7 @@ const LandingSelectedWork = () => {
                                 <img
                                     src={project!.image}
                                     alt={project!.title}
-                                    className="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
+                                    className="w-full h-full object-center lg:opacity-60 lg:grayscale md:group-hover:grayscale-0 md:group-hover:opacity-100 transition-all duration-700"
                                 />
                             </div>
                             <h3 className="font-headline text-2xl font-bold mb-2 group-hover:text-primary transition-colors uppercase">{project!.title}</h3>
