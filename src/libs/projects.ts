@@ -18,20 +18,20 @@ export const projects = {
             demo: 'https://servyfix.com',
             featured: true
         },
-        // {
-        //     title: 'ShopSmart - e-Commerce con Chatbot de IA para encontrar productos y responder preguntas frecuentes',
-        //     description: 'Chatbot inteligente que asiste a los clientes en la compra de productos, responde preguntas frecuentes y recomienda artículos.',
-        //     image: '/chatbot_photo.png',
-        //     technologies: ['Next.js', 'TypeScript', 'OpenAI API', 'Supabase', 'Tailwind CSS', 'Vercel'],
-        //     github: 'https://github.com/leamartinez1707/IA-Catalog-Chatbot',
-        //     demo: 'https://shopsmart-ai.vercel.app/',
-        //     featured: true
-        // },
+        {
+            title: 'ShopSmart - e-Commerce con Chatbot de IA para encontrar productos y responder preguntas frecuentes',
+            description: 'Chatbot inteligente que asiste a los clientes en la compra de productos, responde preguntas frecuentes y recomienda artículos.',
+            image: '/chatbot_photo.png',
+            technologies: ['Next.js', 'TypeScript', 'OpenAI API', 'Supabase', 'Tailwind CSS', 'Vercel'],
+            github: 'https://github.com/leamartinez1707/IA-Catalog-Chatbot',
+            demo: 'https://shopsmart-ai.vercel.app/',
+            featured: true
+        },
         {
             title: 'Teslo Shop - Clon de Tesla Shop - E-commerce',
             description: 'Plataforma de E-commerce que permite a los usuarios comprar productos de una manera fácil y rápida integrada con PayPal.',
             image: '/teslo_1.png',
-            technologies: ['Next.js 15', 'TypeScript', 'Zustand', 'Prisma', 'Cloudinary', 'TypeScript', 'NextAuth', 'PostgreSQL', 'Tailwind CSS', 'PayPal API', 'Vercel'],
+            technologies: ['Next.js 15', 'TypeScript', 'Zustand', 'Prisma', 'Cloudinary', 'NextAuth', 'PostgreSQL', 'Tailwind CSS', 'PayPal API', 'Vercel'],
             github: 'https://github.com/leamartinez1707/ecommerce-app',
             demo: 'https://teslo-ecommerce-app.vercel.app/',
             featured: true
@@ -109,6 +109,15 @@ export const projects = {
             technologies: ['Node.js', 'React.js', 'TypeScript', 'Tailwind CSS', 'Leaflet', 'Motion', 'Zod', 'Vercel'],
             github: '#',
             demo: 'https://servyfix.com',
+            featured: true
+        },
+        {
+            title: 'ShopSmart - e-Commerce with AI Shopping Assistant',
+            description: 'E-commerce app with an AI assistant that helps users discover products, answers common questions, and improves buying flow.',
+            image: '/chatbot_photo.png',
+            technologies: ['Next.js', 'TypeScript', 'OpenAI API', 'Supabase', 'Tailwind CSS', 'Vercel'],
+            github: 'https://github.com/leamartinez1707/IA-Catalog-Chatbot',
+            demo: 'https://shopsmart-ai.vercel.app/',
             featured: true
         },
         {
