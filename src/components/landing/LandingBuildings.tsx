@@ -1,6 +1,6 @@
 const LandingBuildings = () => {
   return (
-    <div id="about" className="py-40 px-8 bg-surface">
+    <div id="about" className="py-40 md:px-8 bg-surface">
       {/* // <!-- Hero Section / About --> */}
       <section className="max-w-[1440px] mx-auto px-8 mb-40">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
@@ -29,7 +29,9 @@ const LandingBuildings = () => {
           </div>
           <div className="md:col-span-5 relative">
             <div className="aspect-[4/5] bg-surface-container-low overflow-hidden group">
-              <img alt="Professional portrait" className="w-full h-full object-cover grayscale contrast-125 opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700" data-alt="dramatic low-key portrait of a focused male software engineer in a dark studio, cinematic lighting on side of face, moody aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKdrK2uNr85fquCxi0HZwMifL0wdeKQTL8Z8s6SZDz634auCYbfuaCmfrHRsnEtciRWtl9RdVSABu3M3Askd3P5VCdsx7D7um8vudGXbK_aKzQfnaDF6-Yi5JVAzIYjlM90nFaD9EsPFpBXaeApb6V9AduewuaoJP25S2Ye6N_28kH5yIQtavISpnMAAjdk-N3fc8WYOtqfqXfq_ssw9t7p3UWVVJzOZQ0XcY65lvGM_CkhoXpO8nfKxYqPMX1pvS5PAg1NEkJxIkr" />
+              <img
+                loading="lazy"
+                alt="Professional portrait" className="w-full h-full object-cover lg:grayscale lg:contrast-125 lg:opacity-70 lg:group-hover:grayscale-0 lg:group-hover:opacity-100 transition-all duration-700" src="/assets/profile_image.webp" />
             </div>
             <div className="absolute -bottom-6 -left-6 bg-primary-container p-8 hidden lg:block">
               <span className="font-headline text-4xl font-black block text-on-primary-container">JR</span>
@@ -39,7 +41,7 @@ const LandingBuildings = () => {
         </div>
       </section>
       {/* // <!-- Bento Grid Stats / Achievements --> */}
-      <section className="max-w-[1440px] mx-auto px-8 mb-40">
+      <section className="max-w-[1440px] mx-auto px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <div className="md:col-span-2 bg-surface-container-low p-10 border border-outline-variant/5">
             <span className="font-label text-xs text-primary mb-4 block">01 / HOW I WORK</span>

@@ -1,6 +1,18 @@
 ﻿import { projects } from '../../libs/projects';
 
-const featuredProjects = projects.en.filter(p => p.featured);
+const priorityProjects = ['ShopSmart', 'Teslo Shop'];
+
+const featuredProjects = projects.en
+    .filter((p) => p.featured)
+    .sort((a, b) => {
+        const aIndex = priorityProjects.findIndex((name) => a.title.includes(name));
+        const bIndex = priorityProjects.findIndex((name) => b.title.includes(name));
+        const safeA = aIndex === -1 ? Number.MAX_SAFE_INTEGER : aIndex;
+        const safeB = bIndex === -1 ? Number.MAX_SAFE_INTEGER : bIndex;
+        return safeA - safeB;
+    });
+
+const isPrivateRepo = (repo: string) => repo === '#';
 
 const LandingSelectedWork = () => {
     const [main, second, third, fourth, ...rest] = featuredProjects;
@@ -20,7 +32,7 @@ const LandingSelectedWork = () => {
                             <span data-gsap-line className="block text-primary italic">PROJECTS</span>
                         </h2>
                         <p className="md:max-w-sm text-on-surface-variant font-body text-lg leading-relaxed text-right">
-                            Real-world apps solving real problems — full stack, production-ready.
+                            Built for production, with open-source repos available for technical review.
                         </p>
                     </div>
                 </header>
@@ -54,10 +66,15 @@ const LandingSelectedWork = () => {
                                         </div>
                                     </div>
                                     <div className="flex gap-4 shrink-0">
-                                        {main.github !== '#' && (
+                                        {!isPrivateRepo(main.github) && (
                                             <a href={main.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 font-label text-xs uppercase tracking-widest text-on-surface/60 hover:text-primary transition-colors border border-outline-variant/30 px-4 py-2">
                                                 Code
                                             </a>
+                                        )}
+                                        {isPrivateRepo(main.github) && (
+                                            <span className="flex items-center gap-2 font-label text-[10px] uppercase tracking-widest text-on-surface/45 border border-outline-variant/20 px-4 py-2">
+                                                Private Repo
+                                            </span>
                                         )}
                                         {main.demo !== '#' && (
                                             <a href={main.demo} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 font-label text-xs uppercase tracking-widest text-on-primary-container bg-primary-container px-4 py-2 hover:bg-secondary transition-colors">
@@ -85,8 +102,11 @@ const LandingSelectedWork = () => {
                                         ))}
                                     </div>
                                     <div className="flex gap-3">
-                                        {second.github !== '#' && (
+                                        {!isPrivateRepo(second.github) && (
                                             <a href={second.github} target="_blank" rel="noopener noreferrer" className="font-label text-xs uppercase tracking-widest text-on-surface/50 hover:text-primary transition-colors">Code</a>
+                                        )}
+                                        {isPrivateRepo(second.github) && (
+                                            <span className="font-label text-[10px] uppercase tracking-widest text-on-surface/40">Private Repo</span>
                                         )}
                                         {second.demo !== '#' && (
                                             <a href={second.demo} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 font-label text-xs uppercase tracking-widest text-secondary hover:tracking-[0.2em] transition-all duration-300">
@@ -119,8 +139,11 @@ const LandingSelectedWork = () => {
                                 ))}
                             </div>
                             <div className="flex gap-4">
-                                {project!.github !== '#' && (
+                                {!isPrivateRepo(project!.github) && (
                                     <a href={project!.github} target="_blank" rel="noopener noreferrer" className="font-label text-xs uppercase tracking-widest text-on-surface/50 hover:text-primary transition-colors">Code</a>
+                                )}
+                                {isPrivateRepo(project!.github) && (
+                                    <span className="font-label text-[10px] uppercase tracking-widest text-on-surface/40">Private Repo</span>
                                 )}
                                 {project!.demo !== '#' && (
                                     <a href={project!.demo} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 font-label text-xs uppercase tracking-widest text-secondary hover:text-primary transition-colors">
@@ -151,8 +174,11 @@ const LandingSelectedWork = () => {
                                         ))}
                                     </div>
                                     <div className="flex gap-4">
-                                        {project.github !== '#' && (
+                                        {!isPrivateRepo(project.github) && (
                                             <a href={project.github} target="_blank" rel="noopener noreferrer" className="font-label text-[10px] uppercase tracking-widest text-on-surface/40 hover:text-primary transition-colors">Code</a>
+                                        )}
+                                        {isPrivateRepo(project.github) && (
+                                            <span className="font-label text-[9px] uppercase tracking-widest text-on-surface/40">Private Repo</span>
                                         )}
                                         {project.demo !== '#' && (
                                             <a href={project.demo} target="_blank" rel="noopener noreferrer" className="font-label text-[10px] uppercase tracking-widest text-secondary hover:text-primary transition-colors">Demo</a>

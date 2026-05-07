@@ -3,7 +3,7 @@ export const featuredSkills = [
   { name: 'TypeScript', level: 80, knowledge: 'Avanzado', color: 'from-blue-600 to-blue-800', icon: 'https://skillicons.dev/icons?i=typescript&size=48' },
   { name: 'React', level: 80, knowledge: 'Avanzado', color: 'from-blue-500 to-cyan-500', icon: 'https://skillicons.dev/icons?i=react&size=48' },
   { name: 'Next.js', level: 60, knowledge: 'Intermedio', color: 'from-gray-700 to-gray-900', icon: 'https://skillicons.dev/icons?i=nextjs&size=48' },
-  { name: 'Express.js', level: 80, knowledge: 'Avanzado', color: 'from-green-500 to-green-700', icon: 'https://skillicons.dev/icons?i=express&size=48' },
+  { name: 'Express.js', level: 60, knowledge: 'Intermedio', color: 'from-green-500 to-green-700', icon: 'https://skillicons.dev/icons?i=express&size=48' },
   { name: 'Nest.js', level: 40, knowledge: 'Básico', color: 'from-red-500 to-red-700', icon: 'https://skillicons.dev/icons?i=nestjs&size=48' },
 ];
 
