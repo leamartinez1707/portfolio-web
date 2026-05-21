@@ -10,12 +10,12 @@ export const projects = {
             featured: true
         },
         {
-            title: 'ServyFix - Guía de Servicios Técnicos',
-            description: 'Plataforma que conecta a usuarios con servicios técnicos disponibles en su área, permitiendo agendar citas al instante.',
-            image: '/servyfix_landing.webp',
-            technologies: ['Node.js', 'React.js', 'TypeScript', 'Tailwind CSS', 'Leaflet', 'Motion', 'Zod', 'Vercel'],
-            github: '#',
-            demo: 'https://servyfix.com',
+            title: 'Taskbyte - Gestión de Proyectos',
+            description: 'Aplicación de gestión de proyectos estilo Kanban que permite crear, asignar y gestionar tareas en equipo. Incluye autenticación, drag and drop de tareas y un sistema de comentarios.',
+            image: '/taskbyte_screenshot.webp',
+            technologies: ['React.js', 'React Query', 'TypeScript', 'Drag and Drop Kit', 'Tailwind CSS', 'Chakra UI', 'Express.js', 'MongoDB', 'JWT', 'NodeMailer', 'Vercel'],
+            github: 'https://github.com/leamartinez1707/mytasks-frontend',
+            demo: 'https://taskbyte-leandromartinez.vercel.app/landing',
             featured: true
         },
         {
@@ -67,19 +67,19 @@ export const projects = {
         {
             title: 'FastFood - Gestión de Restaurantes',
             description: 'Aplicación para restaurantes de comida rápida que permite gestionar pedidos en tiempo real, administración de menú y seguimiento de pedidos. Dashboard para administración y control de productos.',
-            image: '/fastfood_screenshot.png',
+            image: '/fastfood_screenshot.webp',
             technologies: ['Next.js', 'TypeScript', 'Prisma', 'MongoDB', 'SWR', 'Tailwind CSS', 'Zustand', 'Cloudinary', 'Vercel'],
             github: 'https://github.com/leamartinez1707/next-tienda',
             demo: 'https://fastfooduy.vercel.app/order/cafe',
             featured: true
         },
         {
-            title: 'UpTask - Gestión de Proyectos',
-            description: 'Aplicación de gestión de proyectos estilo Kanban que permite crear, asignar y gestionar tareas en equipo. Incluye autenticación, drag and drop de tareas y un sistema de comentarios.',
-            image: '/uptask_screenshot.png',
-            technologies: ['React.js', 'React Query', 'TypeScript', 'Drag and Drop Kit', 'Tailwind CSS', 'Chakra UI', 'Express.js', 'MongoDB', 'JWT', 'NodeMailer', 'Vercel'],
-            github: 'https://github.com/leamartinez1707/mytasks-frontend',
-            demo: 'https://uptask-projectmanagement-phi.vercel.app/auth/login',
+            title: 'ServyFix - Guía de Servicios Técnicos',
+            description: 'Plataforma que conecta a usuarios con servicios técnicos disponibles en su área, permitiendo agendar citas al instante.',
+            image: '/servyfix_landing.webp',
+            technologies: ['Node.js', 'React.js', 'TypeScript', 'Tailwind CSS', 'Leaflet', 'Motion', 'Zod', 'Vercel'],
+            github: '#',
+            demo: 'https://servyfix.com',
             featured: true
         },
         {
@@ -103,18 +103,18 @@ export const projects = {
             featured: true
         },
         {
-            title: 'ServyFix - Technical Services Directory',
-            description: 'Platform that connects users with technical service providers in their area, enabling instant appointment booking.',
-            image: '/servyfix_landing.webp',
-            technologies: ['Node.js', 'React.js', 'TypeScript', 'Tailwind CSS', 'Leaflet', 'Motion', 'Zod', 'Vercel'],
-            github: '#',
-            demo: 'https://servyfix.com',
+            title: 'Taskbyte - Project Management',
+            description: 'Kanban-style project management app to create, assign and manage team tasks. Features authentication, drag-and-drop, and a comment system.',
+            image: '/taskbyte-screenshot.webp',
+            technologies: ['React.js', 'React Query', 'TypeScript', 'Drag and Drop Kit', 'Tailwind CSS', 'Chakra UI', 'Express.js', 'MongoDB', 'JWT', 'NodeMailer', 'Vercel'],
+            github: 'https://github.com/leamartinez1707/mytasks-frontend',
+            demo: 'https://taskbyte-leandromartinez.vercel.app/landing',
             featured: true
         },
         {
-            title: 'ShopSmart - e-Commerce with AI Shopping Assistant',
+            title: 'ShopSmart AI - e-Commerce with AI Shopping Assistant',
             description: 'E-commerce app with an AI assistant that helps users discover products, answers common questions, and improves buying flow.',
-            image: '/chatbot_photo.png',
+            image: '/shop_smart-screenshot.png',
             technologies: ['Next.js', 'TypeScript', 'OpenAI API', 'Supabase', 'Tailwind CSS', 'Vercel'],
             github: 'https://github.com/leamartinez1707/IA-Catalog-Chatbot',
             demo: 'https://shopsmart-ai.vercel.app/',
@@ -159,19 +159,19 @@ export const projects = {
         {
             title: 'FastFood - Restaurant Management App',
             description: 'App for fast food restaurants to manage real-time orders, handle menu administration and order tracking. Includes an admin dashboard for full product control.',
-            image: '/fastfood_screenshot.png',
+            image: '/fastfood_screenshot.webp',
             technologies: ['Next.js', 'TypeScript', 'Prisma', 'MongoDB', 'SWR', 'Tailwind CSS', 'Zustand', 'Cloudinary', 'Vercel'],
             github: 'https://github.com/leamartinez1707/next-tienda',
             demo: 'https://fastfooduy.vercel.app/order/cafe',
             featured: true
         },
         {
-            title: 'UpTask - Project Management',
-            description: 'Kanban-style project management app to create, assign and manage team tasks. Features authentication, drag-and-drop, and a comment system.',
-            image: '/uptask_screenshot.png',
-            technologies: ['React.js', 'React Query', 'TypeScript', 'Drag and Drop Kit', 'Tailwind CSS', 'Chakra UI', 'Express.js', 'MongoDB', 'JWT', 'NodeMailer', 'Vercel'],
-            github: 'https://github.com/leamartinez1707/mytasks-frontend',
-            demo: 'https://uptask-projectmanagement-phi.vercel.app/auth/login',
+            title: 'ServyFix - Technical Services Directory',
+            description: 'Platform that connects users with technical service providers in their area, enabling instant appointment booking.',
+            image: '/servyfix_landing.webp',
+            technologies: ['Node.js', 'React.js', 'TypeScript', 'Tailwind CSS', 'Leaflet', 'Motion', 'Zod', 'Vercel'],
+            github: '#',
+            demo: 'https://servyfix.com',
             featured: true
         },
         {

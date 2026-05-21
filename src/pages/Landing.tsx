@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { LandingFooter } from "../components/landing/LandingFooter";
 import { LandingMainContent } from "../components/landing/LandingMainContent";
 import { LandingTopNav } from "../components/landing/LandingTopNav";
@@ -14,12 +14,43 @@ import ScrollProgress from "../components/ScrollProgress";
 export const LandingPage = () => {
   const [loaded, setLoaded] = useState(false);
   const scope = useLandingGsap(loaded);
+  const initialHtmlOverflow = useRef<string | null>(null);
+  const initialBodyOverflow = useRef<string | null>(null);
+  const handleLoaderComplete = useCallback(() => {
+    setLoaded(true);
+  }, []);
+
+  useEffect(() => {
+    if (initialHtmlOverflow.current === null) {
+      initialHtmlOverflow.current = document.documentElement.style.overflow;
+    }
+    if (initialBodyOverflow.current === null) {
+      initialBodyOverflow.current = document.body.style.overflow;
+    }
+
+    if (!loaded) {
+      document.documentElement.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.documentElement.style.overflow = initialHtmlOverflow.current;
+      document.body.style.overflow = initialBodyOverflow.current;
+    }
+
+    return () => {
+      if (initialHtmlOverflow.current !== null) {
+        document.documentElement.style.overflow = initialHtmlOverflow.current;
+      }
+      if (initialBodyOverflow.current !== null) {
+        document.body.style.overflow = initialBodyOverflow.current;
+      }
+    };
+  }, [loaded]);
 
   return (
     <>
       <CustomCursor />
-      <ScrollProgress />
-      {!loaded && <PageLoader onComplete={() => setLoaded(true)} />}
+      {loaded && <ScrollProgress />}
+      {!loaded && <PageLoader onComplete={handleLoaderComplete} />}
       <div ref={scope} className="relative overflow-x-hidden portfolio-atmosphere editorial-texture">
         <LandingTopNav />
         <LandingHome />

@@ -77,6 +77,10 @@ export const useLandingGsap = (enabled: boolean) => {
       }
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
+      const isAdaptiveMobile =
+        window.matchMedia('(pointer: coarse)').matches ||
+        window.matchMedia('(max-width: 820px)').matches;
+
       const mm = gsap.matchMedia();
 
       // ── Nav slide-in ────────────────────────────────────────────────────────
@@ -116,11 +120,11 @@ export const useLandingGsap = (enabled: boolean) => {
       const reveals = gsap.utils.toArray<HTMLElement>('[data-gsap-reveal]');
       reveals.forEach((el, i) => {
         gsap.from(el, {
-          y: 56,
+          y: isAdaptiveMobile ? 34 : 56,
           autoAlpha: 0,
-          duration: 0.9,
+          duration: isAdaptiveMobile ? 0.65 : 0.9,
           ease: 'power3.out',
-          delay: (i % 3) * 0.06,
+          delay: isAdaptiveMobile ? 0 : (i % 3) * 0.06,
           scrollTrigger: {
             trigger: el,
             start: 'top 86%',
@@ -140,6 +144,21 @@ export const useLandingGsap = (enabled: boolean) => {
             duration: 0.8,
             ease: 'power4.out',
             stagger: 0.08,
+            scrollTrigger: {
+              trigger: heading,
+              start: 'top 88%',
+              once: true,
+            },
+          });
+          return;
+        }
+
+        if (isAdaptiveMobile) {
+          gsap.from(heading, {
+            y: 24,
+            autoAlpha: 0,
+            duration: 0.6,
+            ease: 'power3.out',
             scrollTrigger: {
               trigger: heading,
               start: 'top 88%',
@@ -180,6 +199,21 @@ export const useLandingGsap = (enabled: boolean) => {
 
       // ── Media reveal (cinematic) ────────────────────────────────────────────
       gsap.utils.toArray<HTMLElement>('[data-gsap-media]').forEach((media) => {
+        if (isAdaptiveMobile) {
+          gsap.from(media, {
+            y: 28,
+            autoAlpha: 0,
+            duration: 0.75,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: media,
+              start: 'top 86%',
+              once: true,
+            },
+          });
+          return;
+        }
+
         gsap.from(media, {
           clipPath: 'inset(18% 0 20% 0 round 0px)',
           autoAlpha: 0,
@@ -215,76 +249,90 @@ export const useLandingGsap = (enabled: boolean) => {
       // ── Float decoration ────────────────────────────────────────────────────
       const floatTweens = gsap.utils
         .toArray<HTMLElement>('[data-gsap-float]')
-        .map((el, i) =>
-          gsap.to(el, {
+        .map((el, i) => {
+          if (isAdaptiveMobile) {
+            return gsap.to(el, {
+              y: i % 2 === 0 ? 8 : -8,
+              duration: 4.5 + i * 0.2,
+              repeat: -1,
+              yoyo: true,
+              ease: 'sine.inOut',
+            });
+          }
+
+          return gsap.to(el, {
             y: i % 2 === 0 ? 18 : -18,
             duration: 3.8 + i * 0.25,
             repeat: -1,
             yoyo: true,
             ease: 'sine.inOut',
-          })
-        );
+          });
+        });
 
       // ── Magnetic CTA buttons ────────────────────────────────────────────────
       const magneticCleanups: (() => void)[] = [];
 
-      gsap.utils
-        .toArray<HTMLElement>('[data-gsap-magnetic]')
-        .forEach((btn) => {
-          const onMove = (e: MouseEvent) => {
-            const rect = btn.getBoundingClientRect();
-            const cx = rect.left + rect.width / 2;
-            const cy = rect.top + rect.height / 2;
-            const dx = (e.clientX - cx) * 0.28;
-            const dy = (e.clientY - cy) * 0.28;
-            gsap.to(btn, { x: dx, y: dy, duration: 0.35, ease: 'power2.out' });
-          };
-          const onLeave = () => {
-            gsap.to(btn, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.4)' });
-          };
+      if (!isAdaptiveMobile) {
+        gsap.utils
+          .toArray<HTMLElement>('[data-gsap-magnetic]')
+          .forEach((btn) => {
+            const onMove = (e: MouseEvent) => {
+              const rect = btn.getBoundingClientRect();
+              const cx = rect.left + rect.width / 2;
+              const cy = rect.top + rect.height / 2;
+              const dx = (e.clientX - cx) * 0.28;
+              const dy = (e.clientY - cy) * 0.28;
+              gsap.to(btn, { x: dx, y: dy, duration: 0.35, ease: 'power2.out' });
+            };
+            const onLeave = () => {
+              gsap.to(btn, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.4)' });
+            };
 
-          btn.addEventListener('mousemove', onMove);
-          btn.addEventListener('mouseleave', onLeave);
-          magneticCleanups.push(() => {
-            btn.removeEventListener('mousemove', onMove);
-            btn.removeEventListener('mouseleave', onLeave);
+            btn.addEventListener('mousemove', onMove);
+            btn.addEventListener('mouseleave', onLeave);
+            magneticCleanups.push(() => {
+              btn.removeEventListener('mousemove', onMove);
+              btn.removeEventListener('mouseleave', onLeave);
+            });
           });
-        });
+      }
 
       // ── Subtle tilt cards ───────────────────────────────────────────────────
-      gsap.utils.toArray<HTMLElement>('[data-gsap-tilt]').forEach((card) => {
-        const onMove = (e: MouseEvent) => {
-          const rect = card.getBoundingClientRect();
-          const x = ((e.clientX - rect.left) / rect.width - 0.5) * 4;
-          const y = ((e.clientY - rect.top) / rect.height - 0.5) * -4;
+      if (!isAdaptiveMobile) {
+        gsap.utils.toArray<HTMLElement>('[data-gsap-tilt]').forEach((card) => {
+          const onMove = (e: MouseEvent) => {
+            const rect = card.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width - 0.5) * 4;
+            const y = ((e.clientY - rect.top) / rect.height - 0.5) * -4;
 
-          gsap.to(card, {
-            rotateX: y,
-            rotateY: x,
-            transformPerspective: 900,
-            transformOrigin: 'center',
-            duration: 0.35,
-            ease: 'power2.out',
+            gsap.to(card, {
+              rotateX: y,
+              rotateY: x,
+              transformPerspective: 900,
+              transformOrigin: 'center',
+              duration: 0.35,
+              ease: 'power2.out',
+            });
+          };
+
+          const onLeave = () => {
+            gsap.to(card, {
+              rotateX: 0,
+              rotateY: 0,
+              duration: 0.5,
+              ease: 'power2.out',
+            });
+          };
+
+          card.addEventListener('mousemove', onMove);
+          card.addEventListener('mouseleave', onLeave);
+
+          magneticCleanups.push(() => {
+            card.removeEventListener('mousemove', onMove);
+            card.removeEventListener('mouseleave', onLeave);
           });
-        };
-
-        const onLeave = () => {
-          gsap.to(card, {
-            rotateX: 0,
-            rotateY: 0,
-            duration: 0.5,
-            ease: 'power2.out',
-          });
-        };
-
-        card.addEventListener('mousemove', onMove);
-        card.addEventListener('mouseleave', onLeave);
-
-        magneticCleanups.push(() => {
-          card.removeEventListener('mousemove', onMove);
-          card.removeEventListener('mouseleave', onLeave);
         });
-      });
+      }
 
       // ── Parallax (desktop only) ─────────────────────────────────────────────
       mm.add('(min-width: 1024px)', () => {

@@ -1,6 +1,6 @@
 ﻿import { projects } from '../../libs/projects';
 
-const priorityProjects = ['ShopSmart', 'Teslo Shop'];
+const priorityProjects = ['ShopSmart', 'Teslo Shop', 'Task'];
 
 const featuredProjects = projects.en
     .filter((p) => p.featured)
