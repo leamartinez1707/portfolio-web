@@ -12,6 +12,8 @@ export const PageLoader = ({ onComplete }: Props) => {
   const counterRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
+    let isActive = true;
+
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       onComplete();
       return;
@@ -19,7 +21,9 @@ export const PageLoader = ({ onComplete }: Props) => {
 
     const tl = gsap.timeline({
       onComplete: () => {
-        onComplete();
+        if (isActive) {
+          onComplete();
+        }
       },
     });
 
@@ -64,6 +68,11 @@ export const PageLoader = ({ onComplete }: Props) => {
         },
         1.8
       );
+
+    return () => {
+      isActive = false;
+      tl.kill();
+    };
   }, [onComplete]);
 
   return (
