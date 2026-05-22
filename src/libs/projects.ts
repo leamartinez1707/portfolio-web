@@ -4,7 +4,7 @@ export const projects = {
             title: 'UruFix - Gestión integral para servicios técnicos',
             description: 'Plataforma que permite gestionar servicios técnicos para diferentes tipos de dispositivos, facilitando la trazabilidad de reparaciones y mantenimientos.',
             image: '/urufix_landing.webp',
-            technologies: ['Node.js', 'JavaScript', 'Express.js', 'JWT', 'Zod', 'MongoDB', 'Railway', 'React.js', 'Tailwind CSS', 'Vercel'],
+            technologies: ['React.js', 'Express.js', 'MongoDB', 'Node.js', 'JavaScript', 'JWT', 'Zod', 'Railway', 'Tailwind CSS', 'Vercel'],
             github: '#',
             demo: 'https://urufix.com/',
             featured: true
@@ -21,7 +21,7 @@ export const projects = {
         {
             title: 'ShopSmart - e-Commerce con Chatbot de IA para encontrar productos y responder preguntas frecuentes',
             description: 'Chatbot inteligente que asiste a los clientes en la compra de productos, responde preguntas frecuentes y recomienda artículos.',
-            image: '/chatbot_photo.png',
+            image: '/shop_smart-screenshot.png',
             technologies: ['Next.js', 'TypeScript', 'OpenAI API', 'Supabase', 'Tailwind CSS', 'Vercel'],
             github: 'https://github.com/leamartinez1707/IA-Catalog-Chatbot',
             demo: 'https://shopsmart-ai.vercel.app/',
@@ -97,7 +97,7 @@ export const projects = {
             title: 'UruFix - Comprehensive Technical Services Management',
             description: 'Platform for managing technical services across different types of devices, enabling full traceability of repairs and maintenance workflows.',
             image: '/urufix_landing.webp',
-            technologies: ['Node.js', 'JavaScript', 'Express.js', 'JWT', 'Zod', 'MongoDB', 'Railway', 'React.js', 'Tailwind CSS', 'Vercel'],
+            technologies: ['React.js', 'Express.js', 'MongoDB', 'Node.js', 'JavaScript', 'JWT', 'Zod', 'Railway', 'Tailwind CSS', 'Vercel'],
             github: '#',
             demo: 'https://urufix.com/',
             featured: true
@@ -105,7 +105,7 @@ export const projects = {
         {
             title: 'Taskbyte - Project Management',
             description: 'Kanban-style project management app to create, assign and manage team tasks. Features authentication, drag-and-drop, and a comment system.',
-            image: '/taskbyte-screenshot.webp',
+            image: '/taskbyte_screenshot.webp',
             technologies: ['React.js', 'React Query', 'TypeScript', 'Drag and Drop Kit', 'Tailwind CSS', 'Chakra UI', 'Express.js', 'MongoDB', 'JWT', 'NodeMailer', 'Vercel'],
             github: 'https://github.com/leamartinez1707/mytasks-frontend',
             demo: 'https://taskbyte-leandromartinez.vercel.app/landing',
@@ -177,7 +177,7 @@ export const projects = {
         {
             title: 'TodoMuebles | Carpentry Landing Page',
             description: 'Landing page for a custom furniture carpentry business. Includes a product catalog and contact form.',
-            image: '/todo_muebles_screenshot.png',
+            image: '/todomuebles_screenshot.png',
             technologies: ['Next.js', 'Motion', 'HeadlessUi', 'NodeMailer', 'Tailwind CSS', 'Vercel'],
             github: '#',
             demo: 'https://todomueblesuy.vercel.app/home',
