@@ -123,7 +123,9 @@ export const LandingMainContent = ({ language }: LandingMainContentProps) => {
           <div className="flex flex-wrap justify-center gap-10 opacity-40 hover:opacity-100 transition-opacity duration-700 grayscale hover:grayscale-0">
             {allTechnologies.map(tech => (
               <div key={tech.name} className="flex flex-col items-center gap-2">
-                <img src={tech.icon} alt={tech.name} className="size-14" />
+                <div className="size-14 rounded-xl bg-surface-container-high/70 border border-outline-variant/15 flex items-center justify-center p-2">
+                  <img src={tech.icon} alt={tech.name} className="size-full object-contain" />
+                </div>
                 <span className="font-label text-[9px] uppercase tracking-widest text-on-surface-variant">{tech.name}</span>
               </div>
             ))}

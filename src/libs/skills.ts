@@ -27,8 +27,8 @@ export const allTechnologies = [
   { name: 'Zustand', icon: 'https://user-images.githubusercontent.com/958486/218346783-72be5ae3-b953-4dd7-b239-788a882fdad6.svg' },
   { name: 'TanStack Query', icon: 'https://tanstack.com/images/logos/logo-color-banner-600.png' },
   { name: 'Prisma', icon: 'https://skillicons.dev/icons?i=prisma&size=48' },
-  { name: 'OpenAI API', icon: 'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/openai.png' },
-  { name: 'GitHub Copilot', icon: 'https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/githubcopilot.png' }
+  { name: 'OpenAI API', icon: 'https://cdn.simpleicons.org/openai/ffffff' },
+  { name: 'GitHub Copilot', icon: 'https://cdn.simpleicons.org/githubcopilot/ffffff' }
 
 
 ];
