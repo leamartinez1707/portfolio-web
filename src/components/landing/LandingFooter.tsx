@@ -1,4 +1,12 @@
-export const LandingFooter = () => {
+import { landingText, type Language } from '../../libs/i18n';
+
+type LandingFooterProps = {
+  language: Language;
+};
+
+export const LandingFooter = ({ language }: LandingFooterProps) => {
+  const t = landingText.footer;
+
   return (
     <footer data-gsap-reveal className="w-full py-20 px-8 bg-[#0e0e0e] border-t border-[#464555]/15">
       <div className="max-w-[1440px] mx-auto">
@@ -6,7 +14,7 @@ export const LandingFooter = () => {
           <div className="flex flex-col gap-2">
             <span className="font-headline text-lg font-black tracking-tighter text-[#e5e2e1]/80">LEANDRO MARTÍNEZ</span>
             <span className="font-label text-xs tracking-widest uppercase text-[#e5e2e1]/30">
-              © 2026 Leandro Martínez. Built with React &amp; TypeScript.
+              © 2026 Leandro Martínez. {t.copyright[language]}
             </span>
           </div>
           <div className="flex items-center gap-10">
@@ -38,7 +46,7 @@ export const LandingFooter = () => {
               href="mailto:leandromartinez.dev@gmail.com"
               className="font-label text-xs tracking-widest uppercase text-secondary hover:tracking-[0.2em] transition-all duration-500"
             >
-              Email Me
+              {t.emailMe[language]}
             </a>
           </div>
         </div>

@@ -1,20 +1,30 @@
 ﻿import { projects } from '../../libs/projects';
+import { landingText, type Language } from '../../libs/i18n';
 
-const priorityProjects = ['ShopSmart', 'Teslo Shop', 'Task'];
-
-const featuredProjects = projects.en
-    .filter((p) => p.featured)
-    .sort((a, b) => {
-        const aIndex = priorityProjects.findIndex((name) => a.title.includes(name));
-        const bIndex = priorityProjects.findIndex((name) => b.title.includes(name));
-        const safeA = aIndex === -1 ? Number.MAX_SAFE_INTEGER : aIndex;
-        const safeB = bIndex === -1 ? Number.MAX_SAFE_INTEGER : bIndex;
-        return safeA - safeB;
-    });
+const priorityProjectsByLanguage: Record<Language, string[]> = {
+    en: ['ShopSmart', 'Teslo Shop', 'Taskbyte'],
+    es: ['ShopSmart', 'Teslo Shop', 'Taskbyte'],
+};
 
 const isPrivateRepo = (repo: string) => repo === '#';
 
-const LandingSelectedWork = () => {
+type LandingSelectedWorkProps = {
+    language: Language;
+};
+
+const LandingSelectedWork = ({ language }: LandingSelectedWorkProps) => {
+    const t = landingText.work;
+    const priorityProjects = priorityProjectsByLanguage[language];
+    const featuredProjects = projects[language]
+        .filter((p) => p.featured)
+        .sort((a, b) => {
+            const aIndex = priorityProjects.findIndex((name) => a.title.includes(name));
+            const bIndex = priorityProjects.findIndex((name) => b.title.includes(name));
+            const safeA = aIndex === -1 ? Number.MAX_SAFE_INTEGER : aIndex;
+            const safeB = bIndex === -1 ? Number.MAX_SAFE_INTEGER : bIndex;
+            return safeA - safeB;
+        });
+
     const [main, second, third, fourth, ...rest] = featuredProjects;
 
     return (
@@ -24,15 +34,15 @@ const LandingSelectedWork = () => {
                 <header data-gsap-reveal className="mb-24">
                     <div className="flex items-center gap-4 mb-6">
                         <div className="h-px w-12 bg-secondary"></div>
-                        <span className="font-label text-secondary uppercase tracking-[0.3em] text-xs">Selected Work</span>
+                        <span className="font-label text-secondary uppercase tracking-[0.3em] text-xs">{t.badge[language]}</span>
                     </div>
                     <div className="flex flex-col md:flex-row justify-between items-end gap-8">
                         <h2 data-gsap-heading className="font-headline text-6xl md:text-8xl font-black tracking-tighter leading-none text-on-surface overflow-hidden">
-                            <span data-gsap-line className="block">FEATURED</span>
-                            <span data-gsap-line className="block text-primary italic">PROJECTS</span>
+                            <span data-gsap-line className="block">{t.heading1[language]}</span>
+                            <span data-gsap-line className="block text-primary italic">{t.heading2[language]}</span>
                         </h2>
                         <p className="md:max-w-sm text-on-surface-variant font-body text-lg leading-relaxed text-right">
-                            Built for production, with open-source repos available for technical review.
+                            {t.subtitle[language]}
                         </p>
                     </div>
                 </header>
@@ -68,17 +78,17 @@ const LandingSelectedWork = () => {
                                     <div className="flex gap-4 shrink-0">
                                         {!isPrivateRepo(main.github) && (
                                             <a href={main.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 font-label text-xs uppercase tracking-widest text-on-surface/60 hover:text-primary transition-colors border border-outline-variant/30 px-4 py-2">
-                                                Code
+                                                {t.code[language]}
                                             </a>
                                         )}
                                         {isPrivateRepo(main.github) && (
                                             <span className="flex items-center gap-2 font-label text-[10px] uppercase tracking-widest text-on-surface/45 border border-outline-variant/20 px-4 py-2">
-                                                Private Repo
+                                                {t.privateRepo[language]}
                                             </span>
                                         )}
                                         {main.demo !== '#' && (
                                             <a href={main.demo} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 font-label text-xs uppercase tracking-widest text-on-primary-container bg-primary-container px-4 py-2 hover:bg-secondary transition-colors">
-                                                Live Demo <span className="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
+                                                {t.liveDemo[language]} <span className="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
                                             </a>
                                         )}
                                     </div>
@@ -103,14 +113,14 @@ const LandingSelectedWork = () => {
                                     </div>
                                     <div className="flex gap-3">
                                         {!isPrivateRepo(second.github) && (
-                                            <a href={second.github} target="_blank" rel="noopener noreferrer" className="font-label text-xs uppercase tracking-widest text-on-surface/50 hover:text-primary transition-colors">Code</a>
+                                            <a href={second.github} target="_blank" rel="noopener noreferrer" className="font-label text-xs uppercase tracking-widest text-on-surface/50 hover:text-primary transition-colors">{t.code[language]}</a>
                                         )}
                                         {isPrivateRepo(second.github) && (
-                                            <span className="font-label text-[10px] uppercase tracking-widest text-on-surface/40">Private Repo</span>
+                                            <span className="font-label text-[10px] uppercase tracking-widest text-on-surface/40">{t.privateRepo[language]}</span>
                                         )}
                                         {second.demo !== '#' && (
                                             <a href={second.demo} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 font-label text-xs uppercase tracking-widest text-secondary hover:tracking-[0.2em] transition-all duration-300">
-                                                Demo <span className="material-symbols-outlined text-sm" data-icon="arrow_right_alt">arrow_right_alt</span>
+                                                {t.demo[language]} <span className="material-symbols-outlined text-sm" data-icon="arrow_right_alt">arrow_right_alt</span>
                                             </a>
                                         )}
                                     </div>
@@ -140,14 +150,14 @@ const LandingSelectedWork = () => {
                             </div>
                             <div className="flex gap-4">
                                 {!isPrivateRepo(project!.github) && (
-                                    <a href={project!.github} target="_blank" rel="noopener noreferrer" className="font-label text-xs uppercase tracking-widest text-on-surface/50 hover:text-primary transition-colors">Code</a>
+                                    <a href={project!.github} target="_blank" rel="noopener noreferrer" className="font-label text-xs uppercase tracking-widest text-on-surface/50 hover:text-primary transition-colors">{t.code[language]}</a>
                                 )}
                                 {isPrivateRepo(project!.github) && (
-                                    <span className="font-label text-[10px] uppercase tracking-widest text-on-surface/40">Private Repo</span>
+                                    <span className="font-label text-[10px] uppercase tracking-widest text-on-surface/40">{t.privateRepo[language]}</span>
                                 )}
                                 {project!.demo !== '#' && (
                                     <a href={project!.demo} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 font-label text-xs uppercase tracking-widest text-secondary hover:text-primary transition-colors">
-                                        Live Demo <span className="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
+                                        {t.liveDemo[language]} <span className="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
                                     </a>
                                 )}
                             </div>
@@ -160,7 +170,7 @@ const LandingSelectedWork = () => {
                     <div>
                         <div className="flex items-center gap-4 mb-8">
                             <div className="h-px flex-1 bg-outline-variant/15"></div>
-                            <span className="font-label text-xs tracking-widest uppercase text-on-surface-variant">More Projects</span>
+                            <span className="font-label text-xs tracking-widest uppercase text-on-surface-variant">{t.moreProjects[language]}</span>
                             <div className="h-px flex-1 bg-outline-variant/15"></div>
                         </div>
                         <div data-gsap-stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -175,13 +185,13 @@ const LandingSelectedWork = () => {
                                     </div>
                                     <div className="flex gap-4">
                                         {!isPrivateRepo(project.github) && (
-                                            <a href={project.github} target="_blank" rel="noopener noreferrer" className="font-label text-[10px] uppercase tracking-widest text-on-surface/40 hover:text-primary transition-colors">Code</a>
+                                            <a href={project.github} target="_blank" rel="noopener noreferrer" className="font-label text-[10px] uppercase tracking-widest text-on-surface/40 hover:text-primary transition-colors">{t.code[language]}</a>
                                         )}
                                         {isPrivateRepo(project.github) && (
-                                            <span className="font-label text-[9px] uppercase tracking-widest text-on-surface/40">Private Repo</span>
+                                            <span className="font-label text-[9px] uppercase tracking-widest text-on-surface/40">{t.privateRepo[language]}</span>
                                         )}
                                         {project.demo !== '#' && (
-                                            <a href={project.demo} target="_blank" rel="noopener noreferrer" className="font-label text-[10px] uppercase tracking-widest text-secondary hover:text-primary transition-colors">Demo</a>
+                                            <a href={project.demo} target="_blank" rel="noopener noreferrer" className="font-label text-[10px] uppercase tracking-widest text-secondary hover:text-primary transition-colors">{t.demo[language]}</a>
                                         )}
                                     </div>
                                 </div>
@@ -199,7 +209,7 @@ const LandingSelectedWork = () => {
                         className="inline-flex items-center gap-3 font-label text-sm uppercase tracking-widest text-on-surface/60 hover:text-primary transition-colors border border-outline-variant/30 px-10 py-4 hover:border-primary/50"
                         data-gsap-magnetic
                     >
-                        View All on GitHub <span className="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+                        {t.viewAllGithub[language]} <span className="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
                     </a>
                 </div>
             </div>

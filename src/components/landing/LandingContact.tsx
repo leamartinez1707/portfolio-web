@@ -1,14 +1,20 @@
 import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { enqueueSnackbar, SnackbarProvider } from 'notistack';
+import { landingText, type Language } from '../../libs/i18n';
 
 const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
 const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
 const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
 
-const LandingContact = () => {
+type LandingContactProps = {
+  language: Language;
+};
+
+const LandingContact = ({ language }: LandingContactProps) => {
   const form = useRef<HTMLFormElement>(null);
   const [sending, setSending] = useState(false);
+  const t = landingText.contact;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -20,18 +26,18 @@ const LandingContact = () => {
     const message = formData.get('message')?.toString().trim();
 
     if (!name || !email || !message) {
-      enqueueSnackbar('Please fill in all fields.', { variant: 'warning' });
+      enqueueSnackbar(t.validationError[language], { variant: 'warning' });
       return;
     }
 
     setSending(true);
     try {
       await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, { publicKey: PUBLIC_KEY });
-      enqueueSnackbar('Message sent! I\'ll get back to you soon.', { variant: 'success' });
+      enqueueSnackbar(t.sentOk[language], { variant: 'success' });
       form.current.reset();
     } catch (error) {
       console.log('Email sending failed', error);
-      enqueueSnackbar('Failed to send. Please try again or email me directly.', { variant: 'error' });
+      enqueueSnackbar(t.sentFail[language], { variant: 'error' });
     } finally {
       setSending(false);
     }
@@ -46,15 +52,15 @@ const LandingContact = () => {
           <div data-gsap-reveal className="mb-24">
             <div className="flex items-center gap-4 mb-6">
               <div className="h-px w-12 bg-secondary"></div>
-              <span className="font-label text-secondary uppercase tracking-[0.3em] text-xs">Get In Touch</span>
+              <span className="font-label text-secondary uppercase tracking-[0.3em] text-xs">{t.badge[language]}</span>
             </div>
             <h2 data-gsap-heading className="font-headline text-6xl md:text-8xl font-black tracking-tighter leading-none text-on-surface mb-6 overflow-hidden">
-              <span data-gsap-line className="block">LET'S</span>
-              <span data-gsap-line className="block text-primary italic">WORK</span>
-              <span data-gsap-line className="block">TOGETHER.</span>
+              <span data-gsap-line className="block">{t.heading1[language]}</span>
+              <span data-gsap-line className="block text-primary italic">{t.heading2[language]}</span>
+              <span data-gsap-line className="block">{t.heading3[language]}</span>
             </h2>
             <p className="max-w-xl text-on-surface-variant text-lg leading-relaxed font-body">
-              Open to full-time positions, freelance projects, and technical collaborations. Let's build something great.
+              {t.subtitle[language]}
             </p>
           </div>
 
@@ -62,7 +68,7 @@ const LandingContact = () => {
             {/* Contact info */}
             <div data-gsap-item data-gsap-reveal className="lg:col-span-4 space-y-10">
               <div>
-                <h3 className="font-headline text-xl font-bold mb-6 uppercase text-on-surface">Contact Details</h3>
+                <h3 className="font-headline text-xl font-bold mb-6 uppercase text-on-surface">{t.detailsTitle[language]}</h3>
                 <div className="space-y-4">
                   <a
                     href="mailto:leandromartinez.dev@gmail.com"
@@ -95,7 +101,7 @@ const LandingContact = () => {
                       <span className="material-symbols-outlined text-outline text-sm" data-icon="location_on">location_on</span>
                     </div>
                     <div>
-                      <p className="font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-1">Location</p>
+                      <p className="font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-1">{t.location[language]}</p>
                       <p className="font-body text-sm text-on-surface">Montevideo, Uruguay</p>
                     </div>
                   </div>
@@ -104,7 +110,7 @@ const LandingContact = () => {
 
               {/* Social links */}
               <div>
-                <h3 className="font-headline text-xl font-bold mb-6 uppercase text-on-surface">Find Me Online</h3>
+                <h3 className="font-headline text-xl font-bold mb-6 uppercase text-on-surface">{t.socialTitle[language]}</h3>
                 <div className="flex gap-4">
                   <a
                     href="https://github.com/leamartinez1707"
@@ -135,22 +141,22 @@ const LandingContact = () => {
               <div className="bg-surface-container-low p-6 border border-outline-variant/10">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-2 h-2 rounded-full bg-secondary animate-pulse"></div>
-                  <span className="font-label text-xs uppercase tracking-widest text-secondary">Available Now</span>
+                  <span className="font-label text-xs uppercase tracking-widest text-secondary">{t.availableNow[language]}</span>
                 </div>
                 <p className="font-body text-sm text-on-surface-variant leading-relaxed">
-                  Open to full-time roles and select freelance projects. Response within 24 hours.
+                  {t.availableText[language]}
                 </p>
               </div>
             </div>
 
             {/* Contact form */}
             <div data-gsap-item data-gsap-reveal className="lg:col-span-8 bg-surface-container-low p-10 border border-outline-variant/10">
-              <h3 className="font-headline text-2xl font-bold mb-8 uppercase text-on-surface">Send a Message</h3>
+              <h3 className="font-headline text-2xl font-bold mb-8 uppercase text-on-surface">{t.formTitle[language]}</h3>
               <form ref={form} onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <label className="font-label text-[10px] uppercase tracking-widest text-on-surface-variant block mb-2">
-                      Your Name
+                      {t.yourName[language]}
                     </label>
                     <input
                       type="text"
@@ -162,7 +168,7 @@ const LandingContact = () => {
                   </div>
                   <div>
                     <label className="font-label text-[10px] uppercase tracking-widest text-on-surface-variant block mb-2">
-                      Email Address
+                      {t.emailAddress[language]}
                     </label>
                     <input
                       type="email"
@@ -175,23 +181,23 @@ const LandingContact = () => {
                 </div>
                 <div>
                   <label className="font-label text-[10px] uppercase tracking-widest text-on-surface-variant block mb-2">
-                    Subject
+                    {t.subject[language]}
                   </label>
                   <input
                     type="text"
                     name="subject"
-                    placeholder="Job opportunity / Project collaboration / ..."
+                    placeholder={t.subjectPlaceholder[language]}
                     className="w-full bg-surface-container-high border border-outline-variant/20 px-4 py-3 font-body text-sm text-on-surface placeholder:text-on-surface-variant/40 focus:border-primary/50 focus:outline-none transition-colors"
                   />
                 </div>
                 <div>
                   <label className="font-label text-[10px] uppercase tracking-widest text-on-surface-variant block mb-2">
-                    Message
+                    {t.message[language]}
                   </label>
                   <textarea
                     name="message"
                     rows={6}
-                    placeholder="Tell me about your project or opportunity..."
+                    placeholder={t.messagePlaceholder[language]}
                     required
                     className="w-full bg-surface-container-high border border-outline-variant/20 px-4 py-3 font-body text-sm text-on-surface placeholder:text-on-surface-variant/40 focus:border-primary/50 focus:outline-none transition-colors resize-none"
                   />
@@ -202,7 +208,7 @@ const LandingContact = () => {
                   data-gsap-magnetic
                   className="w-full sm:w-auto px-12 py-4 bg-primary-container text-on-primary-container font-label font-bold uppercase tracking-widest hover:bg-secondary hover:text-on-secondary transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {sending ? 'Sending...' : 'Send Message'}
+                  {sending ? t.sending[language] : t.send[language]}
                 </button>
               </form>
             </div>

@@ -10,9 +10,14 @@ import { useLandingGsap } from "../hooks/useLandingGsap";
 import PageLoader from "../components/PageLoader";
 import CustomCursor from "../components/CustomCursor";
 import ScrollProgress from "../components/ScrollProgress";
+import { DEFAULT_LANGUAGE, LANGUAGE_STORAGE_KEY, type Language } from "../libs/i18n";
 
 export const LandingPage = () => {
   const [loaded, setLoaded] = useState(false);
+  const [language, setLanguage] = useState<Language>(() => {
+    const savedLanguage = localStorage.getItem(LANGUAGE_STORAGE_KEY);
+    return savedLanguage === 'en' || savedLanguage === 'es' ? savedLanguage : DEFAULT_LANGUAGE;
+  });
   const scope = useLandingGsap(loaded);
   const initialHtmlOverflow = useRef<string | null>(null);
   const initialBodyOverflow = useRef<string | null>(null);
@@ -46,19 +51,23 @@ export const LandingPage = () => {
     };
   }, [loaded]);
 
+  useEffect(() => {
+    localStorage.setItem(LANGUAGE_STORAGE_KEY, language);
+  }, [language]);
+
   return (
     <>
       <CustomCursor />
       {loaded && <ScrollProgress />}
       {!loaded && <PageLoader onComplete={handleLoaderComplete} />}
       <div ref={scope} className="relative overflow-x-hidden portfolio-atmosphere editorial-texture">
-        <LandingTopNav />
-        <LandingHome />
-        <LandingBuildings />
-        <LandingSelectedWork />
-        <LandingMainContent />
-        <LandingContact />
-        <LandingFooter />
+        <LandingTopNav language={language} onLanguageChange={setLanguage} />
+        <LandingHome language={language} />
+        <LandingBuildings language={language} />
+        <LandingSelectedWork language={language} />
+        <LandingMainContent language={language} />
+        <LandingContact language={language} />
+        <LandingFooter language={language} />
       </div>
     </>
   );
