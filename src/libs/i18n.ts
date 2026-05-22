@@ -11,7 +11,7 @@ export const landingText = {
     },
     stack: {
       en: 'Stack',
-      es: 'Stack',
+      es: 'Tecnologias',
     },
     contact: {
       en: 'Contact',
@@ -19,7 +19,7 @@ export const landingText = {
     },
     hireMe: {
       en: 'Hire Me',
-      es: 'Contratame',
+      es: 'Hablemos',
     },
     language: {
       en: 'Language',
@@ -41,11 +41,11 @@ export const landingText = {
     },
     subtitle: {
       en: "Hi, I'm Leandro Martinez - I build high-impact web experiences with React, Next.js, TypeScript and Node.js. Passionate about clean code, performance and pixel-perfect UIs.",
-      es: 'Hola, soy Leandro Martinez - construyo experiencias web de alto impacto con React, Next.js, TypeScript y Node.js. Apasionado por el clean code, el rendimiento y las interfaces pixel-perfect.',
+      es: 'Soy Leandro Martinez, desarrollador full stack con foco en frontend. Desarrollo productos web con React, Next.js, TypeScript y Node.js, priorizando arquitectura clara, rendimiento y una experiencia de usuario cuidada.',
     },
     ctaHireMe: {
       en: 'Hire Me',
-      es: 'Contratame',
+      es: 'Hablemos',
     },
     titleLine3: {
       en: 'FRONTEND FOCUSED',
@@ -61,7 +61,7 @@ export const landingText = {
     },
     codeRole: {
       en: 'Full Stack Dev',
-      es: 'Dev Full Stack',
+      es: 'Desarrollador Full Stack',
     },
     codeFocus: {
       en: 'Frontend',
@@ -97,11 +97,11 @@ export const landingText = {
     },
     statProjects: {
       en: 'Projects Built',
-      es: 'Proyectos Construidos',
+      es: 'Proyectos desarrollados',
     },
     statTechnologies: {
       en: 'Technologies',
-      es: 'Tecnologias',
+      es: 'Tecnologias dominadas',
     },
     statCertifications: {
       en: 'Certifications',
@@ -111,7 +111,7 @@ export const landingText = {
   about: {
     badge: {
       en: 'Junior Profile',
-      es: 'Perfil Junior',
+      es: 'Perfil profesional',
     },
     titleLine1: {
       en: 'I BUILD',
@@ -127,7 +127,7 @@ export const landingText = {
     },
     paragraph: {
       en: "I'm a Junior Full Stack Developer with a strong frontend focus, building real projects with React, Next.js, TypeScript and Node.js. I care about clean code, performance and thoughtful interfaces, and I'm looking for teams where I can contribute, learn fast and keep improving with every release.",
-      es: 'Soy Desarrollador Full Stack Junior con fuerte foco en frontend, construyendo proyectos reales con React, Next.js, TypeScript y Node.js. Me importa el clean code, el rendimiento y las interfaces pensadas, y busco equipos donde pueda aportar, aprender rapido y mejorar en cada release.',
+      es: 'Soy desarrollador full stack con experiencia construyendo proyectos reales en React, Next.js, TypeScript y Node.js. Me enfoco en codigo mantenible, buenas practicas y productos web que resuelvan problemas concretos.',
     },
     chipFocus: {
       en: 'Frontend Focus',
@@ -135,11 +135,11 @@ export const landingText = {
     },
     chipProjects: {
       en: 'Real Projects, Real Iteration',
-      es: 'Proyectos Reales, Iteracion Real',
+      es: 'Proyectos reales, mejora continua',
     },
     jrTag: {
       en: 'Building Experience',
-      es: 'Construyendo Experiencia',
+      es: 'Experiencia en crecimiento',
     },
     howIWorkTag: {
       en: '01 / HOW I WORK',
@@ -147,23 +147,23 @@ export const landingText = {
     },
     howIWorkTitle: {
       en: 'Clean code, clear structure, steady progress.',
-      es: 'Codigo limpio, estructura clara, progreso constante.',
+      es: 'Codigo limpio, estructura clara y foco en entrega.',
     },
     howIWorkText: {
       en: 'I like building features with readable code, reusable components and room to scale. As a junior developer, I value feedback, iteration and shipping things the right way.',
-      es: 'Me gusta construir features con codigo legible, componentes reutilizables y espacio para escalar. Como desarrollador junior, valoro el feedback, la iteracion y entregar bien las cosas.',
+      es: 'Trabajo con componentes reutilizables, decisiones tecnicas justificadas y atencion al detalle. Valoro el feedback, la iteracion y entregar funcionalidades estables.',
     },
     fastLearnerTitle: {
       en: 'Fast Learner',
-      es: 'Aprendizaje Rapido',
+      es: 'Aprendizaje rapido',
     },
     fastLearnerText: {
       en: 'I adapt quickly, document what I learn and turn new tools into shipped work.',
-      es: 'Me adapto rapido, documento lo que aprendo y convierto nuevas herramientas en trabajo entregado.',
+      es: 'Me adapto rapido, documento lo aprendido y transformo nuevas herramientas en soluciones publicadas.',
     },
     uiCraft: {
       en: 'Frontend Craft',
-      es: 'Oficio Frontend',
+      es: 'Craft frontend',
     },
     currentGoalTag: {
       en: 'CURRENT GOAL',
@@ -171,7 +171,7 @@ export const landingText = {
     },
     currentGoalText: {
       en: 'Join a team where I can add value early, keep learning fast and grow into a stronger full stack engineer.',
-      es: 'Sumarme a un equipo donde pueda aportar valor desde el inicio, seguir aprendiendo rapido y crecer como full stack engineer.',
+      es: 'Apuntar a equipos de producto donde pueda aportar desde el inicio, seguir creciendo tecnicamente y asumir desafios cada vez mas complejos.',
     },
     portraitAlt: {
       en: 'Professional portrait',
@@ -193,11 +193,11 @@ export const landingText = {
     },
     subtitle: {
       en: 'Built for production, with open-source repos available for technical review.',
-      es: 'Construidos para produccion, con repos open-source disponibles para revision tecnica.',
+      es: 'Proyectos pensados para produccion, con repositorios publicos disponibles para revision tecnica.',
     },
     code: {
       en: 'Code',
-      es: 'Codigo',
+      es: 'Repositorio',
     },
     privateRepo: {
       en: 'Private Repo',
@@ -205,7 +205,7 @@ export const landingText = {
     },
     liveDemo: {
       en: 'Live Demo',
-      es: 'Demo Live',
+      es: 'Ver demo',
     },
     demo: {
       en: 'Demo',
@@ -213,17 +213,17 @@ export const landingText = {
     },
     moreProjects: {
       en: 'More Projects',
-      es: 'Mas Proyectos',
+      es: 'Mas proyectos',
     },
     viewAllGithub: {
       en: 'View All on GitHub',
-      es: 'Ver Todo en GitHub',
+      es: 'Ver todo en GitHub',
     },
   },
   stack: {
     badge: {
       en: 'Tech Stack',
-      es: 'Stack Tecnologico',
+      es: 'Stack tecnologico',
     },
     heading1: {
       en: 'THE',
@@ -235,7 +235,7 @@ export const landingText = {
     },
     subtitle: {
       en: 'A curated set of battle-tested tools I use to architect digital experiences that scale.',
-      es: 'Un set curado de herramientas probadas que uso para crear experiencias digitales escalables.',
+      es: 'Tecnologias que uso en proyectos reales para desarrollar productos mantenibles, escalables y listos para produccion.',
     },
     frontendTitle: {
       en: 'React & Next.js Ecosystem',
@@ -243,15 +243,15 @@ export const landingText = {
     },
     frontendText: {
       en: 'Type-safe, component-driven UIs with React 19 and Next.js. I build state management systems, SSR/SSG apps, and pixel-perfect interfaces with TypeScript and Tailwind CSS.',
-      es: 'Interfaces type-safe y orientadas a componentes con React 19 y Next.js. Construyo sistemas de estado, apps SSR/SSG e interfaces pixel-perfect con TypeScript y Tailwind CSS.',
+      es: 'Interfaces basadas en componentes con React y Next.js. Trabajo con TypeScript, manejo de estado y UI escalable con Tailwind CSS.',
     },
     levelsTitle: {
       en: 'Skill Levels',
-      es: 'Niveles de Skill',
+      es: 'Nivel por tecnologia',
     },
     levelsText: {
       en: 'Built from real projects: client work, freelance, and open-source.',
-      es: 'Construido en proyectos reales: clientes, freelance y open-source.',
+      es: 'Nivel construido en proyectos reales, trabajo freelance y colaboraciones tecnicas.',
     },
     backendTitle: {
       en: 'Backend & APIs',
@@ -259,15 +259,15 @@ export const landingText = {
     },
     backendText: {
       en: 'Scalable Node.js services, REST APIs, and microservices with Express and Nest.js. Type-safe data access with Prisma, MongoDB, and PostgreSQL.',
-      es: 'Servicios escalables en Node.js, APIs REST y microservicios con Express y Nest.js. Acceso a datos type-safe con Prisma, MongoDB y PostgreSQL.',
+      es: 'Servicios en Node.js, APIs REST y arquitectura modular con Express y Nest.js. Acceso a datos tipado con Prisma, MongoDB y PostgreSQL.',
     },
     toolsTitle: {
       en: 'Tools & Cloud',
-      es: 'Herramientas y Cloud',
+      es: 'Herramientas y nube',
     },
     toolsText: {
-      en: 'CI/CD with GitHub Actions, cloud deployments on Vercel and AWS, containerization with Docker and AI integrations via OpenAI API.',
-      es: 'CI/CD con GitHub Actions, despliegues cloud en Vercel y AWS, contenedores con Docker e integraciones de IA via OpenAI API.',
+      en: 'Vercel and Render deployments. Familiar with AWS, Docker containerization and AI integrations with OpenAI API.',
+      es: 'Despliegues en Vercel y Render. Conocimiento en AWS, contenedores con Docker e integraciones de IA con OpenAI API.',
     },
     designBlock: {
       en: 'CLEAN CODE FOCUSED',
@@ -297,11 +297,11 @@ export const landingText = {
     },
     subtitle: {
       en: "Open to full-time positions, freelance projects, and technical collaborations. Let's build something great.",
-      es: 'Abierto a posiciones full-time, proyectos freelance y colaboraciones tecnicas. Construyamos algo grande.',
+      es: 'Estoy disponible para posiciones full-time, proyectos freelance y colaboraciones tecnicas. Si tenes una idea o vacante, conversemos.',
     },
     detailsTitle: {
       en: 'Contact Details',
-      es: 'Detalles de Contacto',
+      es: 'Datos de contacto',
     },
     location: {
       en: 'Location',
@@ -309,27 +309,27 @@ export const landingText = {
     },
     socialTitle: {
       en: 'Find Me Online',
-      es: 'Encontrame Online',
+      es: 'Perfiles online',
     },
     availableNow: {
       en: 'Available Now',
-      es: 'Disponible Ahora',
+      es: 'Disponible ahora',
     },
     availableText: {
       en: 'Open to full-time roles and select freelance projects. Response within 24 hours.',
-      es: 'Abierto a roles full-time y proyectos freelance selectivos. Respuesta dentro de 24 horas.',
+      es: 'Disponible para roles full-time y proyectos freelance seleccionados. Respondo dentro de 24 horas.',
     },
     formTitle: {
       en: 'Send a Message',
-      es: 'Enviar Mensaje',
+      es: 'Enviar mensaje',
     },
     yourName: {
       en: 'Your Name',
-      es: 'Tu Nombre',
+      es: 'Tu nombre',
     },
     emailAddress: {
       en: 'Email Address',
-      es: 'Correo Electronico',
+      es: 'Correo electronico',
     },
     subject: {
       en: 'Subject',
@@ -341,7 +341,7 @@ export const landingText = {
     },
     subjectPlaceholder: {
       en: 'Job opportunity / Project collaboration / ...',
-      es: 'Oportunidad laboral / Colaboracion de proyecto / ...',
+      es: 'Busqueda laboral / Proyecto / Colaboracion tecnica',
     },
     messagePlaceholder: {
       en: 'Tell me about your project or opportunity...',
@@ -349,7 +349,7 @@ export const landingText = {
     },
     send: {
       en: 'Send Message',
-      es: 'Enviar Mensaje',
+      es: 'Enviar mensaje',
     },
     sending: {
       en: 'Sending...',
@@ -361,7 +361,7 @@ export const landingText = {
     },
     sentOk: {
       en: "Message sent! I'll get back to you soon.",
-      es: 'Mensaje enviado! Te respondo pronto.',
+      es: 'Mensaje enviado. Te respondo pronto.',
     },
     sentFail: {
       en: 'Failed to send. Please try again or email me directly.',

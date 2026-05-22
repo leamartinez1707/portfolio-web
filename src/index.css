@@ -1,15 +1,30 @@
 @import "tailwindcss";
 
 :root {
+  color-scheme: dark;
   --brand-cyan: #22d3ee;
   --brand-orange: #fb923c;
   --brand-cyan-soft: rgba(34, 211, 238, 0.38);
   --brand-orange-soft: rgba(251, 146, 60, 0.38);
+  --focus-ring: rgba(34, 211, 238, 0.65);
+  --focus-shadow: rgba(34, 211, 238, 0.22);
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100dvh;
+    color: #e5e2e1;
+    background:
+      radial-gradient(circle at 12% 8%, rgba(34, 211, 238, 0.06), transparent 28%),
+      radial-gradient(circle at 86% 84%, rgba(251, 146, 60, 0.06), transparent 30%),
+      #0f1115;
   }
 
   * {
@@ -153,16 +168,47 @@
 a,
 button,
 input,
-textarea {
-  transition: all 0.3s ease;
+textarea,
+select {
+  transition: color 240ms ease, background-color 240ms ease, border-color 240ms ease, transform 240ms ease, box-shadow 240ms ease;
 }
 
 /* Focus states for accessibility */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 6px var(--focus-shadow);
+}
 
 input:focus,
 textarea:focus {
   outline: 1px solid var(--brand-cyan);
   outline-offset: 1px;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 1000;
+  transform: translateY(-150%);
+  border: 1px solid rgba(34, 211, 238, 0.4);
+  background: rgba(15, 17, 21, 0.95);
+  color: #ecfeff;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.5rem 0.75rem;
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
 }
 
 /* Custom loading animation */
@@ -247,6 +293,20 @@ textarea:focus {
   );
 }
 
+.card-premium {
+  border: 1px solid rgba(199, 196, 216, 0.12);
+  box-shadow: 0 22px 50px rgba(4, 7, 12, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
 button {
   cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
