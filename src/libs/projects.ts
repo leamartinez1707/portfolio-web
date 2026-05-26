@@ -85,11 +85,11 @@ export const projects = {
         {
             title: 'TodoMuebles | Landing Page de Carpintería',
             description: 'Landing page para una carpintería que ofrece muebles personalizados. Incluye catálogo de productos y formulario de contacto.',
-            image: '/todo_muebles_screenshot.png',
+            image: '/todomuebles.webp',
             technologies: ['Next.js', 'Motion', 'HeadlessUi', 'NodeMailer', 'Tailwind CSS', 'Vercel'],
             github: '#',
             demo: 'https://todomueblesuy.vercel.app/home',
-            featured: false
+            featured: true
         }
     ],
     en: [
@@ -177,11 +177,11 @@ export const projects = {
         {
             title: 'TodoMuebles | Carpentry Landing Page',
             description: 'Landing page for a custom furniture carpentry business. Includes a product catalog and contact form.',
-            image: '/todomuebles_screenshot.png',
+            image: '/todomuebles.webp',
             technologies: ['Next.js', 'Motion', 'HeadlessUi', 'NodeMailer', 'Tailwind CSS', 'Vercel'],
             github: '#',
             demo: 'https://todomueblesuy.vercel.app/home',
-            featured: false
+            featured: true
         }
     ]
 };

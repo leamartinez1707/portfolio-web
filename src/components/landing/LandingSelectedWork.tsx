@@ -175,7 +175,40 @@ const LandingSelectedWork = ({ language }: LandingSelectedWorkProps) => {
                         </div>
                         <div data-gsap-stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                             {rest.map(project => (
-                                <div key={project.title} data-gsap-item data-gsap-reveal data-gsap-tilt className="group bg-surface-container-low p-6 border border-outline-variant/10 hover:border-primary/30 transition-all duration-300">
+                                <div key={project.title} data-gsap-item data-gsap-reveal data-gsap-tilt className="group bg-surface-container-low p-6 border border-outline-variant/10 hover:border-primary/30 transition-all duration-300 overflow-hidden">
+                                    {project.demo !== '#' ? (
+                                        <a
+                                            href={project.demo}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="relative block aspect-[16/10] overflow-hidden mb-4 bg-surface-container-high border border-outline-variant/10"
+                                            aria-label={`${project.title} demo`}
+                                        >
+                                            <img
+                                                src={project.image}
+                                                alt={project.title}
+                                                loading="lazy"
+                                                className="w-full h-full object-cover object-center opacity-85 md:group-hover:opacity-100 md:group-hover:scale-[1.03] transition-all duration-700"
+                                                onError={(event) => {
+                                                    event.currentTarget.src = '/logo.webp';
+                                                }}
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-surface/60 via-transparent to-transparent pointer-events-none"></div>
+                                        </a>
+                                    ) : (
+                                        <div className="relative aspect-[16/10] overflow-hidden mb-4 bg-surface-container-high border border-outline-variant/10">
+                                            <img
+                                                src={project.image}
+                                                alt={project.title}
+                                                loading="lazy"
+                                                className="w-full h-full object-cover object-center opacity-85 md:group-hover:opacity-100 md:group-hover:scale-[1.03] transition-all duration-700"
+                                                onError={(event) => {
+                                                    event.currentTarget.src = '/logo.webp';
+                                                }}
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-surface/60 via-transparent to-transparent pointer-events-none"></div>
+                                        </div>
+                                    )}
                                     <h4 className="font-headline text-lg font-bold mb-2 group-hover:text-primary transition-colors uppercase">{project.title}</h4>
                                     <p className="text-on-surface-variant font-body text-sm mb-4 leading-relaxed line-clamp-2">{project.description}</p>
                                     <div className="flex flex-wrap gap-2 mb-4">
