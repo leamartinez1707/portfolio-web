@@ -2,8 +2,8 @@
 import { landingText, type Language } from '../../libs/i18n';
 
 const priorityProjectsByLanguage: Record<Language, string[]> = {
-    en: ['ShopSmart', 'Teslo Shop', 'Taskbyte'],
-    es: ['ShopSmart', 'Teslo Shop', 'Taskbyte'],
+    en: ['Tu Técnico', 'Teslo Shop', 'Taskbyte'],
+    es: ['Tu Técnico', 'Teslo Shop', 'Taskbyte'],
 };
 
 const isPrivateRepo = (repo: string) => repo === '#';
@@ -28,7 +28,7 @@ const LandingSelectedWork = ({ language }: LandingSelectedWorkProps) => {
     const [main, second, third, fourth, ...rest] = featuredProjects;
 
     return (
-        <section id="projects" className="py-40 px-8 bg-surface-container-lowest">
+        <section id="projects" className="py-20 sm:py-40 px-4 sm:px-8 bg-surface-container-lowest">
             <div className="max-w-[1440px] mx-auto">
                 {/* Header */}
                 <header data-gsap-reveal className="mb-24">
@@ -37,7 +37,7 @@ const LandingSelectedWork = ({ language }: LandingSelectedWorkProps) => {
                         <span className="font-label text-secondary uppercase tracking-[0.3em] text-xs">{t.badge[language]}</span>
                     </div>
                     <div className="flex flex-col md:flex-row justify-between items-end gap-8">
-                        <h2 data-gsap-heading className="font-headline text-6xl md:text-8xl font-black tracking-tighter leading-none text-on-surface overflow-hidden">
+                        <h2 data-gsap-heading className="font-headline text-5xl sm:text-6xl md:text-8xl font-black tracking-tighter leading-none text-on-surface overflow-hidden">
                             <span data-gsap-line className="block">{t.heading1[language]}</span>
                             <span data-gsap-line className="block text-primary italic">{t.heading2[language]}</span>
                         </h2>

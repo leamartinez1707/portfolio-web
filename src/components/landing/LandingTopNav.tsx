@@ -49,24 +49,35 @@ export const LandingTopNav = ({ language, onLanguageChange }: LandingTopNavProps
           </div>
 
           <div className="flex items-center justify-end gap-3 sm:gap-4 lg:gap-6">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 sm:gap-3">
               <span className="font-label text-[10px] uppercase tracking-widest text-[#e5e2e1]/50 hidden sm:inline">{t.language[language]}</span>
               <button
                 type="button"
-                onClick={() => handleLanguageChange('es')}
-                className={`font-label text-[10px] uppercase tracking-widest transition-colors ${language === 'es' ? 'text-[#e5e2e1]' : 'text-[#e5e2e1]/50 hover:text-[#e5e2e1]/80'}`}
-                aria-pressed={language === 'es'}
+                onClick={() => handleLanguageChange(language === 'es' ? 'en' : 'es')}
+                className="relative flex items-center gap-0.5 bg-[#e5e2e1]/8 rounded-full p-0.5 border border-[#e5e2e1]/10 hover:border-[#e5e2e1]/20 transition-all"
+                title={language === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+                aria-label={language === 'es' ? 'Switch to English' : 'Cambiar a Español'}
               >
-                ES
-              </button>
-              <span className="text-[#e5e2e1]/30">/</span>
-              <button
-                type="button"
-                onClick={() => handleLanguageChange('en')}
-                className={`font-label text-[10px] uppercase tracking-widest transition-colors ${language === 'en' ? 'text-[#e5e2e1]' : 'text-[#e5e2e1]/50 hover:text-[#e5e2e1]/80'}`}
-                aria-pressed={language === 'en'}
-              >
-                EN
+                <span
+                  className={`relative p-1 rounded-full transition-all duration-300 ${
+                    language === 'es'
+                      ? 'bg-primary shadow-[0_0_8px_rgba(195,192,255,0.3)]'
+                      : 'opacity-40 hover:opacity-60'
+                  }`}
+                  aria-hidden="true"
+                >
+                  <img src="/assets/icons/icons8-spain-48.png" alt="" className="w-[18px] h-[18px]" />
+                </span>
+                <span
+                  className={`relative p-1 rounded-full transition-all duration-300 ${
+                    language === 'en'
+                      ? 'bg-primary shadow-[0_0_8px_rgba(195,192,255,0.3)]'
+                      : 'opacity-40 hover:opacity-60'
+                  }`}
+                  aria-hidden="true"
+                >
+                  <img src="/assets/icons/icons8-english-48.png" alt="" className="w-[18px] h-[18px]" />
+                </span>
               </button>
             </div>
 

@@ -36,12 +36,12 @@ export const landingText = {
       es: 'DESARROLLADOR',
     },
     availability: {
-      en: 'Available for Work · Montevideo, Uruguay',
-      es: 'Disponible para trabajar · Montevideo, Uruguay',
+      en: 'Available for Work · Remote or on-site in Montevideo, Uruguay',
+      es: 'Disponible para trabajar · Remoto o presencial en Montevideo, Uruguay',
     },
     subtitle: {
-      en: "Hi, I'm Leandro Martinez - I build high-impact web experiences with React, Next.js, TypeScript and Node.js. Passionate about clean code, performance and pixel-perfect UIs.",
-      es: 'Soy Leandro Martinez, desarrollador full stack con foco en frontend. Desarrollo productos web con React, Next.js, TypeScript y Node.js, priorizando arquitectura clara, rendimiento y una experiencia de usuario cuidada.',
+      en: "Hi, I'm Leandro Martinez. Full stack developer with a frontend focus. I build web products with React, Next.js, TypeScript and Node.js, using Claude Code and OpenCode to accelerate development.",
+      es: 'Hola, soy Leandro Martinez. Desarrollador full stack con foco en frontend. Construyo productos web con React, Next.js, TypeScript y Node.js, usando Claude Code y OpenCode para acelerar el desarrollo.',
     },
     ctaHireMe: {
       en: 'Hire Me',
@@ -110,7 +110,7 @@ export const landingText = {
   },
   about: {
     badge: {
-      en: 'Junior Profile',
+      en: 'Professional Profile',
       es: 'Perfil profesional',
     },
     titleLine1: {
@@ -126,8 +126,8 @@ export const landingText = {
       es: 'SOLIDAS.',
     },
     paragraph: {
-      en: "I'm a Junior Full Stack Developer with a strong frontend focus, building real projects with React, Next.js, TypeScript and Node.js. I care about clean code, performance and thoughtful interfaces, and I'm looking for teams where I can contribute, learn fast and keep improving with every release.",
-      es: 'Soy desarrollador full stack con experiencia construyendo proyectos reales en React, Next.js, TypeScript y Node.js. Me enfoco en codigo mantenible, buenas practicas y productos web que resuelvan problemas concretos.',
+      en: "Full stack developer with a frontend focus. I work with React, Next.js, TypeScript and Node.js, using Claude Code and OpenCode to accelerate development. I care about maintainable code, solid technical decisions, and building products that work well.",
+      es: 'Desarrollador full stack con foco en frontend. Trabajo con React, Next.js, TypeScript y Node.js, usando Claude Code y OpenCode para acelerar el desarrollo. Me interesa escribir codigo mantenible, tomar buenas decisiones tecnicas y construir productos que funcionen bien.',
     },
     chipFocus: {
       en: 'Frontend Focus',
@@ -146,20 +146,20 @@ export const landingText = {
       es: '01 / COMO TRABAJO',
     },
     howIWorkTitle: {
-      en: 'Clean code, clear structure, steady progress.',
-      es: 'Codigo limpio, estructura clara y foco en entrega.',
+      en: 'Clean code, AI-augmented workflow, steady delivery.',
+      es: 'Codigo limpio, flujo AI-augmented, entrega consistente.',
     },
     howIWorkText: {
-      en: 'I like building features with readable code, reusable components and room to scale. As a junior developer, I value feedback, iteration and shipping things the right way.',
-      es: 'Trabajo con componentes reutilizables, decisiones tecnicas justificadas y atencion al detalle. Valoro el feedback, la iteracion y entregar funcionalidades estables.',
+      en: 'I build features with readable code, reusable components and room to scale. I use Claude Code and OpenCode as AI pair-programming tools to accelerate development, reduce boilerplate, and iterate faster while keeping the architect in control.',
+      es: 'Trabajo con componentes reutilizables, decisiones tecnicas justificadas y atencion al detalle. Uso Claude Code y OpenCode como herramientas de pair-programming con IA para acelerar desarrollo, reducir boilerplate e iterar mas rapido sin perder control de la arquitectura.',
     },
     fastLearnerTitle: {
       en: 'Fast Learner',
       es: 'Aprendizaje rapido',
     },
     fastLearnerText: {
-      en: 'I adapt quickly, document what I learn and turn new tools into shipped work.',
-      es: 'Me adapto rapido, documento lo aprendido y transformo nuevas herramientas en soluciones publicadas.',
+      en: 'I adapt quickly, document what I learn, and turn new tools into shipped work. Early adopter of AI-native development workflows.',
+      es: 'Me adapto rapido, documento lo aprendido y transformo nuevas herramientas en soluciones publicadas. Early adopter de flujos de desarrollo AI-native.',
     },
     uiCraft: {
       en: 'Frontend Craft',
@@ -170,8 +170,8 @@ export const landingText = {
       es: 'OBJETIVO ACTUAL',
     },
     currentGoalText: {
-      en: 'Join a team where I can add value early, keep learning fast and grow into a stronger full stack engineer.',
-      es: 'Apuntar a equipos de producto donde pueda aportar desde el inicio, seguir creciendo tecnicamente y asumir desafios cada vez mas complejos.',
+      en: 'Join a product team where I can add value from day one, leverage AI-augmented development to ship faster, and grow into a senior full stack engineer.',
+      es: 'Sumarme a un equipo de producto donde pueda aportar desde el inicio, aprovechar desarrollo AI-augmented para entregar mas rapido y crecer como full stack engineer.',
     },
     portraitAlt: {
       en: 'Professional portrait',
@@ -234,16 +234,16 @@ export const landingText = {
       es: 'STACK.',
     },
     subtitle: {
-      en: 'A curated set of battle-tested tools I use to architect digital experiences that scale.',
-      es: 'Tecnologias que uso en proyectos reales para desarrollar productos mantenibles, escalables y listos para produccion.',
+      en: 'A curated set of battle-tested tools and AI-native workflows I use to architect digital experiences that scale.',
+      es: 'Tecnologias que uso en proyectos reales, junto con herramientas de IA como Claude Code y OpenCode para desarrollar productos mantenibles, escalables y listos para produccion.',
     },
     frontendTitle: {
       en: 'React & Next.js Ecosystem',
       es: 'Ecosistema React y Next.js',
     },
     frontendText: {
-      en: 'Type-safe, component-driven UIs with React 19 and Next.js. I build state management systems, SSR/SSG apps, and pixel-perfect interfaces with TypeScript and Tailwind CSS.',
-      es: 'Interfaces basadas en componentes con React y Next.js. Trabajo con TypeScript, manejo de estado y UI escalable con Tailwind CSS.',
+      en: 'Type-safe, component-driven UIs with React 19 and Next.js. I build state management systems, SSR/SSG apps, and pixel-perfect interfaces with TypeScript and Tailwind CSS — accelerated by AI pair-programming.',
+      es: 'Interfaces basadas en componentes con React y Next.js. Trabajo con TypeScript, manejo de estado y UI escalable con Tailwind CSS, acelerado por pair-programming con IA.',
     },
     levelsTitle: {
       en: 'Skill Levels',
@@ -266,12 +266,12 @@ export const landingText = {
       es: 'Herramientas y nube',
     },
     toolsText: {
-      en: 'Vercel and Render deployments. Familiar with AWS, Docker containerization and AI integrations with OpenAI API.',
-      es: 'Despliegues en Vercel y Render. Conocimiento en AWS, contenedores con Docker e integraciones de IA con OpenAI API.',
+      en: 'Vercel and Render deployments. Familiar with AWS, Docker containerization, and AI-native development with Claude Code, OpenCode, OpenAI API, LangChain and Vercel AI SDK.',
+      es: 'Despliegues en Vercel y Render. Conocimiento en AWS, contenedores con Docker y desarrollo AI-native con Claude Code, OpenCode, OpenAI API, LangChain y Vercel AI SDK.',
     },
     designBlock: {
-      en: 'CLEAN CODE FOCUSED',
-      es: 'FOCO EN CODIGO LIMPIO',
+      en: 'AI-AUGMENTED DEVELOPMENT',
+      es: 'DESARROLLO POTENCIADO CON IA',
     },
     ecosystemTitle: {
       en: 'Full Ecosystem',
@@ -370,8 +370,8 @@ export const landingText = {
   },
   footer: {
     copyright: {
-      en: 'Built with React & TypeScript.',
-      es: 'Construido con React y TypeScript.',
+      en: 'Built with React, TypeScript & AI-assisted development.',
+      es: 'Construido con React, TypeScript y desarrollo asistido por IA.',
     },
     emailMe: {
       en: 'Email Me',
@@ -383,6 +383,7 @@ export const landingText = {
 export const skillKnowledgeTranslation: Record<string, { en: string; es: string }> = {
   Avanzado: { en: 'Advanced', es: 'Avanzado' },
   Intermedio: { en: 'Intermediate', es: 'Intermedio' },
+  'Intermedio/Avanzado': { en: 'Intermediate/Advanced', es: 'Intermedio/Avanzado' },
   Basico: { en: 'Basic', es: 'Basico' },
   'Básico': { en: 'Basic', es: 'Basico' },
 };

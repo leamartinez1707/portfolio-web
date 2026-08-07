@@ -46,15 +46,15 @@ const LandingContact = ({ language }: LandingContactProps) => {
   return (
     <>
       <SnackbarProvider maxSnack={3} />
-      <section id="contact" className="py-40 px-8 bg-surface-container-lowest">
+      <section id="contact" className="py-20 sm:py-40 px-4 sm:px-8 bg-surface-container-lowest">
         <div className="max-w-[1440px] mx-auto">
           {/* Header */}
-          <div data-gsap-reveal className="mb-24">
+          <div data-gsap-reveal className="mb-12 sm:mb-24">
             <div className="flex items-center gap-4 mb-6">
               <div className="h-px w-12 bg-secondary"></div>
               <span className="font-label text-secondary uppercase tracking-[0.3em] text-xs">{t.badge[language]}</span>
             </div>
-            <h2 data-gsap-heading className="font-headline text-6xl md:text-8xl font-black tracking-tighter leading-none text-on-surface mb-6 overflow-hidden">
+            <h2 data-gsap-heading className="font-headline text-4xl sm:text-5xl md:text-8xl font-black tracking-tighter leading-none text-on-surface mb-6 overflow-hidden">
               <span data-gsap-line className="block">{t.heading1[language]}</span>
               <span data-gsap-line className="block text-primary italic">{t.heading2[language]}</span>
               <span data-gsap-line className="block">{t.heading3[language]}</span>
@@ -64,7 +64,7 @@ const LandingContact = ({ language }: LandingContactProps) => {
             </p>
           </div>
 
-          <div data-gsap-stagger className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          <div data-gsap-stagger className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-16">
             {/* Contact info */}
             <div data-gsap-item data-gsap-reveal className="lg:col-span-4 space-y-10">
               <div>
@@ -150,7 +150,7 @@ const LandingContact = ({ language }: LandingContactProps) => {
             </div>
 
             {/* Contact form */}
-            <div data-gsap-item data-gsap-reveal className="lg:col-span-8 bg-surface-container-low p-10 border border-outline-variant/10">
+            <div data-gsap-item data-gsap-reveal className="lg:col-span-8 bg-surface-container-low p-6 sm:p-10 border border-outline-variant/10">
               <h3 className="font-headline text-2xl font-bold mb-8 uppercase text-on-surface">{t.formTitle[language]}</h3>
               <form ref={form} onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

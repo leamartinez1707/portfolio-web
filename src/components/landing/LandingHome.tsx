@@ -10,7 +10,7 @@ const LandingHome = ({ language }: LandingHomeProps) => {
   return (
     <>
       {/* Hero Section */}
-      <section id="home" className="relative min-h-[100dvh] flex items-center pt-32 pb-40 px-6 md:px-8 overflow-hidden">
+      <section id="home" className="relative min-h-[100dvh] flex items-center pt-24 sm:pt-32 pb-40 sm:pb-40 px-4 sm:px-6 md:px-8 overflow-hidden">
         {/* Background Decoration */}
         <div data-gsap-float className="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
           <div className="w-full h-full bg-gradient-to-l from-primary/30 to-transparent"></div>
@@ -25,20 +25,20 @@ const LandingHome = ({ language }: LandingHomeProps) => {
               <span className="h-[1px] w-12 bg-secondary"></span>
               <span className="font-label text-secondary tracking-[0.3em] uppercase text-xs">{t.availability[language]}</span>
             </div>
-            <h1 data-gsap-hero-title className="font-headline text-6xl md:text-[7.25rem] font-black leading-[0.86] tracking-[-0.04em] mb-10 text-on-surface overflow-hidden [text-wrap:balance]">
+            <h1 data-gsap-hero-title className="font-headline text-[2.5rem] sm:text-6xl md:text-[7.25rem] font-black leading-[0.92] sm:leading-[0.86] tracking-[-0.04em] mb-8 sm:mb-10 text-on-surface overflow-hidden [text-wrap:balance]">
               <span data-gsap-line className="block">{t.titleLine1[language]}</span>
               <span data-gsap-line className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">{t.titleLine2[language]}</span>
               <span data-gsap-line className="block">{t.titleLine3[language]}</span>
             </h1>
-            <p data-gsap-hero-subtitle className="font-body text-lg md:text-xl text-on-surface-variant max-w-[65ch] leading-relaxed mb-12 [text-wrap:pretty]">
+            <p data-gsap-hero-subtitle className="font-body text-base sm:text-lg md:text-xl text-on-surface-variant max-w-[65ch] leading-relaxed mb-6 sm:mb-12 [text-wrap:pretty]">
               {t.subtitle[language]}
             </p>
-            <div className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-4 sm:gap-8">
+            <div className="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-2 sm:gap-8">
               <a
                 href="#contact"
                 data-gsap-hero-cta
                 data-gsap-magnetic
-                className="group relative px-10 py-5 bg-primary-container text-on-primary-container font-label font-bold uppercase tracking-widest overflow-hidden rounded-md shadow-[0_14px_40px_rgba(79,70,229,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-secondary hover:text-on-secondary"
+                className="group relative px-8 sm:px-10 py-0 sm:py-5 bg-primary-container text-on-primary-container font-label font-bold text-sm uppercase tracking-widest overflow-hidden rounded-md shadow-[0_14px_40px_rgba(79,70,229,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-secondary hover:text-on-secondary"
               >
                 <span className="relative z-10">{t.ctaHireMe[language]}</span>
               </a>
@@ -65,7 +65,7 @@ const LandingHome = ({ language }: LandingHomeProps) => {
 
           {/* Code snippet card */}
           <div className="col-span-12 lg:col-span-5 hidden lg:block lg:translate-y-16">
-            <div data-gsap-hero-codecard className="card-premium relative p-8 bg-surface-container-low rounded-xl">
+            <div data-gsap-hero-codecard className="card-premium relative p-4 md:p-8 bg-surface-container-low rounded-xl">
               <div className="flex space-x-2 mb-6">
                 <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
                 <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
@@ -81,6 +81,9 @@ const LandingHome = ({ language }: LandingHomeProps) => {
                 <p className="pl-8 text-secondary">"React", "Next.js",</p>
                 <p className="pl-8 text-secondary">"Node.js", "Express.js", "TypeScript"</p>
                 <p className="pl-4">],</p>
+                <p className="pl-4">aiTools: [</p>
+                <p className="pl-8 text-secondary">"Claude Code", "OpenCode"</p>
+                <p className="pl-4">],</p>
                 <p className="pl-4">{t.codeKeyOpenToWork[language]}: <span className="text-[#27c93f]">true</span></p>
                 <p className="text-secondary">{'}'}</p>
               </div>
@@ -89,20 +92,20 @@ const LandingHome = ({ language }: LandingHomeProps) => {
         </div>
 
         {/* Stats row */}
-        <div className="absolute bottom-10 left-0 right-0 px-6 md:px-8">
+        <div className="absolute bottom-4 sm:bottom-10 left-0 right-0 px-4 sm:px-6 md:px-8">
           <div className="max-w-[1440px] mx-auto w-full">
-            <div className="flex flex-wrap gap-12 border-t border-outline-variant/15 pt-10">
+            <div className="flex flex-wrap gap-6 sm:gap-12 border-t border-outline-variant/15 pt-6 sm:pt-10">
               <div data-gsap-stat>
-                <span data-gsap-stat-number className="font-headline text-4xl font-black text-on-surface">20+</span>
-                <p className="font-label text-xs text-on-surface-variant uppercase tracking-widest mt-1">{t.statProjects[language]}</p>
+                <span data-gsap-stat-number className="font-headline text-3xl sm:text-4xl font-black text-on-surface">20+</span>
+                <p className="font-label text-[10px] sm:text-xs text-on-surface-variant uppercase tracking-widest mt-1">{t.statProjects[language]}</p>
               </div>
               <div data-gsap-stat>
-                <span data-gsap-stat-number className="font-headline text-4xl font-black text-on-surface">6+</span>
-                <p className="font-label text-xs text-on-surface-variant uppercase tracking-widest mt-1">{t.statTechnologies[language]}</p>
+                <span data-gsap-stat-number className="font-headline text-3xl sm:text-4xl font-black text-on-surface">12+</span>
+                <p className="font-label text-[10px] sm:text-xs text-on-surface-variant uppercase tracking-widest mt-1">{t.statTechnologies[language]}</p>
               </div>
               <div data-gsap-stat>
-                <span data-gsap-stat-number className="font-headline text-4xl font-black text-on-surface">5+</span>
-                <p className="font-label text-xs text-on-surface-variant uppercase tracking-widest mt-1">{t.statCertifications[language]}</p>
+                <span data-gsap-stat-number className="font-headline text-3xl sm:text-4xl font-black text-on-surface">5+</span>
+                <p className="font-label text-[10px] sm:text-xs text-on-surface-variant uppercase tracking-widest mt-1">{t.statCertifications[language]}</p>
               </div>
             </div>
           </div>

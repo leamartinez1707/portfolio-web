@@ -84,7 +84,7 @@ export const PageLoader = ({ onComplete }: Props) => {
       <div className="overflow-hidden mb-12">
         <span
           ref={textRef}
-          className="block font-headline text-2xl font-black tracking-[0.35em] uppercase text-[#e5e2e1]"
+          className="block font-headline text-lg sm:text-2xl font-black tracking-[0.2em] sm:tracking-[0.35em] uppercase text-[#e5e2e1]"
           style={{ opacity: 0 }}
         >
           LEANDRO_MARTÍNEZ

@@ -1,10 +1,11 @@
 export const featuredSkills = [
+  { name: 'React', level: 85, knowledge: 'Avanzado', color: 'from-blue-500 to-cyan-500', icon: 'https://skillicons.dev/icons?i=react&size=48' },
+  { name: 'TypeScript', level: 85, knowledge: 'Avanzado', color: 'from-blue-600 to-blue-800', icon: 'https://skillicons.dev/icons?i=typescript&size=48' },
   { name: 'Node.js', level: 80, knowledge: 'Avanzado', color: 'from-green-600 to-green-800', icon: 'https://skillicons.dev/icons?i=nodejs&size=48' },
-  { name: 'TypeScript', level: 80, knowledge: 'Avanzado', color: 'from-blue-600 to-blue-800', icon: 'https://skillicons.dev/icons?i=typescript&size=48' },
-  { name: 'React', level: 80, knowledge: 'Avanzado', color: 'from-blue-500 to-cyan-500', icon: 'https://skillicons.dev/icons?i=react&size=48' },
-  { name: 'Next.js', level: 60, knowledge: 'Intermedio', color: 'from-gray-700 to-gray-900', icon: 'https://skillicons.dev/icons?i=nextjs&size=48' },
-  { name: 'Express.js', level: 60, knowledge: 'Intermedio', color: 'from-green-500 to-green-700', icon: 'https://skillicons.dev/icons?i=express&size=48' },
-  { name: 'Nest.js', level: 40, knowledge: 'Básico', color: 'from-red-500 to-red-700', icon: 'https://skillicons.dev/icons?i=nestjs&size=48' },
+  { name: 'Next.js', level: 70, knowledge: 'Intermedio/Avanzado', color: 'from-gray-700 to-gray-900', icon: 'https://skillicons.dev/icons?i=nextjs&size=48' },
+  { name: 'AI Development', level: 70, knowledge: 'Intermedio/Avanzado', color: 'from-purple-600 to-violet-800', icon: 'https://skillicons.dev/icons?i=ai&size=48' },
+  { name: 'Express.js', level: 65, knowledge: 'Intermedio', color: 'from-green-500 to-green-700', icon: 'https://skillicons.dev/icons?i=express&size=48' },
+  { name: 'NestJS', level: 45, knowledge: 'Básico', color: 'from-red-500 to-red-700', icon: 'https://skillicons.dev/icons?i=nestjs&size=48' },
 ];
 
 export const allTechnologies = [
@@ -21,14 +22,15 @@ export const allTechnologies = [
   { name: 'Docker', icon: 'https://skillicons.dev/icons?i=docker&size=48' },
   { name: 'AWS', icon: 'https://skillicons.dev/icons?i=aws&size=48' },
   { name: 'Firebase', icon: 'https://skillicons.dev/icons?i=firebase&size=48' },
-  { name: 'Redux', icon: 'https://skillicons.dev/icons?i=redux&size=48' },
   { name: 'Vercel', icon: 'https://skillicons.dev/icons?i=vercel&size=48' },
   { name: 'Nest.js', icon: 'https://skillicons.dev/icons?i=nestjs&size=48' },
   { name: 'Zustand', icon: 'https://user-images.githubusercontent.com/958486/218346783-72be5ae3-b953-4dd7-b239-788a882fdad6.svg' },
   { name: 'TanStack Query', icon: 'https://tanstack.com/images/logos/logo-color-banner-600.png' },
   { name: 'Prisma', icon: 'https://skillicons.dev/icons?i=prisma&size=48' },
-  { name: 'OpenAI API', icon: 'https://cdn.simpleicons.org/openai/ffffff' },
-  { name: 'GitHub Copilot', icon: 'https://cdn.simpleicons.org/githubcopilot/ffffff' }
-
-
+  { name: 'Claude Code', icon: 'https://cdn.simpleicons.org/anthropic/ffffff' },
+  { name: 'OpenCode', icon: 'https://skillicons.dev/icons?i=bash&size=48' },
+  { name: 'OpenAI API', icon: 'https://skillicons.dev/icons?i=openai&size=48' },
+  { name: 'GitHub Copilot', icon: 'https://cdn.simpleicons.org/githubcopilot/ffffff' },
+  { name: 'LangChain', icon: 'https://cdn.simpleicons.org/langchain/ffffff' },
+  { name: 'Vercel AI SDK', icon: 'https://cdn.simpleicons.org/vercel/ffffff' },
 ];

@@ -60,7 +60,7 @@ export const LandingPage = () => {
       <CustomCursor />
       {loaded && <ScrollProgress />}
       {!loaded && <PageLoader onComplete={handleLoaderComplete} />}
-      <div ref={scope} className="relative overflow-x-hidden portfolio-atmosphere editorial-texture">
+      <div ref={scope} className="relative overflow-x-hidden portfolio-atmosphere editorial-texture" style={{ visibility: loaded ? 'visible' : 'hidden' }}>
         <LandingTopNav language={language} onLanguageChange={setLanguage} />
         <LandingHome language={language} />
         <LandingBuildings language={language} />

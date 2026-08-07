@@ -30,7 +30,7 @@ export const projects = {
         {
             title: 'Teslo Shop - Clon de Tesla Shop - E-commerce',
             description: 'Plataforma de E-commerce que permite a los usuarios comprar productos de una manera fácil y rápida integrada con PayPal.',
-            image: '/teslo_1.png',
+            image: '/tesloshop_landing.webp',
             technologies: ['Next.js 15', 'TypeScript', 'Zustand', 'Prisma', 'Cloudinary', 'NextAuth', 'PostgreSQL', 'Tailwind CSS', 'PayPal API', 'Vercel'],
             github: 'https://github.com/leamartinez1707/ecommerce-app',
             demo: 'https://teslo-ecommerce-app.vercel.app/',
@@ -74,12 +74,12 @@ export const projects = {
             featured: true
         },
         {
-            title: 'ServyFix - Guía de Servicios Técnicos',
+            title: 'Tu Técnico - Guía de Servicios Técnicos',
             description: 'Plataforma que conecta a usuarios con servicios técnicos disponibles en su área, permitiendo agendar citas al instante.',
-            image: '/servyfix_landing.webp',
-            technologies: ['Node.js', 'React.js', 'TypeScript', 'Tailwind CSS', 'Leaflet', 'Motion', 'Zod', 'Vercel'],
-            github: '#',
-            demo: 'https://servyfix.com',
+            image: '/tutecnico_landing.webp',
+            technologies: ['NestJS', 'React.js', 'TypeScript', 'Tailwind CSS', 'Leaflet', 'Motion', 'Zod', 'Vercel', 'TypeORM', 'PostgreSQL'],
+            github: 'https://github.com/leamartinez1707/tutecnico-webapp',
+            demo: 'https://tutecnico-webapp-frontend.vercel.app/',
             featured: true
         },
         {
@@ -123,7 +123,7 @@ export const projects = {
         {
             title: 'Teslo Shop - Tesla Shop Clone - E-commerce',
             description: 'E-commerce platform that allows users to buy products easily and quickly, integrated with PayPal.',
-            image: '/teslo_1.png',
+            image: '/tesloshop_landing.webp',
             technologies: ['Next.js 15', 'TypeScript', 'Zustand', 'Prisma', 'Cloudinary', 'NextAuth', 'PostgreSQL', 'Tailwind CSS', 'PayPal API', 'Vercel'],
             github: 'https://github.com/leamartinez1707/ecommerce-app',
             demo: 'https://teslo-ecommerce-app.vercel.app/',
@@ -166,11 +166,11 @@ export const projects = {
             featured: true
         },
         {
-            title: 'ServyFix - Technical Services Directory',
+            title: 'Tu Técnico - Technical Services Directory',
             description: 'Platform that connects users with technical service providers in their area, enabling instant appointment booking.',
-            image: '/servyfix_landing.webp',
-            technologies: ['Node.js', 'React.js', 'TypeScript', 'Tailwind CSS', 'Leaflet', 'Motion', 'Zod', 'Vercel'],
-            github: '#',
+            image: '/tutecnico_landing.webp',
+            technologies: ['NestJS', 'React.js', 'TypeScript', 'Tailwind CSS', 'Leaflet', 'Motion', 'Zod', 'Vercel', 'TypeORM', 'PostgreSQL'],
+            github: 'https://github.com/leamartinez1707/tutecnico-webapp',
             demo: 'https://servyfix.com',
             featured: true
         },

@@ -75,7 +75,13 @@ export const useLandingGsap = (enabled: boolean) => {
       if (!enabled) {
         return;
       }
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        gsap.set(scope.current, { visibility: 'visible' });
+        return;
+      }
+
+      // Prevent flash of unstyled content before GSAP animations start
+      gsap.set(scope.current, { visibility: 'visible' });
 
       const isAdaptiveMobile =
         window.matchMedia('(pointer: coarse)').matches ||
@@ -127,7 +133,7 @@ export const useLandingGsap = (enabled: boolean) => {
           delay: isAdaptiveMobile ? 0 : (i % 3) * 0.06,
           scrollTrigger: {
             trigger: el,
-            start: 'top 86%',
+            start: isAdaptiveMobile ? 'top 98%' : 'top 86%',
             once: true,
           },
         });
@@ -146,7 +152,7 @@ export const useLandingGsap = (enabled: boolean) => {
             stagger: 0.08,
             scrollTrigger: {
               trigger: heading,
-              start: 'top 88%',
+              start: isAdaptiveMobile ? 'top 98%' : 'top 88%',
               once: true,
             },
           });
@@ -161,7 +167,7 @@ export const useLandingGsap = (enabled: boolean) => {
             ease: 'power3.out',
             scrollTrigger: {
               trigger: heading,
-              start: 'top 88%',
+              start: 'top 98%',
               once: true,
             },
           });
@@ -192,7 +198,7 @@ export const useLandingGsap = (enabled: boolean) => {
             scaleX: 1,
             duration: 1.2,
             ease: 'expo.out',
-            scrollTrigger: { trigger: bar, start: 'top 90%', once: true },
+            scrollTrigger: { trigger: bar, start: isAdaptiveMobile ? 'top 98%' : 'top 90%', once: true },
           }
         );
       });
@@ -207,7 +213,7 @@ export const useLandingGsap = (enabled: boolean) => {
             ease: 'power3.out',
             scrollTrigger: {
               trigger: media,
-              start: 'top 86%',
+              start: 'top 98%',
               once: true,
             },
           });
@@ -240,7 +246,7 @@ export const useLandingGsap = (enabled: boolean) => {
           stagger: 0.1,
           scrollTrigger: {
             trigger: group,
-            start: 'top 86%',
+            start: isAdaptiveMobile ? 'top 98%' : 'top 86%',
             once: true,
           },
         });
@@ -364,10 +370,10 @@ export const useLandingGsap = (enabled: boolean) => {
       return () => {
         floatTweens.forEach((t) => t.kill());
         magneticCleanups.forEach((fn) => fn());
-        mm.revert();
+        try { mm.revert(); } catch (_) { /* nodes already unmounted by React */ }
       };
     },
-    { scope, dependencies: [enabled], revertOnUpdate: true }
+    { scope, dependencies: [enabled], revertOnUpdate: false }
   );
 
   return scope;
