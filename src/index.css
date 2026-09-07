@@ -315,6 +315,99 @@ button {
   cursor: pointer;
 }
 
+/* ── Scroll reveal system ─────────────────────────────────────────────────
+   Elements start hidden and are revealed by adding `.is-visible` (toggled
+   from an IntersectionObserver in useLandingGsap). Pure CSS transitions —
+   this stays correct even when webfonts or images shift the page layout
+   after the observer was set up, unlike a scroll library that caches pixel
+   offsets up front.
+*/
+[data-gsap-reveal],
+[data-gsap-item] {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-gsap-reveal].is-visible,
+[data-gsap-item].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-gsap-stagger] [data-gsap-item]:nth-child(2) { transition-delay: 0.08s; }
+[data-gsap-stagger] [data-gsap-item]:nth-child(3) { transition-delay: 0.16s; }
+[data-gsap-stagger] [data-gsap-item]:nth-child(4) { transition-delay: 0.24s; }
+[data-gsap-stagger] [data-gsap-item]:nth-child(5) { transition-delay: 0.32s; }
+[data-gsap-stagger] [data-gsap-item]:nth-child(6) { transition-delay: 0.4s; }
+
+[data-gsap-heading] [data-gsap-line] {
+  display: block;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-gsap-heading].is-visible [data-gsap-line] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-gsap-heading] [data-gsap-line]:nth-child(2) { transition-delay: 0.08s; }
+[data-gsap-heading] [data-gsap-line]:nth-child(3) { transition-delay: 0.16s; }
+
+[data-gsap-media] {
+  opacity: 0;
+  transform: scale(1.035);
+  transition: opacity 0.9s ease-out, transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-gsap-media].is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+[data-gsap-skillbar] {
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-gsap-skillbar].is-visible {
+  transform: scaleX(1);
+}
+
+/* ── Floating background decoration ─────────────────────────────────────── */
+[data-gsap-float] {
+  animation: floatDecoration 5.5s ease-in-out infinite alternate;
+}
+
+[data-gsap-float]:nth-of-type(2) {
+  animation-duration: 6.5s;
+  animation-delay: -2s;
+}
+
+@keyframes floatDecoration {
+  from { transform: translateY(-14px); }
+  to { transform: translateY(14px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-gsap-reveal],
+  [data-gsap-item],
+  [data-gsap-heading] [data-gsap-line],
+  [data-gsap-media],
+  [data-gsap-skillbar] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  [data-gsap-float] {
+    animation: none !important;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     scroll-behavior: auto !important;

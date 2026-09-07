@@ -52,7 +52,7 @@ const LandingSelectedWork = ({ language }: LandingSelectedWorkProps) => {
                     <div data-gsap-reveal className="mb-20 group">
                         <div data-gsap-stagger className="grid grid-cols-12 gap-8 items-end">
                             <div data-gsap-item className="col-span-12 lg:col-span-8">
-                                <div data-gsap-media data-gsap-parallax className="relative aspect-video overflow-hidden mb-6 bg-surface-container-low transition-all duration-500 hover:translate-y-[-4px]">
+                                <div data-gsap-media className="relative aspect-video overflow-hidden mb-6 bg-surface-container-low transition-all duration-500 hover:translate-y-[-4px]">
                                     <img
                                         src={main.image}
                                         alt={main.title}
@@ -97,7 +97,7 @@ const LandingSelectedWork = ({ language }: LandingSelectedWorkProps) => {
                             {/* Side card - Project 2 */}
                             {second && (
                                 <div data-gsap-item data-gsap-reveal className="col-span-12 lg:col-span-4 lg:mb-0 group/side">
-                                    <div data-gsap-media data-gsap-parallax className="relative aspect-[4/3] overflow-hidden mb-4 bg-surface-container-low transition-all duration-500 hover:translate-y-[-4px]">
+                                    <div data-gsap-media className="relative aspect-[4/3] overflow-hidden mb-4 bg-surface-container-low transition-all duration-500 hover:translate-y-[-4px]">
                                         <img
                                             src={second.image}
                                             alt={second.title}
@@ -133,8 +133,8 @@ const LandingSelectedWork = ({ language }: LandingSelectedWorkProps) => {
                 {/* Row: Projects 3 & 4 */}
                 <div data-gsap-stagger className="grid grid-cols-12 gap-8 mb-12">
                     {[third, fourth].filter(Boolean).map((project, idx) => (
-                        <div key={project!.title} data-gsap-item data-gsap-reveal data-gsap-tilt className={"col-span-12 md:col-span-6 group" + (idx === 1 ? " md:mt-16" : "")}>
-                            <div data-gsap-media data-gsap-parallax className="relative aspect-video overflow-hidden mb-4 bg-surface-container-low transition-all duration-500 hover:translate-y-[-4px]">
+                        <div key={project!.title} data-gsap-item data-gsap-reveal className={"col-span-12 md:col-span-6 group" + (idx === 1 ? " md:mt-16" : "")}>
+                            <div data-gsap-media className="relative aspect-video overflow-hidden mb-4 bg-surface-container-low transition-all duration-500 hover:translate-y-[-4px]">
                                 <img
                                     src={project!.image}
                                     alt={project!.title}
@@ -175,7 +175,7 @@ const LandingSelectedWork = ({ language }: LandingSelectedWorkProps) => {
                         </div>
                         <div data-gsap-stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                             {rest.map(project => (
-                                <div key={project.title} data-gsap-item data-gsap-reveal data-gsap-tilt className="group bg-surface-container-low p-6 border border-outline-variant/10 hover:border-primary/30 transition-all duration-300 overflow-hidden">
+                                <div key={project.title} data-gsap-item data-gsap-reveal className="group bg-surface-container-low p-6 border border-outline-variant/10 hover:border-primary/30 transition-all duration-300 overflow-hidden">
                                     {project.demo !== '#' ? (
                                         <a
                                             href={project.demo}
