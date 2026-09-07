@@ -27,6 +27,11 @@ export const ScrollProgress = () => {
       }
     );
 
+    // Webfonts (and images without reserved space) can resize the page after
+    // this ScrollTrigger's "end" was first measured — refresh once they've
+    // settled so the bar still reaches 100% exactly at the real bottom.
+    document.fonts?.ready.then(() => ScrollTrigger.refresh()).catch(() => {});
+
     return () => {
       tween.kill();
       ScrollTrigger.getAll().forEach((st) => {
